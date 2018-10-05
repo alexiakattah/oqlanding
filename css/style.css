@@ -2302,18 +2302,37 @@ a:focus, a:hover {
 
 
 .circle-text {
-  width: 45vh;
-  height: 45vh;
-  border-width: 10px;
-  border-color: #000000;
-  border:0.5vh solid #818181;
-  border-radius: 50%;
-  font-size: 12px;
-  color: #000;
-  line-height: 45vh;
-  text-align: center;
+	width: 45vh;
+	height: 45vh;
+	border-width: 10px;
+	border-color: #000000;
+	border:0.5vh solid #818181;
+	border-radius: 50%;
+	font-size: 12px;
+	color: #000;
+	line-height: 45vh;
+	text-align: center;
 	font-size:1.2em;
 	text-align:center;
 	font-weight: bold;
 	word-break:break-all;
+	font-family: 'GothamLight' !important;
+}
+
+.circle-text-white {
+	width: 45vh;
+	height: 45vh;
+	border-width: 10px;
+	border-color: #ffffff;
+	border:0.5vh solid #ffffff;
+	border-radius: 50%;
+	font-size: 12px;
+	color: #ffffff;
+	line-height: 45vh;
+	text-align: center;
+	font-size:1.2em;
+	text-align:center;
+	font-weight: bold;
+	word-break:break-all;
+	font-family: 'GothamLight' !important;
 }
