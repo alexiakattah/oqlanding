@@ -2296,7 +2296,7 @@ a:focus, a:hover {
 	border-radius: 50%;
 	color: #646566;
 	font-size:1.4em;
-	font-weight: bold;
+	font-weight: 900;
 	padding: 25px;
 	font-family: 'GothamLight' !important;
 	line-height: 1.6
@@ -2314,10 +2314,11 @@ a:focus, a:hover {
 	border-radius: 50%;
 	color: #fff;
 	font-size:1.4em;
-	font-weight: bold;
+	font-weight: 900;
 	padding: 25px;
 	font-family: 'GothamLight' !important;
-	line-height: 1.6
+	line-height: 1.6;
+
 }
 
 .big-red-text {
@@ -2336,4 +2337,12 @@ a:focus, a:hover {
 
 .white-text{
 	color: white;
+}
+
+.no-margin{
+	margin: 0 !important;
+}
+
+.margin-all-20{
+	margin: 20px;
 }
