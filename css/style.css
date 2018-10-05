@@ -1489,14 +1489,16 @@ a:focus, a:hover {
 
 	font-weight: 500;
 
-	line-height: 45px;
-
-	padding-top: 15px;
+	padding-top: 15vh;
 
 	margin:0 auto;
 
 	text-align:center;
 
+}
+
+.header_space{
+	margin-top: 10vh
 }
 
 
@@ -2250,3 +2252,6 @@ a:focus, a:hover {
 	height:100%;
 }
 
+.ethereum_logo{
+	width: 20vh;
+}
