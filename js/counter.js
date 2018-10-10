@@ -1,32 +1,48 @@
-/* Examples */
-(function($) {
-    $('.first.circle.gray').circleProgress({
-        value: 1,
-        fill: {gradient: [['#787878', .1], ['#787878', .1]], gradientAngle: Math.PI / 4},
-        size: $("body").innerWidth() * 0.2,
-        thickness: 3
-      }).on('circle-animation-progress', function(event, progress, stepValue) {
-        $(this).find('strong').html(Math.round(80 * progress) +  '<i>%</i>');
-      });
-  
-   
-    $('.second.circle.gray').circleProgress({
-      value: 1,
-      fill: {gradient: [['#787878', .1], ['#787878', .1]], gradientAngle: Math.PI / 4},
-      size: $("body").innerWidth() * 0.2,
-      thickness: 3
-    }).on('circle-animation-progress', function(event, progress, stepValue) {
-      $(this).find('strong').html('<i>$</i>' + (2.4 * progress).toFixed(2) +  '<i>k</i>');
-    });
 
-    $('.third.circle.gray').circleProgress({
-        value: 1,
-        fill: {gradient: [['#787878', .1], ['#787878', .1]], gradientAngle: Math.PI / 4},
-        size: $("body").innerWidth() * 0.2,
-        thickness: 3
-      }).on('circle-animation-progress', function(event, progress, stepValue) {
-        $(this).find('strong').html(Math.round(202 * progress) +  '<i>%</i>');
-      });
+let ptCounted = false;
+let enCounted = false;
 
+$(window).scroll(function() {
+  if(isScrolledIntoView($("#countWhiteSection"))) {
+    if (!ptCounted){
+      loadPtCounts();
+      ptCounted = true;
+    }
+    
+  }
+});
+
+function isScrolledIntoView(elem) {
+  var docViewTop = $(window).scrollTop();
+  var docViewBottom = docViewTop + $(window).height();
+  var elemTop = $(elem).offset().top;
+  var elemBottom = elemTop + $(elem).height();
+  return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
+
+function loadPtCounts(){
+  const maxCountPt1 = 80;
+  const maxCountPt2 = 2.4;
+  const maxCountPt3 = 202;
+  const maxCountPt4 = 200;
+  const maxCountPt5 = 92;
+  const maxCountPt6 = 854;
+
+  startCounter(maxCountPt1, "pt_count_1");
+  startCounter(maxCountPt2, "pt_count_2");
+  startCounter(maxCountPt3, "pt_count_3");
+  startCounter(maxCountPt4, "pt_count_4");
+  startCounter(maxCountPt5, "pt_count_5");
+  startCounter(maxCountPt6, "pt_count_6");
+};
+
+function startCounter(maxCount, divId) {
+  let countInit = 0;
   
-  })(jQuery);
+  setInterval(function () {
+      if (countInit <= maxCount){
+        $("#"+divId).html(countInit+ "%");
+        countInit ++;
+      }
+  }, 10);
+}
