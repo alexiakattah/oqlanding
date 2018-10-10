@@ -2335,6 +2335,10 @@ a:focus, a:hover {
 	padding: 30px !important;
 }
 
+.no-padding-top{
+	padding-top: 0px !important;
+}
+
 .white-text{
 	color: white;
 }
@@ -2349,4 +2353,99 @@ a:focus, a:hover {
 
 .circle-image{
 	padding: 8vh;
+}
+
+
+/* Counter CSS */
+.circles {
+  margin-bottom: -10px;
+}
+
+.circle {
+  width: 100px;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  line-height: 100px;
+}
+
+.circle canvas {
+  vertical-align: middle;
+}
+
+.circle strong {
+  position: absolute;
+  top: 11vh;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+}
+
+.circle strong i {
+  font-style: normal;
+  font-size: 0.6em;
+  font-weight: normal;
+}
+
+.circle span {
+  display: block;
+  color: #aaa;
+  margin-top: 12px;
+}
+
+p {
+  margin: 40px 0;
+}
+
+.install {
+  display: inline-block;
+}
+
+.install a {
+  display: block;
+  width: auto;
+  vertical-align: middle;
+  padding: 6px 12px;
+  line-height: 20px;
+  background-color: #111;
+  color: #fff;
+  border-radius: 3px;
+  text-decoration: none;
+  margin: 5px auto;
+  transition: all .3s;
+}
+
+.install code {
+  padding: 6px 12px;
+  display: block;
+  font: 13px/20px Courier New, Liberation Mono, monospase;
+  background-color: #333333;
+  border-radius: 4px;
+  margin: 5px 0;
+  white-space: nowrap;
+}
+
+.install a:hover {
+  background-color: #222;
+}
+
+.credits {
+  color: #aaa;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.credits img {
+  margin-left: 4px;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+@media (max-height: 600px), (max-width: 480px) {
+  .credits {
+    position: inherit;
+  }
 }
