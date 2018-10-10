@@ -2318,3 +2318,8 @@ text {
 	line-height:1.3em;
 	text-align:center;
 }
+
+svg {
+    width: 60vh; height: 60vh;
+    text-align: center;
+}
