@@ -2346,3 +2346,7 @@ a:focus, a:hover {
 .margin-all-20{
 	margin: 20px;
 }
+
+.circle-image{
+	padding: 8vh;
+}
