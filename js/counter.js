@@ -28,21 +28,28 @@ function loadPtCounts(){
   const maxCountPt5 = 92;
   const maxCountPt6 = 854;
 
-  startCounter(maxCountPt1, "pt_count_1");
-  startCounter(maxCountPt2, "pt_count_2");
-  startCounter(maxCountPt3, "pt_count_3");
-  startCounter(maxCountPt4, "pt_count_4");
-  startCounter(maxCountPt5, "pt_count_5");
-  startCounter(maxCountPt6, "pt_count_6");
+  startCounter(maxCountPt1, "pt_count_1", 3);
+  startCounter(maxCountPt2, "pt_count_2", 3);
+  startCounter(maxCountPt3, "pt_count_3", 3);
+  startCounter(maxCountPt4, "pt_count_4", 3);
+  startCounter(maxCountPt5, "pt_count_5", 3);
+  startCounter(maxCountPt6, "pt_count_6", 3);
 };
 
-function startCounter(maxCount, divId) {
+function startCounter(maxCount, divId, timeToLoad) {
   let countInit = 0;
+  const countInterval = maxCount / timeToLoad;
   
   setInterval(function () {
       if (countInit <= maxCount){
-        $("#"+divId).html(countInit);
-        countInit ++;
+        if (countInit < maxCount){
+          $("#"+divId).html(countInit.toFixed(1));
+        }
+        else {
+          $("#"+divId).html(countInit);
+        }
+        
+        countInit += countInterval;
       }
-  }, 10);
+  }, 200);
 }
