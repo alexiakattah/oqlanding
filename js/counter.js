@@ -8,7 +8,6 @@ $(window).scroll(function() {
       loadPtCounts();
       ptCounted = true;
     }
-    
   }
 });
 
