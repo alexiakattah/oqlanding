@@ -70,6 +70,16 @@
 
 }
 
+@font-face {
+
+	font-family: 'GothamBold';
+
+	src: url('../fonts/gotham/Gotham-Bold-Regular.ttf');
+
+	src: local('GothamBold'), url('../fonts/gotham/Gotham-Bold-Regular.ttf') format('truetype');
+
+}
+
 
 
 body, html {
@@ -2302,24 +2312,28 @@ svg {
 }
 
 circle {  
-	fill: #3DB8A4;
+	fill: #F7F7F7;
 }
 
 text {  
-	fill: #fff;
+	fill: #787878;
 	font-size: 1;
 }
 
 .svg-title{
 	color:rgb(12, 12, 12);
-	width:10%;
-	margin:0 auto;
 	font-size:1.6em;
 	line-height:1.3em;
 	text-align:center;
 }
 
 svg {
-    width: 60vh; height: 60vh;
+    width: 50vh; height: 50vh;
     text-align: center;
 }
+
+.count-number{
+	fill: #E22300;
+	font-family: "GothamBold"
+}
+
