@@ -41,7 +41,7 @@ function startCounter(maxCount, divId) {
   
   setInterval(function () {
       if (countInit <= maxCount){
-        $("#"+divId).html(countInit+ "%");
+        $("#"+divId).html(countInit);
         countInit ++;
       }
   }, 10);
