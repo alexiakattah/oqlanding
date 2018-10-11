@@ -2312,12 +2312,16 @@ svg {
 }
 
 circle {  
-	fill: #F7F7F7;
+	fill: rgba(247, 247, 247, 0);
 }
+
 
 text {  
 	fill: #787878;
-	font-size: 1;
+}
+
+whiteText {  
+	fill: #ffffff;
 }
 
 .svg-title{
@@ -2335,5 +2339,9 @@ svg {
 .count-number{
 	fill: #E22300;
 	font-family: "GothamBold"
+}
+
+.whiteText{
+	fill: #FFFFFF;
 }
 

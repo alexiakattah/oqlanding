@@ -33,6 +33,13 @@ function loadPtCounts(){
   startCounter(maxCountPt4, "pt_count_4", 3);
   startCounter(maxCountPt5, "pt_count_5", 3);
   startCounter(maxCountPt6, "pt_count_6", 3);
+
+  startCounter(maxCountPt1, "pt_count_7", 3);
+  startCounter(maxCountPt2, "pt_count_8", 3);
+  startCounter(maxCountPt3, "pt_count_9", 3);
+  startCounter(maxCountPt4, "pt_count_10", 3);
+  startCounter(maxCountPt5, "pt_count_11", 3);
+  startCounter(maxCountPt6, "pt_count_12", 3);
 };
 
 function startCounter(maxCount, divId, timeToLoad) {
