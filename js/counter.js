@@ -20,6 +20,24 @@ $('#countWhiteSection').on({
   }
 });
 
+$(window).scroll(function() {
+  if(isScrolledIntoView($("#countColoredSection"))) {
+    if (!ptCounted){
+      loadPtCounts();
+      ptCounted = true;
+    }
+  }
+});
+
+$('#countColoredSection').on({
+  'touchmove': function(e) { 
+    if (!ptCounted){
+      loadPtCounts();
+      ptCounted = true;
+    }
+  }
+});
+
 function isScrolledIntoView(elem) {
   var docViewTop = $(window).scrollTop();
   var docViewBottom = docViewTop + $(window).height();
