@@ -84,5 +84,5 @@ function startCounter(maxCount, divId, timeToLoad) {
         
         countInit += countInterval;
       }
-  }, 200);
+  }, 300);
 }
