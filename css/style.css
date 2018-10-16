@@ -177,6 +177,41 @@ a {
   color: #444;
 }
 
+@media (min-width: 576px) and (max-width: 1199.98px) {
+  circle {
+    r: 21%;
+    cx: 26%;
+  }
+
+  text {
+    transform: translate(-24.5%, 0%);
+  }
+
+  .circle-text {
+    font-size: 1.5vh !important;
+  }
+
+  .count-number {
+    font-size: 5.6vh;
+  }
+
+  #top-mid-circle {
+    transform: translate(-24.5%, 1.5%);
+  }
+
+  #top-right-circle {
+    transform: translate(-24.5%, -1.5%);
+  }
+
+  #bottom-right-circle {
+    transform: translate(-24.5%, 0%);
+  }
+
+  #bottom-eng-circle{
+    transform: translate(-25%, 3%);
+  }
+}
+
 @media (max-width: 767px) {
   .inner-intro h1 {
     font-size: 35px;
@@ -1798,6 +1833,6 @@ svg {
   font-size: 2.5vh;
 }
 
-.whiteTextColor{
+.whiteTextColor {
   color: white !important;
 }
