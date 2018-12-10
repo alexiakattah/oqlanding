@@ -1,545 +1,859 @@
 <!DOCTYPE html>
 <html lang="en" style="overflow-x: hidden;">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>OQ Digital</title>
+		<link rel="shortcut icon" type="image/png" href="images/favicon.ico" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700"
+			rel="stylesheet"
+		/>
+		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
+		<link href="css/animate.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<script>
+			function show() {
+				if (document.getElementById("benefits").style.display == "none") {
+					document.getElementById("benefits").style.display = "block";
+					document.getElementById("upbutton").style.display = "none";
+					document.getElementById("call-to-action-btn").innerHTML = "Solicitar Demo";
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>OQ Digital</title>
-    <link rel="shortcut icon" type="image/png" href="images/favicon.ico" />
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <script>        function show() { if (document.getElementById('benefits').style.display == 'none') { document.getElementById('benefits').style.display = 'block'; document.getElementById('upbutton').style.display = 'none'; } return false; } function hide() { if (document.getElementById('benefits').style.display == 'block') { document.getElementById('benefits').style.display = 'none'; document.getElementById('upbutton').style.display = 'block'; } return false; }    </script>
-</head>
+					document.getElementById("request-demo").href = "#demoPortuguese";
 
-<body style="overflow-x: hidden;">
-    <!-- header -->
-    <header id="home">
-        <div class="header-top-area">
-            <div class="container header-container">
-                <div class="row">
-                    <div class="col-md-10"> <a id="nav-icon2" onClick="openNav()"> </a> </div>
-                    <div class="col-md-2">
-                        <div class="language">
-                            <ul>
-                                <li><a href="#1" name="1" id="chkYes" onclick="return show();">PORTUGUES</a></li>
-                                <li><a href="#1" name="1" id="chkNo" onclick="return hide();">ENGLISH</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header> <!-- header End-->
-    <!--<div id="mySidenav" class="sidenav">-->
-    <div class="sidenav"> <a href="javascript:void(0)" class="closebtn" onClick="closeNav()">&times;</a>
-        <!--<a href="#">About</a><a href="#">Services</a><a href="#">Clients</a><a href="#">Contact</a>-->
-    </div>
-    <div id="benefits" style="display:block;">
-        <!-- Banner ------>
-        <div id="banner" class="banner position_rel">
-            <div class="banner-area banner-1">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="slider-title">
-                                <div class="header_space"></div>
-                                <h1><img src="images/banner-logo.png" width="100%"></h1>
-                                <div class="banner-title"> Bem-vindo a um jeito novo de envolver pessoas e gerar
-                                    neg&oacute;cios. </div>
-                                <div class="banner-powered">POWERED BY BLOCKCHAIN</div>
-                                <div class="text-center"><img src="images/logo_ethereum.png" class="ethereum_logo"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- Banner End -->
-        <section class="sec-video">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/357SaLKXy54" frameborder="0" allow="autoplay; encrypted-media"
-                    allowfullscreen></iframe>
-                <div class="iframe_allow_scroll"></div>
-            </div>
-        </section>
-        <section class="sec-2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-5"></div>
-                    <div class="col-md-7">
-                        <h2 class="top">Somos uma plataforma de m&iacutedia digital diferente: n&atilde;o geramos
-                            s&oacute; audi&ecirc;ncia para a sua marca.</h2>
-                    </div>
-                    <div class="col-md-6">
-                        <h2 class="mid">O QUE &Eacute</h2>
-                    </div>
-                    <div class="col-md-6"></div>
-                    <div class="col-md-5"></div>
-                    <div class="col-md-7">
-                        <h2 class="bottom">Geramos receitas mensur&aacuteveis para a sua empresa e valor
-                            imensur&aacutevel para os seus clientes e colaboradores.</h2>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="sec-3 position_rel">
-            <div class="container">
-                <div class="row">
-                    <div class="parent-section">
-                        <div class="child-section">
-                            <h2 class="headline-left">COMO</h2>
-                        </div>
-                        <div class="child-section">
-                            <div class="right-content">
-                                <ul class="content-list">
-                                    <li>Engaje, fidelize, recompense e proporcione</li>
-                                    <li>uma experi&ecirc;ncia &uacute;nica aos seus clientes</li>
-                                    <li>e colaboradores com um canal</li>
-                                    <li>pr&oacute;prio de m&iacute;dia digital de alto</li>
-                                    <li>impacto e grande alcance.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="sec-4 position_rel">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="section-headline text-center">OMNICHANNEL</h2>
-                    </div>
-                    <div class="col-md-6"></div>
-                    <div class="col-md-6">
-                        <p class="section-sub-headline">Conhe&ccedil;a e reconhe&ccedil;a</p>
-                        <p class="section-sub-headline">seu p&uacute;blico-alvo:</p>
-                    </div>
-                    <div class="col-md-12 body-text text-center">
-                        <ul class="content-list-vertical">
-                            <li>Brand Advocate</li>
-                            <li>+ Social Selling</li>
-                            <li>+ Influence Marketing</li>
-                            <li>+ Loyalty Program</li>
-                        </ul>
-                        <p>= M&eacute;tricas mensur&aacute;veis, Leads altamente qualificados e People Analytics.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="sec-5 position_rel">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="section-headline-5 text-center">PERFORMANCE</h2>
-                    </div>
-                    <div class="col-md-12 text-center">
-                        <ul class="team-img-box">
-                            <li>
-                                <div class="fit-img" style="background-image: url('images/team-1.jpg');"></div>
-                            </li>
-                            <li>
-                                <div class="fit-img" style="background-image: url('images/team-2.jpg');"></div>
-                            </li>
-                            <li>
-                                <div class="fit-img" style="background-image: url('images/team-3.jpg');"></div>
-                            </li>
-                        </ul>
-                        <div class="performance-body-text">Uma plataforma a serviço da performance de marketing,
-                            motivação de colaboradores e fidelização de consumidores com um modelo inédito de relação
-                            entre empresas e pessoas.</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="sec-count-white">
-            <div class="row text-center" id="countWhiteSection">
-                <div class="col-md-4 p-0">
-                    <svg>
-                        <circle r="35%" cx="50%" cy="55%" stroke="#787878" stroke-width="2" />
-                        <text x="50%" y="53%" text-anchor="middle">
-                            <tspan x="50.5%" dy="-3em" class="circle-text">Empresas com</tspan>
-                            <tspan x="51%" dy="1.5em" class="circle-text">funcionários engajados</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text">retêm mais de</tspan>
-                            <tspan x="52.5%" dy="0.9em" id="pt_count_1" font-size="9vh" class="count-number">0</tspan>
-                            <tspan class="count-number circle-text">%</tspan>
-                            <tspan x="50.5%" dy="1.5em" class="circle-text">dos clientes.</tspan>
-                        </text>
-                    </svg>
-                </div>
-                <div class="col-md-4 p-0">
-                    <svg>
-                        <circle r="35%" cx="50%" cy="56.5%" stroke="#787878" stroke-width="2" />
-                        <text x="50%" y="55%" text-anchor="middle">
-                            <tspan x="51.5%" dy="-4.2em" class="circle-text">Aumentar em</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text">10% o investimento</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text">em engajamento dá</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text">um retorno médio de </tspan>
-                            <tspan x="52%" dy="3.45em" class="count-number circle-text">$</tspan>
-                            <tspan class="count-number" id="pt_count_2" font-size="9vh">0</tspan>
-                            <tspan class="count-number circle-text">k</tspan>
-                            <tspan x="51%" dy="1.4em" class="circle-text">por colaborador.</tspan>
-                        </text>
-                    </svg>
-                </div>
-                <div class="col-md-4 p-0">
-                    <svg>
-                        <circle r="35%" cx="50%" cy="55%" stroke="#787878" stroke-width="2" />
-                        <text x="50%" y="55%" id="top-right-circle" text-anchor="middle">
-                            <tspan x="51%" dy="-4em" class="circle-text">Empresas com</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text">colaboradores</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text">engajados</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text">performam</tspan>
-                            <tspan x="52%" dy="0.9em" id="pt_count_3" font-size="9vh" class="count-number">0</tspan>
-                            <tspan class="count-number circle-text">%</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text">a mais.</tspan>
-                        </text>
-                    </svg>
-                </div>
-            </div>
-            <div class="row padding-30">
-                <div class="col-md-12 text-right">
-                    <div class="source-text">Fonte: <a href="http://officevibe.com/blog/investing-employee-engagement"
-                            target="_blank">officevibe.com.blog/investing-employee-engagement</a></div>
-                </div>
-            </div>
-        </section>
-        <section class="sec-count-colored" id="countColoredSection">
-            <div class="row text-center">
-                <div class="col-md-4 p-0">
-                    <svg>
-                        <circle r="35%" cx="50%" cy="55%" stroke="#FFFFFF" stroke-width="2" />
-                        <text x="50%" y="55%" text-anchor="middle">
-                            <tspan x="51.5%" dy="-0.2em" id="pt_count_4" font-size="9vh" class="count-number whiteText">0</tspan>
-                            <tspan class="count-number circle-text whiteText">%</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text whiteText"> é quanto o gamification</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text whiteText"> gera a mais de</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text whiteText"> engajamento.</tspan>
-                        </text>
-                    </svg>
-                </div>
-                <div class="col-md-4 p-0">
-                    <svg>
-                        <circle r="35%" cx="50%" cy="55%" stroke="#FFFFFF" stroke-width="2" />
-                        <text x="50%" y="55%" text-anchor="middle">
-                            <tspan x="51.5%" dy="-0.4em" id="pt_count_5" font-size="9vh" class="count-number whiteText">0</tspan>
-                            <tspan class="count-number circle-text whiteText">%</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text whiteText"> das pessoas sentem mais</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text whiteText"> confiança no que é</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text whiteText"> recomendado por</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text whiteText"> conhecidos.</tspan>
-                        </text>
-                    </svg>
-                </div>
-                <div class="col-md-4 p-0">
-                    <svg>
-                        <circle r="35%" cx="50%" cy="55%" stroke="#FFFFFF" stroke-width="2" />
-                        <text x="50%" y="55%" id="bottom-right-circle" text-anchor="middle">
-                            <tspan x="51.5%" dy="-3.5em" class="circle-text whiteText">Em média,</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text whiteText"> cada usuário viraliza</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text whiteText"> a mensagem para</tspan>
-                            <tspan x="51.5%" dy="0.9em" id="pt_count_6" font-size="9vh" class="count-number whiteText">0</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text whiteText"> contatos.</tspan>
-                        </text>
-                    </svg>
-                </div>
-            </div>
-            <div class="row padding-30">
-                <div class="col-md-12 text-right">
-                    <div class="whiteTextColor">Fonte: eMarketer e Insights from Emergent Markets</div>
-                </div>
-            </div>
-        </section>
-        <section class="sec-6 position_rel">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="section-headline text-center">GAMIFICA&Ccedil;&Atilde;O</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="full-width"> <img src="images/section-6-bg.png" alt=""> </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 body-text text-center">
-                        <p>Um modelo <strong>gamificado</strong> de engajamento, um jogo onde todos saem ganhando:
-                            gera&ccedil;&atilde;o de audi&ecirc;ncia, gera&ccedil;&atilde;o de dados e convers&atilde;o
-                            de vendas em troca de recompensas! Ganhe <strong>visibilidade, marketshare e brand lovers.</strong></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="sec-7 position_rel">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="section-headline-5 text-center">CONTATO</h2>
-                    </div>
-                    <div class="col-md-12 text-center">
-                        <div class="address-details">BH - Av. Afonso Pena, 3355, 11º andar - Funcionários </div>
-                        <div class="address-details">SP - Av. Pedroso de Marais, 2120 - Pinheiros</div>
-                        <div class="contact-text">Entre em contato e solicite uma apresenta&ccedil;&atilde;o:</div>
-                        <div class="contact-details">sayhello@oqdigital.com<br>+55 31 3254 9909</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-    <div id="upbutton" style="display:none;">
-        <!-- Banner -->
-        <div id="banner" class="banner position_rel">
-            <div class="banner-area banner-1">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="slider-title">
-                                <div class="header_space"></div>
-                                <h1><img src="images/banner-logo.png"></h1>
-                                <div class="banner-title">Welcome to a new way to engage people and generate business.</div>
-                                <div class="banner-powered">POWERED BY BLOCKCHAIN</div>
-                                <div class="text-center"><img src="images/logo_ethereum.png" class="ethereum_logo"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- Banner End -->
-        <section class="sec-video">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/6pa06VkIplA" frameborder="0" allow="autoplay; encrypted-media"
-                    allowfullscreen></iframe>
-            </div>
-        </section>
-        <section class="sec-2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-5"></div>
-                    <div class="col-md-7">
-                        <h2 class="top">We are an unconventional digital media company: we do not just generate
-                            audience for your brand - we generate measurable revenues for your business and
-                            immeasurable values for your customers and employees.</h2>
-                    </div>
-                    <div class="col-md-6">
-                        <h2 class="mid">What is it?</h2>
-                    </div>
-                    <div class="col-md-6"></div>
-                    <div class="col-md-5"></div>
-                    <div class="col-md-7">
-                        <h2 class="bottom">We generate measurable revenue for your company and immense value to your
-                            customers and employees.</h2>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="sec-3 position_rel">
-            <div class="container">
-                <div class="row">
-                    <div class="parent-section">
-                        <div class="child-section">
-                            <h2 class="headline-left">HOW</h2>
-                        </div>
-                        <div class="child-section">
-                            <div class="right-content">
-                                <ul class="content-list">
-                                    <li>Engage, turn them loyal , reward them, and provide a unique experience for your
-                                        clients and employees with a high-impact, high-reach digital media channel.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="sec-4 position_rel">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="section-headline text-center">ONMICHANNEL</h2>
-                    </div>
-                    <div class="col-md-6"></div>
-                    <div class="col-md-6">
-                        <p class="section-sub-headline">Knowledge and recognition</p>
-                        <p class="section-sub-headline">your target audience:</p>
-                    </div>
-                    <div class="col-md-12 body-text text-center">
-                        <ul class="content-list-vertical">
-                            <li>Brand Advocate</li>
-                            <li>+ Social Selling</li>
-                            <li>+ Influence Marketing</li>
-                            <li>+ Loyalty Program</li>
-                        </ul>
-                        <p>= Measurable Metrics, Highly Qualified Leads and People Analytics.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="sec-5 position_rel">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="section-headline-5 text-center">PERFORMANCE</h2>
-                    </div>
-                    <div class="col-md-12 text-center">
-                        <ul class="team-img-box">
-                            <li>
-                                <div class="fit-img" style="background-image: url('images/team-1.jpg');"></div>
-                            </li>
-                            <li>
-                                <div class="fit-img" style="background-image: url('images/team-2.jpg');"></div>
-                            </li>
-                            <li>
-                                <div class="fit-img" style="background-image: url('images/team-3.jpg');"></div>
-                            </li>
-                        </ul>
-                        <div class="performance-body-text">A platform made for the marketing performance, motivation of
-                            employees, involvement and loyalty of clients with an unprecedented model of relationship
-                            between companies and people.</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="sec-count-white">
-            <div class="row text-center" id="countWhiteSection">
-                <div class="col-md-4 p-0">
-                    <svg>
-                        <circle r="35%" cx="50%" cy="55%" stroke="#787878" stroke-width="2" />
-                        <text x="50%" y="53%" text-anchor="middle">
-                            <tspan x="50.5%" dy="-3em" class="circle-text">Companies with</tspan>
-                            <tspan x="50%" dy="1.5em" class="circle-text">engaged employees</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text">retain more than</tspan>
-                            <tspan x="52.5%" dy="0.9em" id="pt_count_7" font-size="9vh" class="count-number">0</tspan>
-                            <tspan class="count-number">%</tspan>
-                            <tspan x="50.5%" dy="1.5em" class="circle-text">of customers.</tspan>
-                        </text>
-                    </svg>
-                </div>
-                <div class="col-md-4 p-0">
-                    <svg>
-                        <circle r="35%" cx="50%" cy="55%" stroke="#787878" stroke-width="2" />
-                        <text x="50%" y="56.5%" text-anchor="middle">
-                            <tspan x="51.5%" dy="-4.55em" class="circle-text">Increase in</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text">10% the investiment</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text">in engagement gives an</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text">average return of</tspan>
-                            <tspan x="51.5%" dy="3.45em" class="count-number circle-text">$</tspan>
-                            <tspan class="count-number" id="pt_count_8" font-size="9vh">0</tspan>
-                            <tspan class="count-number circle-text">k</tspan>
-                            <tspan x="51%" dy="1.4em" class="circle-text">by collaborator.</tspan>
-                        </text>
-                    </svg>
-                </div>
-                <div class="col-md-4 p-0">
-                    <svg>
-                        <circle r="35%" cx="50%" cy="55%" stroke="#787878" stroke-width="2" />
-                        <text x="50%" y="55%" text-anchor="middle">
-                            <tspan x="51.5%" dy="-3.75em" class="circle-text">Companies with</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text">engaged employees</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text">perform</tspan>
-                            <tspan x="52%" dy="0.9em" id="pt_count_9" font-size="9vh" class="count-number">0</tspan>
-                            <tspan class="count-number circle-text">%</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text">more than others.</tspan>
-                        </text>
-                    </svg>
-                </div>
-            </div>
-            <div class="row padding-30">
-                <div class="col-md-12 text-right">
-                    <div class="source-text">Source: <a href="http://officevibe.com/blog/investing-employee-engagement"
-                            target="_blank">officevibe.com.blog/investing-employee-engagement</a></div>
-                </div>
-            </div>
-        </section>
-        <section class="sec-count-colored" id="countColoredSection">
-            <div class="row text-center">
-                <div class="col-md-4 p-0">
-                    <svg>
-                        <circle r="35%" cx="50%" cy="55%" stroke="#FFFFFF" stroke-width="2" />
-                        <text x="50%" y="51%" text-anchor="middle" id="bottom-eng-circle">
-                            <tspan x="51.5%" dy="-0.2em" id="pt_count_10" font-size="9vh" class="count-number whiteText">0</tspan>
-                            <tspan class="count-number whiteText">%</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text whiteText"> is how many times</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text whiteText"> the gamification </tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text whiteText"> generate more </tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text whiteText"> engagement. </tspan>
-                        </text>
-                    </svg>
-                </div>
-                <div class="col-md-4 p-0">
-                    <svg>
-                        <circle r="35%" cx="50%" cy="55%" stroke="#FFFFFF" stroke-width="2" />
-                        <text x="50%" y="55%" text-anchor="middle">
-                            <tspan x="51.5%" dy="-0.4em" id="pt_count_11" font-size="9vh" class="count-number whiteText">0</tspan>
-                            <tspan class="count-number whiteText">%</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text whiteText"> of the people feel more</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text whiteText"> confident in what is</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text whiteText"> recommended by</tspan>
-                            <tspan x="51.5%" dy="1.5em" class="circle-text whiteText"> acquaintances.</tspan>
-                        </text>
-                    </svg>
-                </div>
-                <div class="col-md-4 p-0">
-                    <svg>
-                        <circle r="35%" cx="50%" cy="55%" stroke="#FFFFFF" stroke-width="2" />
-                        <text x="50%" y="55%" id="right-circle" text-anchor="middle">
-                            <tspan x="51%" dy="-3.5em" class="circle-text whiteText">In average,</tspan>
-                            <tspan x="51%" dy="1.5em" class="circle-text whiteText"> each user viralizes</tspan>
-                            <tspan x="51%" dy="1.5em" class="circle-text whiteText"> the messange to</tspan>
-                            <tspan x="51%" dy="0.9em" id="pt_count_12" font-size="9vh" class="count-number whiteText">0</tspan>
-                            <tspan x="51%" dy="1.5em" class="circle-text whiteText"> contacts.</tspan>
-                        </text>
-                    </svg>
-                </div>
-            </div>
-            <div class="row padding-30">
-                <div class="col-md-12 text-right">
-                    <div class="whiteTextColor">Source: eMarketer e Insights from Emergent Markets</div>
-                </div>
-            </div>
-        </section>
-        <section class="sec-6 position_rel">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="section-headline text-center">GAMIFICATION</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="full-width"> <img src="images/section-6-bg.png" alt=""> </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 body-text text-center">
-                        <p>A <strong>gamified model of engagement</strong>, a game where every one wins: audience
-                            generation, data generation and sales conversion in exchange for rewards! <strong>Gain
-                                visibility, market share and brand lovers.</strong></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="sec-7 position_rel">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="section-headline-5 text-center">CONTACT</h2>
-                    </div>
-                    <div class="col-md-12 text-center">
-                        <div class="address-details">BH - Av. Afonso Pena, 3355, 11th floor - Funcionários </div>
-                        <div class="address-details">SP - Av. Pedroso de Marais, 2120 - Pinheiros</div>
-                        <div class="contact-text">Contact us and request a presentation:</div>
-                        <div class="contact-details">sayhello@oqdigital.com<br>+55 31 3254 9909</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/wow.min.js"></script>
-    <script type="text/javascript" src="js/counter.js"></script>
-    <script>        function openNav() { document.getElementById("mySidenav").style.width = "250px"; } function closeNav() { document.getElementById("mySidenav").style.width = "0"; }    </script>
-    <script type="text/javascript" src="js/custom.js"></script>
-</body>
+					return false;
+				}
+			}
+			function hide() {
+				if (document.getElementById("benefits").style.display == "block") {
+					document.getElementById("benefits").style.display = "none";
+					document.getElementById("upbutton").style.display = "block";
+					document.getElementById("call-to-action-btn").innerHTML = "Request Demo";
 
+					document.getElementById("request-demo").href = "#demoEnglish";
+				}
+				return false;
+			}
+		</script>
+	</head>
+
+	<body style="overflow-x: hidden;">
+		<!-- header -->
+		<header id="home">
+			<div class="header-top-area">
+				<div class="container header-container">
+					<div class="row">
+						<div class="col-md-10 call-to-action">
+							<a href="#demoPortuguese" id="request-demo">
+								<button
+									type="button"
+									class="btn btn-primary"
+									id="call-to-action-btn"
+								>
+									Solicitar Demo
+								</button>
+							</a>
+						</div>
+						<div class="col-md-2">
+							<div class="language">
+								<ul>
+									<li>
+										<a href="#1" name="1" id="chkYes" onclick="return show();"
+											>PORTUGUES</a
+										>
+									</li>
+									<li>
+										<a href="#1" name="1" id="chkNo" onclick="return hide();"
+											>ENGLISH</a
+										>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- header End -->
+		<!-- <div id="mySidenav" class="sidenav"> -->
+		<div class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onClick="closeNav()">&times;</a>
+			<!--
+				<a href="#">About</a><a href="#">Services</a><a href="#">Clients</a><a href="#">Contact</a>
+			-->
+		</div>
+		<div id="benefits" style="display:block;">
+			<!-- Banner ---- -->
+			<div id="banner" class="banner position_rel">
+				<div class="banner-area banner-1">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="slider-title">
+									<div class="header_space"></div>
+									<h1><img src="images/banner-logo.png" width="100%" /></h1>
+									<div class="banner-title">
+										Bem-vindo a um jeito novo de envolver pessoas e gerar
+										neg&oacute;cios.
+									</div>
+									<div class="banner-powered">POWERED BY BLOCKCHAIN</div>
+									<div class="text-center">
+										<img src="images/logo_ethereum.png" class="ethereum_logo" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Banner End -->
+			<section class="sec-video">
+				<div class="video-container">
+					<iframe
+						src="https://www.youtube.com/embed/357SaLKXy54"
+						frameborder="0"
+						allow="autoplay; encrypted-media"
+						allowfullscreen
+					></iframe>
+					<div class="iframe_allow_scroll"></div>
+				</div>
+			</section>
+			<section class="sec-2">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-5"></div>
+						<div class="col-md-7">
+							<h2 class="top">
+								Somos uma plataforma de m&iacutedia digital diferente: n&atilde;o
+								geramos s&oacute; audi&ecirc;ncia para a sua marca.
+							</h2>
+						</div>
+						<div class="col-md-6"><h2 class="mid">O QUE &Eacute</h2></div>
+						<div class="col-md-6"></div>
+						<div class="col-md-5"></div>
+						<div class="col-md-7">
+							<h2 class="bottom">
+								Geramos receitas mensur&aacuteveis para a sua empresa e valor
+								imensur&aacutevel para os seus clientes e colaboradores.
+							</h2>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="sec-3 position_rel">
+				<div class="container">
+					<div class="row">
+						<div class="parent-section">
+							<div class="child-section"><h2 class="headline-left">COMO</h2></div>
+							<div class="child-section">
+								<div class="right-content">
+									<ul class="content-list">
+										<li>Engaje, fidelize, recompense e proporcione</li>
+										<li>
+											uma experi&ecirc;ncia &uacute;nica aos seus clientes
+										</li>
+										<li>e colaboradores com um canal</li>
+										<li>pr&oacute;prio de m&iacute;dia digital de alto</li>
+										<li>impacto e grande alcance.</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="sec-4 position_rel">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h2 class="section-headline text-center">OMNICHANNEL</h2>
+						</div>
+						<div class="col-md-6"></div>
+						<div class="col-md-6">
+							<p class="section-sub-headline">Conhe&ccedil;a e reconhe&ccedil;a</p>
+							<p class="section-sub-headline">seu p&uacute;blico-alvo:</p>
+						</div>
+						<div class="col-md-12 body-text text-center">
+							<ul class="content-list-vertical">
+								<li>Brand Advocate</li>
+								<li>+ Social Selling</li>
+								<li>+ Influence Marketing</li>
+								<li>+ Loyalty Program</li>
+							</ul>
+							<p>
+								= M&eacute;tricas mensur&aacute;veis, Leads altamente qualificados e
+								People Analytics.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="sec-5 position_rel">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h2 class="section-headline-5 text-center">PERFORMANCE</h2>
+						</div>
+						<div class="col-md-12 text-center">
+							<ul class="team-img-box">
+								<li>
+									<div
+										class="fit-img"
+										style="background-image: url('images/team-1.jpg');"
+									></div>
+								</li>
+								<li>
+									<div
+										class="fit-img"
+										style="background-image: url('images/team-2.jpg');"
+									></div>
+								</li>
+								<li>
+									<div
+										class="fit-img"
+										style="background-image: url('images/team-3.jpg');"
+									></div>
+								</li>
+							</ul>
+							<div class="performance-body-text">
+								Uma plataforma a serviço da performance de marketing, motivação de
+								colaboradores e fidelização de consumidores com um modelo inédito de
+								relação entre empresas e pessoas.
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="sec-count-white">
+				<div class="row text-center" id="countWhiteSection">
+					<div class="col-md-4 p-0">
+						<svg>
+							<circle r="35%" cx="50%" cy="55%" stroke="#787878" stroke-width="2" />
+							<text x="50%" y="53%" text-anchor="middle">
+								<tspan x="50.5%" dy="-3em" class="circle-text">Empresas com</tspan>
+								<tspan x="51%" dy="1.5em" class="circle-text">
+									funcionários engajados
+								</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text">
+									retêm mais de
+								</tspan>
+								<tspan
+									x="52.5%"
+									dy="0.9em"
+									id="pt_count_1"
+									font-size="9vh"
+									class="count-number"
+								>
+									0
+								</tspan>
+								<tspan class="count-number circle-text">%</tspan>
+								<tspan x="50.5%" dy="1.5em" class="circle-text">
+									dos clientes.
+								</tspan>
+							</text>
+						</svg>
+					</div>
+					<div class="col-md-4 p-0">
+						<svg>
+							<circle r="35%" cx="50%" cy="56.5%" stroke="#787878" stroke-width="2" />
+							<text x="50%" y="55%" text-anchor="middle">
+								<tspan x="51.5%" dy="-4.2em" class="circle-text">Aumentar em</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text">
+									10% o investimento
+								</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text">
+									em engajamento dá
+								</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text">
+									um retorno médio de
+								</tspan>
+								<tspan x="52%" dy="3.45em" class="count-number circle-text">
+									$
+								</tspan>
+								<tspan class="count-number" id="pt_count_2" font-size="9vh">
+									0
+								</tspan>
+								<tspan class="count-number circle-text">k</tspan>
+								<tspan x="51%" dy="1.4em" class="circle-text">
+									por colaborador.
+								</tspan>
+							</text>
+						</svg>
+					</div>
+					<div class="col-md-4 p-0">
+						<svg>
+							<circle r="35%" cx="50%" cy="55%" stroke="#787878" stroke-width="2" />
+							<text x="50%" y="55%" id="top-right-circle" text-anchor="middle">
+								<tspan x="51%" dy="-4em" class="circle-text">Empresas com</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text">
+									colaboradores
+								</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text">engajados</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text">performam</tspan>
+								<tspan
+									x="52%"
+									dy="0.9em"
+									id="pt_count_3"
+									font-size="9vh"
+									class="count-number"
+								>
+									0
+								</tspan>
+								<tspan class="count-number circle-text">%</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text">a mais.</tspan>
+							</text>
+						</svg>
+					</div>
+				</div>
+				<div class="row padding-30">
+					<div class="col-md-12 text-right">
+						<div class="source-text">
+							Fonte:
+							<a
+								href="http://officevibe.com/blog/investing-employee-engagement"
+								target="_blank"
+								>officevibe.com.blog/investing-employee-engagement</a
+							>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="sec-count-colored" id="countColoredSection">
+				<div class="row text-center">
+					<div class="col-md-4 p-0">
+						<svg>
+							<circle r="35%" cx="50%" cy="55%" stroke="#FFFFFF" stroke-width="2" />
+							<text x="50%" y="55%" text-anchor="middle">
+								<tspan
+									x="51.5%"
+									dy="-0.2em"
+									id="pt_count_4"
+									font-size="9vh"
+									class="count-number whiteText"
+								>
+									0
+								</tspan>
+								<tspan class="count-number circle-text whiteText">%</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+									é quanto o gamification
+								</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+									gera a mais de
+								</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+									engajamento.
+								</tspan>
+							</text>
+						</svg>
+					</div>
+					<div class="col-md-4 p-0">
+						<svg>
+							<circle r="35%" cx="50%" cy="55%" stroke="#FFFFFF" stroke-width="2" />
+							<text x="50%" y="55%" text-anchor="middle">
+								<tspan
+									x="51.5%"
+									dy="-0.4em"
+									id="pt_count_5"
+									font-size="9vh"
+									class="count-number whiteText"
+								>
+									0
+								</tspan>
+								<tspan class="count-number circle-text whiteText">%</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+									das pessoas sentem mais
+								</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+									confiança no que é
+								</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+									recomendado por
+								</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+									conhecidos.
+								</tspan>
+							</text>
+						</svg>
+					</div>
+					<div class="col-md-4 p-0">
+						<svg>
+							<circle r="35%" cx="50%" cy="55%" stroke="#FFFFFF" stroke-width="2" />
+							<text x="50%" y="55%" id="bottom-right-circle" text-anchor="middle">
+								<tspan x="51.5%" dy="-3.5em" class="circle-text whiteText">
+									Em média,
+								</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+									cada usuário viraliza
+								</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+									a mensagem para
+								</tspan>
+								<tspan
+									x="51.5%"
+									dy="0.9em"
+									id="pt_count_6"
+									font-size="9vh"
+									class="count-number whiteText"
+								>
+									0
+								</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+									contatos.
+								</tspan>
+							</text>
+						</svg>
+					</div>
+				</div>
+				<div class="row padding-30">
+					<div class="col-md-12 text-right">
+						<div class="whiteTextColor">
+							Fonte: eMarketer e Insights from Emergent Markets
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="sec-6 position_rel">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h2 class="section-headline text-center">GAMIFICA&Ccedil;&Atilde;O</h2>
+						</div>
+					</div>
+				</div>
+				<div class="full-width"><img src="images/section-6-bg.png" alt="" /></div>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 body-text text-center">
+							<p>
+								Um modelo <strong>gamificado</strong> de engajamento, um jogo onde
+								todos saem ganhando: gera&ccedil;&atilde;o de audi&ecirc;ncia,
+								gera&ccedil;&atilde;o de dados e convers&atilde;o de vendas em troca
+								de recompensas! Ganhe
+								<strong>visibilidade, marketshare e brand lovers.</strong>
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="sec-7 position_rel" id="demoPortuguese">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h2 class="section-headline-5 text-center">CONTATO</h2>
+						</div>
+						<div class="col-md-12 text-center">
+							<div class="address-details">
+								BH - Av. Afonso Pena, 3355, 11º andar - Funcionários
+							</div>
+							<div class="address-details">
+								SP - Av. Pedroso de Marais, 2120 - Pinheiros
+							</div>
+							<div class="contact-text">
+								Entre em contato e solicite uma apresenta&ccedil;&atilde;o:
+							</div>
+							<div class="contact-details">
+								sayhello@oqdigital.com<br />+55 31 3254 9909
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<div id="upbutton" style="display:none;">
+			<!-- Banner -->
+			<div id="banner" class="banner position_rel">
+				<div class="banner-area banner-1">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="slider-title">
+									<div class="header_space"></div>
+									<h1><img src="images/banner-logo.png" /></h1>
+									<div class="banner-title">
+										Welcome to a new way to engage people and generate business.
+									</div>
+									<div class="banner-powered">POWERED BY BLOCKCHAIN</div>
+									<div class="text-center">
+										<img src="images/logo_ethereum.png" class="ethereum_logo" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Banner End -->
+			<section class="sec-video">
+				<div class="video-container">
+					<iframe
+						src="https://www.youtube.com/embed/6pa06VkIplA"
+						frameborder="0"
+						allow="autoplay; encrypted-media"
+						allowfullscreen
+					></iframe>
+				</div>
+			</section>
+			<section class="sec-2">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-5"></div>
+						<div class="col-md-7">
+							<h2 class="top">
+								We are an unconventional digital media company: we do not just
+								generate audience for your brand - we generate measurable revenues
+								for your business and immeasurable values for your customers and
+								employees.
+							</h2>
+						</div>
+						<div class="col-md-6"><h2 class="mid">What is it?</h2></div>
+						<div class="col-md-6"></div>
+						<div class="col-md-5"></div>
+						<div class="col-md-7">
+							<h2 class="bottom">
+								We generate measurable revenue for your company and immense value to
+								your customers and employees.
+							</h2>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="sec-3 position_rel">
+				<div class="container">
+					<div class="row">
+						<div class="parent-section">
+							<div class="child-section"><h2 class="headline-left">HOW</h2></div>
+							<div class="child-section">
+								<div class="right-content">
+									<ul class="content-list">
+										<li>
+											Engage, turn them loyal , reward them, and provide a
+											unique experience for your clients and employees with a
+											high-impact, high-reach digital media channel.
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="sec-4 position_rel">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h2 class="section-headline text-center">ONMICHANNEL</h2>
+						</div>
+						<div class="col-md-6"></div>
+						<div class="col-md-6">
+							<p class="section-sub-headline">Knowledge and recognition</p>
+							<p class="section-sub-headline">your target audience:</p>
+						</div>
+						<div class="col-md-12 body-text text-center">
+							<ul class="content-list-vertical">
+								<li>Brand Advocate</li>
+								<li>+ Social Selling</li>
+								<li>+ Influence Marketing</li>
+								<li>+ Loyalty Program</li>
+							</ul>
+							<p>
+								= Measurable Metrics, Highly Qualified Leads and People Analytics.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="sec-5 position_rel">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h2 class="section-headline-5 text-center">PERFORMANCE</h2>
+						</div>
+						<div class="col-md-12 text-center">
+							<ul class="team-img-box">
+								<li>
+									<div
+										class="fit-img"
+										style="background-image: url('images/team-1.jpg');"
+									></div>
+								</li>
+								<li>
+									<div
+										class="fit-img"
+										style="background-image: url('images/team-2.jpg');"
+									></div>
+								</li>
+								<li>
+									<div
+										class="fit-img"
+										style="background-image: url('images/team-3.jpg');"
+									></div>
+								</li>
+							</ul>
+							<div class="performance-body-text">
+								A platform made for the marketing performance, motivation of
+								employees, involvement and loyalty of clients with an unprecedented
+								model of relationship between companies and people.
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="sec-count-white">
+				<div class="row text-center" id="countWhiteSection">
+					<div class="col-md-4 p-0">
+						<svg>
+							<circle r="35%" cx="50%" cy="55%" stroke="#787878" stroke-width="2" />
+							<text x="50%" y="53%" text-anchor="middle">
+								<tspan x="50.5%" dy="-3em" class="circle-text">
+									Companies with
+								</tspan>
+								<tspan x="50%" dy="1.5em" class="circle-text">
+									engaged employees
+								</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text">
+									retain more than
+								</tspan>
+								<tspan
+									x="52.5%"
+									dy="0.9em"
+									id="pt_count_7"
+									font-size="9vh"
+									class="count-number"
+								>
+									0
+								</tspan>
+								<tspan class="count-number">%</tspan>
+								<tspan x="50.5%" dy="1.5em" class="circle-text">
+									of customers.
+								</tspan>
+							</text>
+						</svg>
+					</div>
+					<div class="col-md-4 p-0">
+						<svg>
+							<circle r="35%" cx="50%" cy="55%" stroke="#787878" stroke-width="2" />
+							<text x="50%" y="56.5%" text-anchor="middle">
+								<tspan x="51.5%" dy="-4.55em" class="circle-text">
+									Increase in
+								</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text">
+									10% the investiment
+								</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text">
+									in engagement gives an
+								</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text">
+									average return of
+								</tspan>
+								<tspan x="51.5%" dy="3.45em" class="count-number circle-text">
+									$
+								</tspan>
+								<tspan class="count-number" id="pt_count_8" font-size="9vh">
+									0
+								</tspan>
+								<tspan class="count-number circle-text">k</tspan>
+								<tspan x="51%" dy="1.4em" class="circle-text">
+									by collaborator.
+								</tspan>
+							</text>
+						</svg>
+					</div>
+					<div class="col-md-4 p-0">
+						<svg>
+							<circle r="35%" cx="50%" cy="55%" stroke="#787878" stroke-width="2" />
+							<text x="50%" y="55%" text-anchor="middle">
+								<tspan x="51.5%" dy="-3.75em" class="circle-text">
+									Companies with
+								</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text">
+									engaged employees
+								</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text">perform</tspan>
+								<tspan
+									x="52%"
+									dy="0.9em"
+									id="pt_count_9"
+									font-size="9vh"
+									class="count-number"
+								>
+									0
+								</tspan>
+								<tspan class="count-number circle-text">%</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text">
+									more than others.
+								</tspan>
+							</text>
+						</svg>
+					</div>
+				</div>
+				<div class="row padding-30">
+					<div class="col-md-12 text-right">
+						<div class="source-text">
+							Source:
+							<a
+								href="http://officevibe.com/blog/investing-employee-engagement"
+								target="_blank"
+								>officevibe.com.blog/investing-employee-engagement</a
+							>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="sec-count-colored" id="countColoredSection">
+				<div class="row text-center">
+					<div class="col-md-4 p-0">
+						<svg>
+							<circle r="35%" cx="50%" cy="55%" stroke="#FFFFFF" stroke-width="2" />
+							<text x="50%" y="51%" text-anchor="middle" id="bottom-eng-circle">
+								<tspan
+									x="51.5%"
+									dy="-0.2em"
+									id="pt_count_10"
+									font-size="9vh"
+									class="count-number whiteText"
+								>
+									0
+								</tspan>
+								<tspan class="count-number whiteText">%</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+									is how many times
+								</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+									the gamification
+								</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+									generate more
+								</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+									engagement.
+								</tspan>
+							</text>
+						</svg>
+					</div>
+					<div class="col-md-4 p-0">
+						<svg>
+							<circle r="35%" cx="50%" cy="55%" stroke="#FFFFFF" stroke-width="2" />
+							<text x="50%" y="55%" text-anchor="middle">
+								<tspan
+									x="51.5%"
+									dy="-0.4em"
+									id="pt_count_11"
+									font-size="9vh"
+									class="count-number whiteText"
+								>
+									0
+								</tspan>
+								<tspan class="count-number whiteText">%</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+									of the people feel more
+								</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+									confident in what is
+								</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+									recommended by
+								</tspan>
+								<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+									acquaintances.
+								</tspan>
+							</text>
+						</svg>
+					</div>
+					<div class="col-md-4 p-0">
+						<svg>
+							<circle r="35%" cx="50%" cy="55%" stroke="#FFFFFF" stroke-width="2" />
+							<text x="50%" y="55%" id="right-circle" text-anchor="middle">
+								<tspan x="51%" dy="-3.5em" class="circle-text whiteText">
+									In average,
+								</tspan>
+								<tspan x="51%" dy="1.5em" class="circle-text whiteText">
+									each user viralizes
+								</tspan>
+								<tspan x="51%" dy="1.5em" class="circle-text whiteText">
+									the messange to
+								</tspan>
+								<tspan
+									x="51%"
+									dy="0.9em"
+									id="pt_count_12"
+									font-size="9vh"
+									class="count-number whiteText"
+								>
+									0
+								</tspan>
+								<tspan x="51%" dy="1.5em" class="circle-text whiteText">
+									contacts.
+								</tspan>
+							</text>
+						</svg>
+					</div>
+				</div>
+				<div class="row padding-30">
+					<div class="col-md-12 text-right">
+						<div class="whiteTextColor">
+							Source: eMarketer e Insights from Emergent Markets
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="sec-6 position_rel">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h2 class="section-headline text-center">GAMIFICATION</h2>
+						</div>
+					</div>
+				</div>
+				<div class="full-width"><img src="images/section-6-bg.png" alt="" /></div>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 body-text text-center">
+							<p>
+								A <strong>gamified model of engagement</strong>, a game where every
+								one wins: audience generation, data generation and sales conversion
+								in exchange for rewards!
+								<strong>Gain visibility, market share and brand lovers.</strong>
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="sec-7 position_rel" id="demoEnglish">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h2 class="section-headline-5 text-center">CONTACT</h2>
+						</div>
+						<div class="col-md-12 text-center">
+							<div class="address-details">
+								BH - Av. Afonso Pena, 3355, 11th floor - Funcionários
+							</div>
+							<div class="address-details">
+								SP - Av. Pedroso de Marais, 2120 - Pinheiros
+							</div>
+							<div class="contact-text">Contact us and request a presentation:</div>
+							<div class="contact-details">
+								sayhello@oqdigital.com<br />+55 31 3254 9909
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/wow.min.js"></script>
+		<script type="text/javascript" src="js/counter.js"></script>
+		<script>
+			function openNav() {
+				document.getElementById("mySidenav").style.width = "250px";
+			}
+			function closeNav() {
+				document.getElementById("mySidenav").style.width = "0";
+			}
+		</script>
+		<script type="text/javascript" src="js/custom.js"></script>
+	</body>
 </html>
