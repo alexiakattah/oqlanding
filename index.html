@@ -40,38 +40,54 @@
 				}
 				return false;
 			}
-			function createProspectLead() {
+
+			function createProspectLead(language = "pt") {
+				console.log("aqui language:", language);
 				const Http = new XMLHttpRequest();
 				const url = "http://localhost:5000/oq20-139d9/us-central1/create";
 				Http.open("POST", url);
 
-				const form = document.getElementById("send");
-				if (!form.checkValidity()) form.reportValidity();
+				const form = document.getElementById(language === "pt" ? "send" : "send2");
+				if (!form.checkValidity()) {
+					form.reportValidity();
+				} else {
+					const parameters = JSON.stringify({
+						userType: "prospectLead",
+						createFunctionality: "createProspectLead",
+						prospectLead: {
+							name: document.getElementById(
+								language === "pt" ? "inputName" : "inputName2",
+							).value,
+							email: document.getElementById(
+								language === "pt" ? "inputEmail" : "inputEmail2",
+							).value,
+							phone: document.getElementById(
+								language === "pt" ? "inputPhone" : "inputPhone2",
+							).value,
+							company: document.getElementById(
+								language === "pt" ? "inputCompany" : "inputCompany2",
+							).value,
+							description: document.getElementById(
+								language === "pt" ? "inputDescription" : "inputDescription2",
+							).value,
+						},
+					});
 
-				const parameters = JSON.stringify({
-					userType: "prospectLead",
-					createFunctionality: "createProspectLead",
-					prospectLead: {
-						name: document.getElementById("inputName").value,
-						email: document.getElementById("inputEmail").value,
-						phone: document.getElementById("inputPhone").value,
-						company: document.getElementById("inputCompany").value,
-						description: document.getElementById("inputDescription").value,
-					},
-				});
+					Http.send(parameters);
 
-				Http.send(parameters);
-
-				Http.onreadystatechange = e => {
-					var sucess = JSON.parse(Http.responseText).success;
-					if (sucess) {
-						document.getElementById("success-alert").hidden = false;
-						document.getElementById("danger-alert").hidden = true;
-					} else {
-						document.getElementById("success-alert").hidden = true;
-						document.getElementById("danger-alert").hidden = false;
-					}
-				};
+					Http.onreadystatechange = e => {
+						var sucess = JSON.parse(Http.responseText).success;
+						var successAlert = language === "pt" ? "success-alert" : "success-alert2";
+						var dangerAlert = language === "pt" ? "danger-alert" : "danger-alert2";
+						if (sucess) {
+							document.getElementById(successAlert).hidden = false;
+							document.getElementById(dangerAlert).hidden = true;
+						} else {
+							document.getElementById(successAlert).hidden = true;
+							document.getElementById(dangerAlerts).hidden = false;
+						}
+					};
+				}
 				return false;
 			}
 		</script>
@@ -564,7 +580,7 @@
 							<div class="d-flex justify-content-end w-100 col-md-12 p-right-0">
 								<input
 									class="btn btn-dark"
-									value="Enviar solicitação"
+									value="Send request"
 									onclick="return createProspectLead();"
 								/>
 							</div>
@@ -952,22 +968,119 @@
 					</div>
 				</div>
 			</section>
+
 			<section class="sec-7 position_rel" id="demoEnglish">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
 							<h2 class="section-headline-5 text-center">CONTACT</h2>
 						</div>
-						<div class="col-md-12 text-center">
-							<div class="address-details">
-								BH - Av. Afonso Pena, 3355, 11th floor - Funcionários
+						<div class="col-md-12 row">
+							<div class="row col-12 contact-text">
+								Contact us and request a presentation:
 							</div>
-							<div class="address-details">
-								SP - Av. Pedroso de Marais, 2120 - Pinheiros
+
+							<div
+								class="col-md-6 d-flex justify-content-around flex-column margin-bt-15"
+							>
+								<div class="address-details">
+									<i class="fa fa-map-marker icon"></i> BH - Av. Afonso Pena,
+									3355, 11º andar - Funcionários SP - Av. Pedroso de Marais, 2120
+									- Pinheiros
+								</div>
+
+								<div class="address-details">
+									<i class="fa fa-phone icon"></i>+55 31 3254 9909
+								</div>
+
+								<div class="address-details">
+									<i class="fa fa-envelope icon"></i>sayhello@oqdigital.com
+								</div>
 							</div>
-							<div class="contact-text">Contact us and request a presentation:</div>
-							<div class="contact-details">
-								sayhello@oqdigital.com<br />+55 31 3254 9909
+
+							<div class="col-md-6 p-right-0">
+								<form id="send2">
+									<div class="row margin-bt-15">
+										<div class="col">
+											<input
+												type="text"
+												required
+												class="form-control form-input"
+												placeholder="Name"
+												name="name"
+												id="inputName2"
+											/>
+										</div>
+										<div class="col">
+											<input
+												type="email"
+												required
+												class="form-control form-input"
+												placeholder="Email"
+												name="email"
+												id="inputEmail2"
+											/>
+										</div>
+									</div>
+
+									<div class="row margin-bt-15">
+										<div class="col">
+											<input
+												type="tel"
+												class="form-control form-input"
+												placeholder="Phone"
+												name="phone"
+												id="inputPhone2"
+											/>
+										</div>
+										<div class="col">
+											<input
+												type="text"
+												class="form-control form-input"
+												placeholder="Company"
+												name="company"
+												id="inputCompany2"
+											/>
+										</div>
+									</div>
+
+									<textarea
+										class="form-control form-input margin-bt-15"
+										rows="5"
+										required
+										placeholder="Desccribe your request"
+										name="description"
+										id="inputDescription2"
+									></textarea>
+								</form>
+							</div>
+
+							<div class="d-flex justify-content-end w-100 col-md-12 p-right-0">
+								<input
+									class="btn btn-dark"
+									value="Send request"
+									onclick="return createProspectLead('en');"
+								/>
+							</div>
+
+							<div class="col-12 d-flex justify-content-center">
+								<div
+									class="alert alert-danger"
+									id="danger-alert2"
+									role="alert"
+									hidden
+								>
+									Error creating the request. Try again.
+								</div>
+
+								<div
+									class="alert alert-primary"
+									id="success-alert2"
+									role="alert"
+									hidden
+								>
+									Your request was created successfully.
+								</div>
 							</div>
 						</div>
 					</div>
