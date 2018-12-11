@@ -12,6 +12,10 @@
 		/>
 		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 		<link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
 		<link href="css/animate.css" rel="stylesheet" />
 		<link href="css/style.css" rel="stylesheet" />
 		<script>
@@ -34,6 +38,40 @@
 
 					document.getElementById("request-demo").href = "#demoEnglish";
 				}
+				return false;
+			}
+			function createProspectLead() {
+				const Http = new XMLHttpRequest();
+				const url = "http://localhost:5000/oq20-139d9/us-central1/create";
+				Http.open("POST", url);
+
+				const form = document.getElementById("send");
+				if (!form.checkValidity()) form.reportValidity();
+
+				const parameters = JSON.stringify({
+					userType: "prospectLead",
+					createFunctionality: "createProspectLead",
+					prospectLead: {
+						name: document.getElementById("inputName").value,
+						email: document.getElementById("inputEmail").value,
+						phone: document.getElementById("inputPhone").value,
+						company: document.getElementById("inputCompany").value,
+						description: document.getElementById("inputDescription").value,
+					},
+				});
+
+				Http.send(parameters);
+
+				Http.onreadystatechange = e => {
+					var sucess = JSON.parse(Http.responseText).success;
+					if (sucess) {
+						document.getElementById("success-alert").hidden = false;
+						document.getElementById("danger-alert").hidden = true;
+					} else {
+						document.getElementById("success-alert").hidden = true;
+						document.getElementById("danger-alert").hidden = false;
+					}
+				};
 				return false;
 			}
 		</script>
@@ -443,18 +481,112 @@
 						<div class="col-md-12">
 							<h2 class="section-headline-5 text-center">CONTATO</h2>
 						</div>
-						<div class="col-md-12 text-center">
-							<div class="address-details">
-								BH - Av. Afonso Pena, 3355, 11º andar - Funcionários
-							</div>
-							<div class="address-details">
-								SP - Av. Pedroso de Marais, 2120 - Pinheiros
-							</div>
-							<div class="contact-text">
+						<div class="col-md-12 row">
+							<div class="row col-12 contact-text">
 								Entre em contato e solicite uma apresenta&ccedil;&atilde;o:
 							</div>
-							<div class="contact-details">
-								sayhello@oqdigital.com<br />+55 31 3254 9909
+
+							<div
+								class="col-md-6 d-flex justify-content-around flex-column margin-bt-15"
+							>
+								<div class="address-details">
+									<i class="fa fa-map-marker icon"></i> BH - Av. Afonso Pena,
+									3355, 11º andar - Funcionários SP - Av. Pedroso de Marais, 2120
+									- Pinheiros
+								</div>
+
+								<div class="address-details">
+									<i class="fa fa-phone icon"></i>+55 31 3254 9909
+								</div>
+
+								<div class="address-details">
+									<i class="fa fa-envelope icon"></i>sayhello@oqdigital.com
+								</div>
+							</div>
+
+							<div class="col-md-6 p-right-0">
+								<form id="send">
+									<div class="row margin-bt-15">
+										<div class="col">
+											<input
+												type="text"
+												required
+												class="form-control form-input"
+												placeholder="Nome"
+												name="name"
+												id="inputName"
+											/>
+										</div>
+										<div class="col">
+											<input
+												type="email"
+												required
+												class="form-control form-input"
+												placeholder="Email"
+												name="email"
+												id="inputEmail"
+											/>
+										</div>
+									</div>
+
+									<div class="row margin-bt-15">
+										<div class="col">
+											<input
+												type="tel"
+												class="form-control form-input"
+												placeholder="Telefone"
+												name="phone"
+												id="inputPhone"
+											/>
+										</div>
+										<div class="col">
+											<input
+												type="text"
+												class="form-control form-input"
+												placeholder="Empresa"
+												name="company"
+												id="inputCompany"
+											/>
+										</div>
+									</div>
+
+									<textarea
+										class="form-control form-input margin-bt-15"
+										rows="5"
+										required
+										placeholder="Descreva sua solicitação"
+										name="description"
+										id="inputDescription"
+									></textarea>
+								</form>
+							</div>
+
+							<div class="d-flex justify-content-end w-100 col-md-12 p-right-0">
+								<input
+									class="btn btn-dark"
+									value="Enviar solicitação"
+									onclick="return createProspectLead();"
+								/>
+							</div>
+
+							<div class="col-12 d-flex justify-content-center">
+								<div
+									class="alert alert-danger"
+									id="danger-alert"
+									role="alert"
+									hidden
+								>
+									Erro ao criar solicitação. Tente novamente.
+								</div>
+
+								<div
+									class="alert alert-primary"
+									id="success-alert"
+									role="alert"
+									hidden
+								>
+									Solicitação criada com sucesso!
+								</div>
 							</div>
 						</div>
 					</div>

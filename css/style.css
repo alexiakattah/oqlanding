@@ -1086,7 +1086,7 @@ a:hover {
 	color: #fff;
 	font-family: "GothamLight" !important;
 	text-align: center;
-	margin: 100px 0 30px 0;
+	margin: 100px 0 0px 0;
 	word-wrap: break-word;
 }
 
@@ -1211,7 +1211,9 @@ a:hover {
 	font-size: 2em;
 	line-height: 1.5em;
 	color: #fff;
-	margin-top: 50px;
+	justify-content: center;
+  margin-bottom: 40px;
+  margin-left: 15px;
 }
 
 .contact-details {
@@ -1225,15 +1227,17 @@ a:hover {
 
 .address-details {
 	font-family: Gotham;
-	font-size: 1.2em;
-	line-height: 1.5em;
+	font-size: 15px;
+	line-height: 28px;
 	color: #fff;
-	margin-top: 10px;
 }
 
 @media (max-width: 575px) {
 	.team-img-box li {
 		display: block;
+	}
+	.contact-text {
+		font-size: 10px;
 	}
 }
 
@@ -1449,4 +1453,35 @@ svg {
 #call-to-action-btn {
 	background-color: rgba(0, 98, 220, 0.9);
 	border-color: rgba(0, 98, 220, 0.9);
+}
+
+.icon {
+	color: #323232;
+	background: #fff;
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+	margin-right: 15px;
+}
+
+.form-input {
+	border: 1px solid #fafafa;
+	color: #fafafa;
+	background: #000000b8;
+	border-radius: 0;
+	font-size: 15px;
+	padding: 8px;
+}
+
+.margin-bt-15 {
+	margin-bottom: 15px;
+}
+
+.container {
+	padding-right: 0;
+}
+
+.p-right-0 {
+  padding-right: 0;
 }
