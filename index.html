@@ -42,7 +42,6 @@
 			}
 
 			function createProspectLead(language = "pt") {
-				console.log("aqui language:", language);
 				const Http = new XMLHttpRequest();
 				const url = "http://localhost:5000/oq20-139d9/us-central1/create";
 				Http.open("POST", url);
@@ -73,6 +72,9 @@
 						},
 					});
 
+					document.getElementById("create-btn-" + language).hidden = true;
+					document.getElementById("sending-btn-" + language).hidden = false;
+
 					Http.send(parameters);
 
 					Http.onreadystatechange = e => {
@@ -86,6 +88,9 @@
 							document.getElementById(successAlert).hidden = true;
 							document.getElementById(dangerAlerts).hidden = false;
 						}
+
+						document.getElementById("create-btn-" + language).hidden = false;
+						document.getElementById("sending-btn-" + language).hidden = true;
 					};
 				}
 				return false;
@@ -550,8 +555,8 @@
 											<input
 												type="tel"
 												class="form-control form-input"
-                        placeholder="Telefone"
-                        required
+												placeholder="Telefone"
+												required
 												name="phone"
 												id="inputPhone"
 											/>
@@ -582,7 +587,14 @@
 								<input
 									class="btn btn-dark"
 									value="Enviar solicitação"
+									id="create-btn-pt"
 									onclick="return createProspectLead();"
+								/>
+								<input
+									class="btn btn-dark"
+									value="Enviando solicitação..."
+									id="sending-btn-pt"
+									hidden
 								/>
 							</div>
 
@@ -1029,8 +1041,8 @@
 											<input
 												type="tel"
 												class="form-control form-input"
-                        placeholder="Phone"
-                        required
+												placeholder="Phone"
+												required
 												name="phone"
 												id="inputPhone2"
 											/>
@@ -1061,7 +1073,14 @@
 								<input
 									class="btn btn-dark"
 									value="Send request"
+									id="create-btn-en"
 									onclick="return createProspectLead('en');"
+								/>
+								<input
+									class="btn btn-dark"
+									value="Sending request..."
+									id="sending-btn-en"
+									hidden
 								/>
 							</div>
 
