@@ -63,6 +63,9 @@
 							phone: document.getElementById(
 								language === "pt" ? "inputPhone" : "inputPhone2",
 							).value,
+							role: document.getElementById(
+								language === "pt" ? "inputRole" : "inputRole2",
+							).value,
 							company: document.getElementById(
 								language === "pt" ? "inputCompany" : "inputCompany2",
 							).value,
@@ -552,6 +555,9 @@
 												id="inputName"
 											/>
 										</div>
+									</div>
+
+									<div class="row margin-bt-15">
 										<div class="col">
 											<input
 												type="email"
@@ -562,9 +568,6 @@
 												id="inputEmail"
 											/>
 										</div>
-									</div>
-
-									<div class="row margin-bt-15">
 										<div class="col">
 											<input
 												type="tel"
@@ -575,6 +578,9 @@
 												id="inputPhone"
 											/>
 										</div>
+									</div>
+
+									<div class="row margin-bt-15">
 										<div class="col">
 											<input
 												type="text"
@@ -582,6 +588,15 @@
 												placeholder="Empresa"
 												name="company"
 												id="inputCompany"
+											/>
+										</div>
+										<div class="col">
+											<input
+												type="text"
+												class="form-control form-input"
+												placeholder="Cargo"
+												name="role"
+												id="inputRole"
 											/>
 										</div>
 									</div>
@@ -1053,6 +1068,9 @@
 												id="inputName2"
 											/>
 										</div>
+									</div>
+
+									<div class="row margin-bt-15">
 										<div class="col">
 											<input
 												type="email"
@@ -1063,9 +1081,6 @@
 												id="inputEmail2"
 											/>
 										</div>
-									</div>
-
-									<div class="row margin-bt-15">
 										<div class="col">
 											<input
 												type="tel"
@@ -1076,6 +1091,9 @@
 												id="inputPhone2"
 											/>
 										</div>
+									</div>
+
+									<div class="row margin-bt-15">
 										<div class="col">
 											<input
 												type="text"
@@ -1083,6 +1101,15 @@
 												placeholder="Company"
 												name="company"
 												id="inputCompany2"
+											/>
+										</div>
+										<div class="col">
+											<input
+												type="text"
+												class="form-control form-input"
+												placeholder="Role"
+												name="role"
+												id="inputRole2"
 											/>
 										</div>
 									</div>
