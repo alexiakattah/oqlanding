@@ -23,7 +23,7 @@
 				if (document.getElementById("benefits").style.display == "none") {
 					document.getElementById("benefits").style.display = "block";
 					document.getElementById("upbutton").style.display = "none";
-					document.getElementById("call-to-action-btn").innerHTML = "Solicitar Demo";
+					document.getElementById("call-to-action-btn").innerHTML = "SOLICITAR DEMO";
 
 					document.getElementById("request-demo").href = "#demoPortuguese";
 
@@ -34,7 +34,7 @@
 				if (document.getElementById("benefits").style.display == "block") {
 					document.getElementById("benefits").style.display = "none";
 					document.getElementById("upbutton").style.display = "block";
-					document.getElementById("call-to-action-btn").innerHTML = "Request Demo";
+					document.getElementById("call-to-action-btn").innerHTML = "REQUEST DEMO";
 
 					document.getElementById("request-demo").href = "#demoEnglish";
 				}
@@ -110,8 +110,9 @@
 									type="button"
 									class="btn btn-primary"
 									id="call-to-action-btn"
+									hidden
 								>
-									Solicitar Demo
+									SOLICITAR DEMO
 								</button>
 							</a>
 						</div>
@@ -157,6 +158,19 @@
 										Bem-vindo a um jeito novo de envolver pessoas e gerar
 										neg&oacute;cios.
 									</div>
+
+									<div class="call-to-action">
+										<a href="#demoPortuguese" id="request-demo">
+											<button
+												type="button"
+												class="btn btn-primary"
+												id="call-to-action-btn"
+											>
+												SOLICITAR DEMO
+											</button>
+										</a>
+									</div>
+
 									<div class="banner-powered">POWERED BY BLOCKCHAIN</div>
 									<div class="text-center">
 										<img src="images/logo_ethereum.png" class="ethereum_logo" />
@@ -508,11 +522,11 @@
 							</div>
 
 							<div
-								class="col-md-6 d-flex justify-content-around flex-column margin-bt-15"
+								class="col-md-6 d-flex justify-content-between flex-column margin-bt-15"
 							>
 								<div class="address-details">
 									<i class="fa fa-map-marker icon"></i> BH - Av. Afonso Pena,
-									3355, 11º andar - Funcionários SP - Av. Pedroso de Marais, 2120
+									3355, 11º andar - Funcionários SP - Av. Pedroso de Morais, 2120
 									- Pinheiros
 								</div>
 
@@ -584,18 +598,20 @@
 							</div>
 
 							<div class="d-flex justify-content-end w-100 col-md-12 p-right-0">
-								<input
-									class="btn btn-dark"
-									value="Enviar solicitação"
-									id="create-btn-pt"
-									onclick="return createProspectLead();"
-								/>
-								<input
-									class="btn btn-dark"
-									value="Enviando solicitação..."
-									id="sending-btn-pt"
-									hidden
-								/>
+								<div class="col-md-2 p-0">
+									<input
+										class="btn btn-dark w-100"
+										value="ENVIAR"
+										id="create-btn-pt"
+										onclick="return createProspectLead();"
+									/>
+									<input
+										class="btn btn-dark w-100"
+										value="ENVIANDO..."
+										id="sending-btn-pt"
+										hidden
+									/>
+								</div>
 							</div>
 
 							<div class="col-12 d-flex justify-content-center">
@@ -635,6 +651,19 @@
 									<div class="banner-title">
 										Welcome to a new way to engage people and generate business.
 									</div>
+
+									<div class="call-to-action">
+										<a href="#demoEnglish" id="request-demo">
+											<button
+												type="button"
+												class="btn btn-primary"
+												id="call-to-action-btn"
+											>
+												REQUEST DEMO
+											</button>
+										</a>
+									</div>
+
 									<div class="banner-powered">POWERED BY BLOCKCHAIN</div>
 									<div class="text-center">
 										<img src="images/logo_ethereum.png" class="ethereum_logo" />
@@ -994,11 +1023,11 @@
 							</div>
 
 							<div
-								class="col-md-6 d-flex justify-content-around flex-column margin-bt-15"
+								class="col-md-6 d-flex justify-content-between flex-column margin-bt-15"
 							>
 								<div class="address-details">
 									<i class="fa fa-map-marker icon"></i> BH - Av. Afonso Pena,
-									3355, 11º andar - Funcionários SP - Av. Pedroso de Marais, 2120
+									3355, 11º andar - Funcionários SP - Av. Pedroso de Morais, 2120
 									- Pinheiros
 								</div>
 
@@ -1070,18 +1099,20 @@
 							</div>
 
 							<div class="d-flex justify-content-end w-100 col-md-12 p-right-0">
-								<input
-									class="btn btn-dark"
-									value="Send request"
-									id="create-btn-en"
-									onclick="return createProspectLead('en');"
-								/>
-								<input
-									class="btn btn-dark"
-									value="Sending request..."
-									id="sending-btn-en"
-									hidden
-								/>
+								<div class="col-md-2 p-0">
+									<input
+										class="btn btn-dark w-100"
+										value="SEND"
+										id="create-btn-en"
+										onclick="return createProspectLead('en');"
+									/>
+									<input
+										class="btn btn-dark w-100"
+										value="SENDING"
+										id="sending-btn-en"
+										hidden
+									/>
+								</div>
 							</div>
 
 							<div class="col-12 d-flex justify-content-center">
