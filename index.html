@@ -43,7 +43,7 @@
 
 			function createProspectLead(language = "pt") {
 				const Http = new XMLHttpRequest();
-				const url = "http://localhost:5000/oq20-139d9/us-central1/create";
+				const url = "https://us-central1-oq20-139d9.cloudfunctions.net/create";
 				Http.open("POST", url);
 
 				const form = document.getElementById(language === "pt" ? "send" : "send2");
