@@ -1477,3 +1477,28 @@ svg {
 .p-right-0 {
   padding-right: 0;
 }
+
+.button_example {
+  border-width: 0;
+  border-radius: 4.8px;
+  color: #ffffff;
+  background-color: #e21838;
+  background-image: -webkit-linear-gradient(to right, #e21838, #700c1c);
+  background-image: -moz-linear-gradient(to right, #e21838, #700c1c);
+  background-image: -ms-linear-gradient(to right, #e21838, #700c1c);
+  background-image: -o-linear-gradient(to right, #e21838, #700c1c);
+  background-image: linear-gradient(to right, #e21838, #700c1c);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#E21838, endColorstr=#700C1C);
+}
+
+.button_example:hover {
+  border-width: 0px;
+  border-radius: 4.8px;
+  background-color: #e21838;
+  background-image: -webkit-linear-gradient(to right, #e21838, #e21838);
+  background-image: -moz-linear-gradient(to right, #e21838, #e21838);
+  background-image: -ms-linear-gradient(to right, #e21838, #e21838);
+  background-image: -o-linear-gradient(to right, #e21838, #e21838);
+  background-image: linear-gradient(to right, #e21838, #e21838);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#E21838, endColorstr=#E21838);
+}
