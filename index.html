@@ -41,6 +41,14 @@
 				return false;
 			}
 
+			function changeButtonColorIfFormIsValid(language = "pt") {
+				const form = document.getElementById(language === "pt" ? "send" : "send2");
+				if (form.checkValidity()) {
+					document.getElementById("create-btn-" + language).style.backgroundColor =
+						"#e21838";
+				}
+			}
+
 			function createProspectLead(language = "pt") {
 				const Http = new XMLHttpRequest();
 				const url = "https://us-central1-oq20-139d9.cloudfunctions.net/create";
@@ -213,15 +221,12 @@
 							<div class="child-section"><h2 class="headline-left">COMO</h2></div>
 							<div class="child-section">
 								<div class="right-content">
-									<ul class="content-list">
-										<li>Engaje, fidelize, recompense e proporcione</li>
-										<li>
-											uma experi&ecirc;ncia &uacute;nica aos seus clientes
-										</li>
-										<li>e colaboradores com um canal</li>
-										<li>pr&oacute;prio de m&iacute;dia digital de alto</li>
-										<li>impacto e grande alcance.</li>
-									</ul>
+									<p>
+										Engaje, fidelize, recompense e proporcione uma
+										experi&ecirc;ncia &uacute;nica aos seus clientes e
+										colaboradores com um canal pr&oacute;prio de m&iacute;dia
+										digital de alto impacto e grande alcance.
+									</p>
 								</div>
 							</div>
 						</div>
@@ -243,7 +248,7 @@
 							<ul class="content-list-vertical">
 								<li>Brand Advocate</li>
 								<li>+ Social Selling</li>
-								<li>+ Influence Marketing</li>
+								<li>+ Influencer Marketing</li>
 								<li>+ Loyalty Program</li>
 							</ul>
 							<p>
@@ -544,6 +549,7 @@
 												class="form-control form-input"
 												placeholder="Nome"
 												name="name"
+												onkeyup="return changeButtonColorIfFormIsValid();"
 												id="inputName"
 											/>
 										</div>
@@ -557,6 +563,7 @@
 												class="form-control form-input"
 												placeholder="Email"
 												name="email"
+												onkeyup="return changeButtonColorIfFormIsValid();"
 												id="inputEmail"
 											/>
 										</div>
@@ -567,6 +574,7 @@
 												placeholder="Telefone"
 												required
 												name="phone"
+												onkeyup="return changeButtonColorIfFormIsValid();"
 												id="inputPhone"
 											/>
 										</div>
@@ -579,6 +587,7 @@
 												class="form-control form-input"
 												placeholder="Empresa"
 												name="company"
+												onkeyup="return changeButtonColorIfFormIsValid();"
 												id="inputCompany"
 											/>
 										</div>
@@ -588,6 +597,7 @@
 												class="form-control form-input"
 												placeholder="Cargo"
 												name="role"
+												onkeyup="return changeButtonColorIfFormIsValid();"
 												id="inputRole"
 											/>
 										</div>
@@ -599,6 +609,7 @@
 										required
 										placeholder="Descreva sua solicitação"
 										name="description"
+										onkeyup="return changeButtonColorIfFormIsValid();"
 										id="inputDescription"
 									></textarea>
 								</form>
@@ -613,7 +624,7 @@
 										onclick="return createProspectLead();"
 									/>
 									<input
-										class="btn btn-dark w-100"
+										class="btn btn-primary-color w-100"
 										value="ENVIANDO..."
 										id="sending-btn-pt"
 										hidden
@@ -723,13 +734,11 @@
 							<div class="child-section"><h2 class="headline-left">HOW</h2></div>
 							<div class="child-section">
 								<div class="right-content">
-									<ul class="content-list">
-										<li>
-											Engage, turn them loyal , reward them, and provide a
-											unique experience for your clients and employees with a
-											high-impact, high-reach digital media channel.
-										</li>
-									</ul>
+									<p>
+										Engage, turn them loyal , reward them, and provide a unique
+										experience for your clients and employees with a
+										high-impact, high-reach digital media channel.
+									</p>
 								</div>
 							</div>
 						</div>
@@ -751,7 +760,7 @@
 							<ul class="content-list-vertical">
 								<li>Brand Advocate</li>
 								<li>+ Social Selling</li>
-								<li>+ Influence Marketing</li>
+								<li>+ Influencer Marketing</li>
 								<li>+ Loyalty Program</li>
 							</ul>
 							<p>
@@ -1060,6 +1069,7 @@
 												class="form-control form-input"
 												placeholder="Name"
 												name="name"
+												onkeyup="return changeButtonColorIfFormIsValid('en');"
 												id="inputName2"
 											/>
 										</div>
@@ -1073,6 +1083,7 @@
 												class="form-control form-input"
 												placeholder="Email"
 												name="email"
+												onkeyup="return changeButtonColorIfFormIsValid('en');"
 												id="inputEmail2"
 											/>
 										</div>
@@ -1083,6 +1094,7 @@
 												placeholder="Phone"
 												required
 												name="phone"
+												onkeyup="return changeButtonColorIfFormIsValid('en');"
 												id="inputPhone2"
 											/>
 										</div>
@@ -1095,6 +1107,7 @@
 												class="form-control form-input"
 												placeholder="Company"
 												name="company"
+												onkeyup="return changeButtonColorIfFormIsValid('en');"
 												id="inputCompany2"
 											/>
 										</div>
@@ -1104,6 +1117,7 @@
 												class="form-control form-input"
 												placeholder="Role"
 												name="role"
+												onkeyup="return changeButtonColorIfFormIsValid('en');"
 												id="inputRole2"
 											/>
 										</div>
@@ -1115,6 +1129,7 @@
 										required
 										placeholder="Desccribe your request"
 										name="description"
+										onkeyup="return changeButtonColorIfFormIsValid('en');"
 										id="inputDescription2"
 									></textarea>
 								</form>
@@ -1129,7 +1144,7 @@
 										onclick="return createProspectLead('en');"
 									/>
 									<input
-										class="btn btn-dark w-100"
+										class="btn btn-primary-color w-100"
 										value="SENDING"
 										id="sending-btn-en"
 										hidden

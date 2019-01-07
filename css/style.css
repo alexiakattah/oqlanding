@@ -1000,6 +1000,7 @@ a:hover {
   line-height: 2em;
   color: #fff;
   text-align: left;
+  padding-right: 12.5vw;
 }
 
 .content-list {
@@ -1270,6 +1271,7 @@ a:hover {
   .right-content {
     font-size: 1.6em;
     line-height: 1.5em;
+    padding-right: 3vw;
   }
   .section-headline {
     font-size: 4vw;
@@ -1505,4 +1507,9 @@ svg {
 
 .m-top {
   margin-top: 3vh;
+}
+
+.btn-primary-color {
+  background-color: #e21838;
+  color: white;
 }
