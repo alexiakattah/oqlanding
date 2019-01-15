@@ -1513,3 +1513,11 @@ svg {
   background-color: #e21838;
   color: white;
 }
+
+.no-padding-bottom{
+  padding-bottom: 0px !important;
+}
+
+.padding-10{
+  padding: 10px;
+}
