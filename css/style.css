@@ -121,35 +121,14 @@ a {
     color: #444;
 }
 
-@media (min-width: 576px) and (max-width: 1199.98px) {
-    circle {
-        r: 21%;
-        cx: 26%;
-    }
-    text {
-        transform: translate(-24.5%, 0%);
-    }
+@media (min-width: 400px) and (max-width: 824px) {
+    
     .circle-text {
-        font-size: 1.5vh !important;
-    }
-    .count-number {
-        font-size: 5.6vh;
-    }
-    #top-mid-circle {
-        transform: translate(-24.5%, 1.5%);
-    }
-    #top-right-circle {
-        transform: translate(-24.5%, -1.5%);
-    }
-    #bottom-right-circle {
-        transform: translate(-24.5%, 0%);
-    }
-    #bottom-eng-circle {
-        transform: translate(-25%, 3%);
+        font-size: 2.2vh !important;
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 824px) {
     .inner-intro h1 {
         font-size: 35px;
     }
@@ -162,9 +141,6 @@ a {
     h3,
     .h3 {
         font-size: 20px;
-    }
-    .circle-text {
-        font-size: 4.5vw !important;
     }
 }
 
@@ -509,7 +485,7 @@ a {
     margin-top: -100px;
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 824px) and (max-width: 991px) {
     .up-80 {
         margin-top: 50px;
     }
