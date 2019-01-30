@@ -1539,6 +1539,14 @@ svg {
     object-fit: contain;
 }
 
+.partnerImageTop {
+  padding: 8vh !important;
+}
+
+.partnerImageBDMG {
+  padding: 5vh !important;
+}
+
 .partners-wrapper {
     display: flex;
     display: -webkit-flex;
@@ -1552,5 +1560,13 @@ svg {
         -ms-flex: 0 0 50% !important;
         flex: 0 0 50% !important;
         max-width: 50% !important;
+    }
+    
+    .partnerImageTop {
+      padding: 3vh !important;
+    }
+    
+    .partnerImageBDMG {
+      padding: 3vh !important;
     }
 }
