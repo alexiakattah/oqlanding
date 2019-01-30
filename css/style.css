@@ -1546,3 +1546,11 @@ svg {
     justify-content: center;
     align-items: flex-end;
 }
+
+@media (min-width: 276px){
+    .col-sm-6{
+        -ms-flex: 0 0 50% !important;
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+    }
+}
