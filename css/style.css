@@ -1547,7 +1547,7 @@ svg {
     align-items: flex-end;
 }
 
-@media (min-width: 276px){
+@media (min-width: 276px) and (max-width: 768px) {
     .col-sm-6{
         -ms-flex: 0 0 50% !important;
         flex: 0 0 50% !important;
