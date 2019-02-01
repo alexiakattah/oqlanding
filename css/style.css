@@ -1587,3 +1587,7 @@ svg {
 .footerImage {
     width: 9vh
 }
+
+.clientSessionBottom {
+    margin-bottom: 3vh
+}
