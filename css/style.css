@@ -1591,3 +1591,13 @@ svg {
 .clientSessionBottom {
     margin-bottom: 9vh
 }
+
+.spam-message {
+    font-size: 12px;
+}
+
+.form-info-wrapper {
+    display: flex;
+    width: 100vw;
+    justify-content: flex-end;
+}
