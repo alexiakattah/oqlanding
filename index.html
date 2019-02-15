@@ -13,8 +13,15 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 	<link href="css/animate.css" rel="stylesheet" />
 	<link href="css/style.css" rel="stylesheet" />
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134614292-1"></script>
+
 	<script>
-		
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-134614292-1');
+
 
 		function show() {
 			if (document.getElementById("benefits").style.display == "none") {
@@ -549,9 +556,9 @@
 												onkeyup="return changeButtonColorIfFormIsValid();" id="inputEmail" />
 										</div>
 										<div class="col">
-											<input maxlength="" type="tel" class="form-control form-input" placeholder="Telefone"
-												required name="phone" onkeyup="return changeButtonColorIfFormIsValid();"
-												id="inputPhone" />
+											<input maxlength="" type="tel" class="form-control form-input"
+												placeholder="Telefone" required name="phone"
+												onkeyup="return changeButtonColorIfFormIsValid();" id="inputPhone" />
 										</div>
 									</div>
 
@@ -1093,7 +1100,7 @@
 	<script type="text/javascript" src="js/wow.min.js"></script>
 	<script type="text/javascript" src="js/counter.js"></script>
 	<script type="text/javascript" src="js/inputmask.js"></script>
-	
+
 	<script>
 		function openNav() {
 			document.getElementById("mySidenav").style.width = "250px";
