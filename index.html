@@ -14,6 +14,8 @@
 	<link href="css/animate.css" rel="stylesheet" />
 	<link href="css/style.css" rel="stylesheet" />
 	<script>
+		
+
 		function show() {
 			if (document.getElementById("benefits").style.display == "none") {
 				document.getElementById("benefits").style.display = "block";
@@ -547,7 +549,7 @@
 												onkeyup="return changeButtonColorIfFormIsValid();" id="inputEmail" />
 										</div>
 										<div class="col">
-											<input type="tel" class="form-control form-input" placeholder="Telefone"
+											<input maxlength="" type="tel" class="form-control form-input" placeholder="Telefone"
 												required name="phone" onkeyup="return changeButtonColorIfFormIsValid();"
 												id="inputPhone" />
 										</div>
@@ -575,8 +577,8 @@
 
 							<div class="d-flex justify-content-end w-100 col-md-12 p-right-0">
 								<div class="col-md-2 p-0">
-									<input class="btn btn-dark btn-primary button_example w-100" value="ENVIAR" id="create-btn-pt"
-										onclick="return createProspectLead();" />
+									<input class="btn btn-dark btn-primary button_example w-100" value="ENVIAR"
+										id="create-btn-pt" onclick="return createProspectLead();" />
 									<input class="btn btn-primary-color w-100" value="ENVIANDO..." id="sending-btn-pt"
 										hidden />
 								</div>
@@ -592,7 +594,8 @@
 								</div>
 							</div>
 							<div class="banner-powered form-info-wrapper">
-								<p class="spam-message">Nos comprometemos a não compartilhar seus dados com terceiros nem enviar spams para
+								<p class="spam-message">Nos comprometemos a não compartilhar seus dados com terceiros
+									nem enviar spams para
 									você.</p>
 							</div>
 							<div class="col-12 copyright-wrapper banner-powered">
@@ -1053,8 +1056,8 @@
 
 						<div class="d-flex justify-content-end w-100 col-md-12 p-right-0">
 							<div class="col-md-2 p-0">
-								<input class="btn btn-dark btn-primary button_example w-100" value="SEND" id="create-btn-en"
-									onclick="return createProspectLead('en');" />
+								<input class="btn btn-dark btn-primary button_example w-100" value="SEND"
+									id="create-btn-en" onclick="return createProspectLead('en');" />
 								<input class="btn btn-primary-color w-100" value="SENDING" id="sending-btn-en" hidden />
 							</div>
 						</div>
@@ -1069,7 +1072,8 @@
 							</div>
 						</div>
 						<div class="banner-powered form-info-wrapper">
-							<p class="spam-message">We're committed not to share your data with third parties or to send spam to
+							<p class="spam-message">We're committed not to share your data with third parties or to send
+								spam to
 								you.</p>
 						</div>
 						<div class="col-12 copyright-wrapper banner-powered">
@@ -1088,6 +1092,8 @@
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/wow.min.js"></script>
 	<script type="text/javascript" src="js/counter.js"></script>
+	<script type="text/javascript" src="js/inputmask.js"></script>
+	
 	<script>
 		function openNav() {
 			document.getElementById("mySidenav").style.width = "250px";
@@ -1095,6 +1101,9 @@
 		function closeNav() {
 			document.getElementById("mySidenav").style.width = "0";
 		}
+		$(document).ready(function () {
+			$('#inputPhone').mask('(00) 0000-0000');
+		});
 	</script>
 	<script type="text/javascript" src="js/custom.js"></script>
 </body>
