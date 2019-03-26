@@ -1232,6 +1232,16 @@ a:hover {
   background-position: 50% 50%;
 }
 
+.section-headline-white {
+  font-size: 6vw;
+  color: #9a9a9a;
+  font-family: 'GothamLight' !important;
+  text-align: center;
+  margin-top: 8vh;
+  margin-bottom: 0vh;
+  word-wrap: break-word;
+}
+
 .desc {
   align-content: center;
 }
