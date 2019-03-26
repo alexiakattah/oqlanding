@@ -1105,7 +1105,7 @@ a:hover {
   font-family: 'GothamLight' !important;
   text-align: center;
   margin-top: 8vh;
-  word-wrap: break-word;
+  word-wrap: normal;
 }
 
 .multiplataforma-text-desc {
@@ -1113,8 +1113,8 @@ a:hover {
   color: #fff;
   font-weight: bolder;
   margin: 5% auto 0% auto;
-  font-size: 1.8em;
-  line-height: 1.5em;
+  font-size: 1.6em;
+  line-height: 1.3em;
   text-align: center;
 }
 
@@ -1126,12 +1126,11 @@ a:hover {
   padding: 0% 0%;
   margin: 0% auto;
 }
-
-/* .multiplat-text {
-  margin-top: 50px;
-  line-height: 1.5em;
-  margin-bottom: 40px;
-}  */
+/* 
+.multiplat-text {
+  margin-top: 0px;
+  background-color: red;
+} */
 
 /*====Section 5 ========*/
 
@@ -1387,12 +1386,28 @@ a:hover {
     display: block;
   }
 
+  .sec-org {
+    filter: brightness(90%);
+  }
+
+  .organ-front {
+    align-content: center;
+    width: 90%;
+    height: auto;
+    padding: 0% 0%;
+    margin: 3% auto 0% auto;
+  }
+
   .tut-element {
     width: 50%;
   }
 
   .iconTutorial {
     width: 70%;
+    height: auto;
+  }
+
+  .parent-section {
     height: auto;
   }
 
@@ -1411,10 +1426,6 @@ a:hover {
   .tut-element {
     width: 70% !important;
     margin: 5% auto;
-  }
-
-  .section-headline-win {
-    margin-right: 4vw !important;
   }
 }
 
@@ -1482,6 +1493,11 @@ a:hover {
     font-size: 2.7em;
   }
 
+  .sec-6 .section-headline-white {
+    font-size: 2.7em;
+    margin-bottom: -6vh;
+  }
+
   .sec-org .section-headline-org {
     font-size: 2.2em;
   }
@@ -1498,7 +1514,7 @@ a:hover {
   .sec-6 .section-headline {
     font-size: 2.7em;
   }
-  .sec-7 .section-headline-5 {
+  .sec-7 {
     font-size: 2.7em;
   }
   .sec-6 .body-text {
@@ -1678,10 +1694,10 @@ svg {
 .margin-bt-15 {
   margin-bottom: 15px;
 }
-
+/* 
 .container {
   padding-right: 0;
-}
+} */
 
 .p-right-0 {
   padding-right: 0;
