@@ -1238,8 +1238,8 @@ a:hover {
   font-family: 'GothamLight' !important;
   text-align: center;
   margin-top: 8vh;
-  margin-bottom: 0vh;
   word-wrap: break-word;
+  margin-bottom: -2vh;
 }
 
 .desc {
