@@ -1382,6 +1382,11 @@ a:hover {
 }
 
 @media (max-width: 575px) {
+  .banner-title {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+
   .team-img-box li {
     display: block;
   }
@@ -1426,6 +1431,28 @@ a:hover {
   .tut-element {
     width: 70% !important;
     margin: 5% auto;
+  }
+}
+
+@media (min-width: 575px) and (max-width: 991px) {
+  .banner-title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 25px;
+    padding-top: 5px;
+    width: 60%;
+    margin: 2% auto;
+    text-align: center;
+  }
+
+  .img-logo {
+    width: 50%;
+    height: auto;
+  }
+
+  #call-to-action-btn {
+    font-size: 3vh;
   }
 }
 
