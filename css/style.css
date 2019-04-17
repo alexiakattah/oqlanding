@@ -983,6 +983,124 @@ a:hover {
   color: #df0004;
 }
 
+/*====Section Posts ======*/
+
+.sec-posts {
+  padding: 0 0 50px 0;
+  background: url('../images/orange-texture.jpg') 50% no-repeat fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-position: 50% 50%;
+}
+
+.section-headline-post {
+  font-size: 6vw;
+  color: rgb(255, 255, 255);
+  font-family: 'GothamLight' !important;
+  text-align: center;
+  margin: 60px 0 30px 0;
+  word-wrap: break-word;
+}
+
+.post-element {
+  width: 100%;
+  height: 65vh;
+  padding: 5%;
+  flex: 0 1 auto;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: none;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.img-parent {
+  min-width: 100%;
+  height: 30vh;
+  transform: (1, 1);
+  background-color: white;
+  overflow: hidden;
+}
+
+.imgPost {
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+  border-radius: 5px;
+  background-size: cover;
+}
+
+.post-1 {
+  background-image: url('../images/marketing-transform.png');
+}
+
+.post-2 {
+  background-image: url('../images/img-satisfacao-client.jpg');
+}
+
+.post-3 {
+  background-image: url('../images/img-gamification.png');
+}
+
+.blog-subject {
+  width: 100%;
+  font-size: 1em;
+  margin: 3% 0% 0% 0%;
+}
+
+.blog-subject a {
+  text-decoration: none;
+}
+
+.subject-1 {
+  color: #89229b;
+}
+
+.subject-2 {
+  color: #00bcd4;
+}
+
+.subject-3 {
+  color: #f44336;
+}
+
+.post-text {
+  height: 20vh;
+  margin-top: 1vh;
+}
+
+.post-text h5 {
+  font-family: 'GothamBold';
+  color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  font-size: 1.16em;
+  line-height: 1em;
+  text-align: left;
+  margin: 1% 0% 0% 0%;
+}
+
+.post-text p {
+  line-height: 1.3em;
+  margin-top: 2vh;
+  font-size: 1.05em;
+}
+
+.post-text a {
+  color: #001aff;
+}
+
+.img-parent:hover .imgPost,
+.img-parent:focus .imgPost {
+  transform: scale(1.2);
+  opacity: 0.6;
+}
+
 /*====Section 3========*/
 
 .sec-3 {
@@ -1278,6 +1396,7 @@ a:hover {
   width: 100%;
   position: relative;
 }
+
 /*====Section Win ======*/
 
 .sec-win {
@@ -1382,6 +1501,28 @@ a:hover {
 }
 
 @media (max-width: 575px) {
+  .post-element {
+    width: 75%;
+    margin: 5% auto;
+    height: 50vh;
+  }
+
+  .post-text h5 {
+    font-size: 1em;
+  }
+
+  .post-text p {
+    font-size: 0.8em;
+  }
+
+  .sec-posts .section-headline-post {
+    font-size: 2.7em;
+  }
+
+  .img-parent {
+    height: 25vh;
+  }
+
   .banner-title {
     margin-top: 10%;
     margin-bottom: 10%;
