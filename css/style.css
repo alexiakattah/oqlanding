@@ -1587,6 +1587,42 @@ a:hover {
     text-align: center;
   }
 
+  .sec-posts .row .col-md-4 {
+    width: 31%;
+    height: 60vh;
+    justify-content: space-between;
+    padding: 0;
+    margin: auto;
+  }
+
+  .post-element {
+    height: 55vh;
+  }
+
+  .img-parent {
+    height: 20vh;
+    margin-bottom: -1vh;
+  }
+
+  .subject-1,
+  .subject-2,
+  .subject-3 {
+    font-size: 0.6em;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  .post-text h5 {
+    padding-top: 0;
+    margin-top: -1vh;
+    font-size: 0.7em;
+  }
+
+  .post-text p {
+    font-size: 0.6em;
+  }
+
   .img-logo {
     width: 50%;
     height: auto;
@@ -1606,6 +1642,7 @@ a:hover {
   .slider-title img {
     max-width: 65%;
   }
+
   .banner-title {
     width: 80%;
   }
