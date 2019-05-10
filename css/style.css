@@ -1875,6 +1875,7 @@ svg {
 #call-to-action-btn {
   background-color: rgb(226, 24, 56, 0.9);
   border-color: rgb(226, 24, 56, 0.9);
+  justify-content: space-around;
 }
 
 .icon {
@@ -2023,4 +2024,21 @@ svg {
   display: flex;
   width: 100vw;
   justify-content: flex-end;
+}
+
+.agenciesImg {
+  padding: 3vh;
+  width: 70vh;
+  height: 40vh;
+  object-fit: contain;
+}
+
+.agencies-text {
+  font-family: 'GothamBold';
+}
+
+.demo-button {
+  font-weight: 500;
+  justify-content: space-around;
+  margin: 3% 0% 0% 0%;
 }
