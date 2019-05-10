@@ -1501,6 +1501,40 @@ a:hover {
 }
 
 @media (max-width: 575px) {
+  .agenciesImg-element {
+    padding: 0;
+    min-width: 90%;
+    margin: 0 auto;
+  }
+
+  .agenciesImg {
+    padding: 0 3vh;
+    width: 60%;
+    height: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .agencies-text {
+    font-family: 'Gotham' !important;
+    font-size: 14pt;
+    font-weight: 300;
+    line-height: 1.2em;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center !important;
+  }
+
+  .agencies-text br {
+    display: none;
+  }
+
+  .demo-button {
+    font-weight: 500;
+    justify-content: space-around;
+    margin: 3% 0% 0% 0%;
+  }
+
   .post-element {
     width: 75%;
     margin: 5% auto;
@@ -1632,8 +1666,24 @@ a:hover {
     font-size: 3vh;
   }
 }
-
+/*aqui*/
 @media (max-width: 767px) {
+  .agencies-text {
+    text-align: center !important;
+    font-family: 'Gotham' !important;
+    font-size: 15pt;
+    font-weight: 300;
+    line-height: 1.2em;
+  }
+
+  .agencies-text-contain {
+    width: 100%;
+  }
+
+  .agenciesImg {
+    min-width: 100%;
+  }
+
   .slider-title h1 {
     font-size: 30px;
     text-align: center;
@@ -1875,6 +1925,7 @@ svg {
 #call-to-action-btn {
   background-color: rgb(226, 24, 56, 0.9);
   border-color: rgb(226, 24, 56, 0.9);
+  justify-content: space-around;
 }
 
 .icon {
@@ -2023,4 +2074,30 @@ svg {
   display: flex;
   width: 100vw;
   justify-content: flex-end;
+}
+
+.agenciesImg {
+  padding: 3vh;
+  width: 70vh;
+  height: 40vh;
+  object-fit: contain;
+}
+
+.agencies-text {
+  margin: 0px auto !important;
+  font-family: 'GothamBold';
+}
+
+.demo-button {
+  font-weight: 500;
+  justify-content: space-around;
+  margin-top: 3%;
+}
+
+.head-agencies {
+  margin-bottom: 0px !important;
+}
+
+.agencies-text-contain {
+  margin: 3% auto;
 }
