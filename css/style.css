@@ -2021,6 +2021,10 @@ svg {
   padding: 5vh !important;
 }
 
+.partner-bottom {
+  margin-top: 1%;
+}
+
 .partners-wrapper {
   display: flex;
   display: -webkit-flex;
