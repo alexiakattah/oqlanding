@@ -952,6 +952,37 @@ a:hover {
   transform: scale(1.2);
 }
 
+/*========== Section of SOLUTIONS =======*/
+
+.sec-solutions-container {
+  height: 100%;
+}
+
+.solutions-list {
+  padding: 50px 50px 0;
+}
+
+.solution-item {
+  margin-bottom: 56px;
+}
+
+.solution-item img {
+  width: 50%;
+}
+
+.solution-title {
+  margin: 36px auto 24px;
+  color: #707070;
+  font-size: 24px;
+  font-weight: 900;
+  word-wrap: break-word;
+}
+
+.solution-description {
+  font-size: 18px;
+  padding: 0 10px;
+}
+
 /*========== Section 2 =======*/
 
 .sec-2 {
@@ -1597,6 +1628,14 @@ a:hover {
   .desc {
     margin-top: 0;
   }
+
+  .alert {
+    margin-top: 2vh !important;
+  }
+
+  .alert-primary {
+    font-size: 0.5em !important;
+  }
 }
 
 @media (max-width: 991px) {
@@ -1696,6 +1735,7 @@ a:hover {
     width: 80%;
     font-family: 'Gotham' !important;
   }
+
   .sec-2 {
     padding: 60px 0;
   }
@@ -2048,7 +2088,12 @@ svg {
   .partnerImageBDMG {
     padding: 3vh !important;
   }
+
+  .solution-item img {
+    width: 60% !important;
+  }
 }
+
 .copyright-wrapper {
   display: flex;
   justify-content: space-evenly;

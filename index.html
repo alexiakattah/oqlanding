@@ -56,6 +56,7 @@
 		function createProspectLead(language = "pt") {
 			const Http = new XMLHttpRequest();
 			const url = "https://us-central1-oq20-139d9.cloudfunctions.net/create";
+			// const url = "http://localhost:5000/oqhomapi/us-central1/create"
 			Http.open("POST", url);
 
 			const form = document.getElementById(language === "pt" ? "send" : "send2");
@@ -93,7 +94,10 @@
 				Http.send(parameters);
 
 				Http.onreadystatechange = e => {
-					var sucess = JSON.parse(Http.responseText).success;
+					var response = JSON.parse(Http.responseText);
+
+					console.log('response', response)
+					var sucess = response.success;
 					var successAlert = language === "pt" ? "success-alert" : "success-alert2";
 					var dangerAlert = language === "pt" ? "danger-alert" : "danger-alert2";
 					if (sucess) {
@@ -103,7 +107,7 @@
 						document.getElementById(successAlert).hidden = true;
 						document.getElementById(dangerAlerts).hidden = false;
 					}
-
+					
 					document.getElementById("create-btn-" + language).hidden = false;
 					document.getElementById("sending-btn-" + language).hidden = true;
 				};
@@ -184,6 +188,66 @@
 			</div>
 		</div>
 		<!-- Banner End -->
+
+		<!-- Description Items Begin -->
+		<section class="sec-solutions-container">
+			<div class="col-md-12">
+				<h2 class="section-headline-white text-center">SOLUÇÕES</h2>
+			</div>
+			<div class="row text-center solutions-list">
+				<div class="col-md-4 solution-item">
+					<img src="./assets/indication.svg" alt="Indication marketing" />
+					<h2 class="solution-title">Programa de indicação 4.0</h2>
+					<p class="solution-description">92% das pessoas sentem muito mais confiança
+						em recomendações de pessoas conhecidas. Tire
+						vantagem desta técnica e aumente exponen-
+						cialmente seus resultados em vendas.</p>
+				</div>
+				<div class="col-md-4 solution-item">
+					<img src="./assets/crm-funnel.svg" alt="Crm funnel" />
+					<h2 class="solution-title">CRM / Funil de vendas</h2>
+					<p class="solution-description">Faça uma gestão completa das etapas, nível de 
+						interesse e conversões de leads de forma amigável.
+						Monitore o desempenho das equipe de vendas e 
+						dos clientes envolvidos no processo.</p>
+				</div>
+				<div class="col-md-4 solution-item">
+					<img src="./assets/relation-channels.svg" alt="Relationship channel"/>
+					<h2 class="solution-title">Canais de relacionamento</h2>
+					<p class="solution-description">Quem ama a sua marca também está mais 
+						disposto a ajudá-lo a conquistar novos clientes.
+						Segmente as mensagens, automatize a distribuição
+						de conteúdos e mantenha a sua base motivada.</p>
+				</div>
+				<div class="col-md-4 solution-item">
+					<img src="./assets/trainning.svg" alt='Traninning program'/>
+					<h2 class="solution-title">Treinamento e capacitação</h2>
+					<p class="solution-description">Capacitar, gerir e motivar são 3 maneiras poderosas
+						de aumentar o desempenho de equipes. Use a nossa
+						tecnologia para compartilhar conhecimento, avaliar
+						 e reconhecer os colaboradores.</p>
+				</div>
+				<div class="col-md-4 solution-item">
+					<img src="./assets/gamification.svg" alt='Gamification'/>
+					<h2 class="solution-title">Gamificação e engajamento</h2>
+					<p class="solution-description">Aumente o retorno sobre o investimento em
+						marketing digital usando técnicas de games on-line
+						para motivar as pessoas, potencializar suas vendas
+						e atrair mais clientes para seu negócio.</p>
+				</div>
+				<div class="col-md-4 solution-item">
+					<img src="./assets/search.svg" alt="Pesquisa e cocriação"/>
+					<h2 class="solution-title">Pesquisas, cocriação e NPS</h2>
+					<p class="solution-description">Peça a opinião dos usuários, lance desafios de
+						cocriação, tenha insights com os feedbacks que você
+						receber deles e desenvolva produtos/serviços com a
+						ajuda de quem mais conhece a sua empresa.</p>
+				</div>
+			</div>
+			
+		</section>
+		<!-- Description Items End -->
+
 		<section class="sec-video">
 			<div class="video-container">
 				<iframe src="http://www.youtube.com/embed/im4ImFlKmcI?loop=1&playlist=im4ImFlKmcI" frameborder="0"
