@@ -871,7 +871,7 @@ a:hover {
   content: '';
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background: rgba(0, 0, 0, 0.4) url(../images/banner-shadow.png) 50% 0%
     no-repeat;
@@ -904,11 +904,10 @@ a:hover {
   color: #fff;
   font-size: 30px;
   font-family: 'Gotham' !important;
-  font-weight: 500;
   line-height: 35px;
   padding-top: 15px;
-  width: 80%;
-  margin: 5% auto;
+  width: 60%;
+  margin: 2% auto;
   text-align: center;
 }
 
@@ -916,7 +915,7 @@ a:hover {
   color: #fff;
   font-size: 10px;
   font-weight: 500;
-  margin: 0 auto;
+  margin: 0% auto 0% auto;
   text-align: center;
 }
 
@@ -959,23 +958,11 @@ a:hover {
   height: 100%;
 }
 
-.section-headline-solutions {
-  font-size: 6vw;
-  color: #9a9a9a;
-  font-family: 'GothamLight' !important;
-  text-align: center;
-  margin-top: 8vh;
-}
-
 .solutions-list {
-  display: flex;
-  max-width: 100%;
   padding: 50px 50px 0;
-  flex-wrap: wrap;
 }
 
 .solution-item {
-  width: 33%;
   margin-bottom: 56px;
 }
 
@@ -994,13 +981,6 @@ a:hover {
 .solution-description {
   font-size: 18px;
   padding: 0 10px;
-}
-
-@media screen and (max-width: 900px) {
-  .solution-item {
-    width: 50%;
-    padding: 0 10px;
-  }
 }
 
 /*========== Section 2 =======*/
@@ -1062,7 +1042,6 @@ a:hover {
   padding: 5%;
   flex: 0 1 auto;
   align-items: center;
-  border-radius: 4px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1210,7 +1189,7 @@ a:hover {
 .sec-4 {
   padding: 0px 0;
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   position: relative;
 }
 
@@ -1449,6 +1428,61 @@ a:hover {
   position: relative;
 }
 
+/*====Section Win ======*/
+
+.sec-win {
+  padding: 0 0 50px 0;
+  background: url(../images/fundo-tutorial-metade.png) 50% no-repeat fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-position: 50% 50%;
+}
+
+.section-headline-win {
+  font-size: 6vw;
+  color: #fff;
+  font-family: 'GothamLight' !important;
+  text-align: center;
+  margin: 100px 0 30px 0;
+  word-wrap: break-word;
+}
+
+.tut-text-element {
+  color: #fff;
+  width: 90%;
+  margin: 0 auto;
+  font-size: 1.5em;
+  line-height: 1.3em;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.tutorial {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.tut-element {
+  width: 25%;
+  margin: 2% 1%;
+  height: auto;
+  margin-bottom: 3vh;
+  flex: 0 1 auto;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.iconTutorial {
+  width: 70%;
+  height: auto;
+  object-fit: contain;
+}
+
 /*====Section 7 ========*/
 
 .sec-7 {
@@ -1559,18 +1593,6 @@ a:hover {
     margin-bottom: 10%;
   }
 
-  .section-headline-solutions {
-    font-size: 36px;
-  }
-
-  .solutions-list {
-    padding: 50px 5px 0;
-  }
-
-  .solution-item {
-    width: 100%;
-  }
-
   .team-img-box li {
     display: block;
   }
@@ -1579,14 +1601,21 @@ a:hover {
     filter: brightness(90%);
   }
 
-  .form-container {
-    margin: 0 auto;
-    padding: 0 15px 0 0;
+  .organ-front {
+    align-content: center;
+    width: 90%;
+    height: auto;
+    padding: 0% 0%;
+    margin: 3% auto 0% auto;
   }
 
-  .contact-text {
-    font-size: 24px !important;
-    line-height: normal;
+  .tut-element {
+    width: 50%;
+  }
+
+  .iconTutorial {
+    width: 70%;
+    height: auto;
   }
 
   .parent-section {
@@ -1597,7 +1626,7 @@ a:hover {
     font-size: 10px;
   }
   .desc {
-    margin: 0 auto 50px;
+    margin-top: 0;
   }
 
   .alert {
@@ -1606,11 +1635,6 @@ a:hover {
 
   .alert-primary {
     font-size: 0.5em !important;
-  }
-
-  .spam-message {
-    width: 100%;
-    margin: 0 0 15px 0 !important;
   }
 }
 
@@ -1708,9 +1732,7 @@ a:hover {
   }
 
   .banner-title {
-    margin: 30px 0;
-    width: 100%;
-    font-size: 20px;
+    width: 80%;
     font-family: 'Gotham' !important;
   }
 
@@ -1741,7 +1763,6 @@ a:hover {
     font-size: 4vw;
     margin-top: 40px;
     margin-bottom: 15px;
-    width: 100%;
   }
   .section-sub-headline {
     font-size: 6vw;
@@ -1772,10 +1793,6 @@ a:hover {
     margin-bottom: -6vh;
   }
 
-  .sec-6 .section-headline {
-    margin-bottom: 0;
-  }
-
   .sec-org .section-headline-org {
     font-size: 2.2em;
   }
@@ -1792,9 +1809,8 @@ a:hover {
   .sec-6 .section-headline {
     font-size: 2.7em;
   }
-  .sec-7 .section-headline-5 {
+  .sec-7 {
     font-size: 2.7em;
-    margin-bottom: 20px;
   }
   .sec-6 .body-text {
     display: flex;
@@ -1808,16 +1824,12 @@ a:hover {
     font-size: 1em;
   }
 
-  .contact-text {
-    font-size: 16px;
-  }
-
   .contact-details {
     font-size: 1.3em;
   }
 
-  .spam-message {
-    padding-left: 15px;
+  .tut-element {
+    min-width: 50%;
   }
 }
 
@@ -2106,7 +2118,6 @@ svg {
 
 .spam-message {
   font-size: 12px;
-  color: #fff;
 }
 
 .form-info-wrapper {
