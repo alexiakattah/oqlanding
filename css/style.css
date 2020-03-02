@@ -1612,6 +1612,27 @@ a:hover {
     width: 100%;
     margin: 0 0 15px 0 !important;
   }
+
+  .head-exclusive {
+    font-size: 48px !important;
+  }
+
+  .exclusive-solution-container {
+    display: flex;
+    flex-direction: column-reverse !important;
+  }
+
+  .exclusive-solution-text {
+    font-size: 22px !important;
+    text-align: center;
+  }
+
+  .exclusiveImgCont {
+    max-width: 250px;
+    max-height: 250px;
+    margin-top: 40px;
+    border: 5px solid white;
+  }
 }
 
 @media (max-width: 991px) {
@@ -2127,6 +2148,25 @@ svg {
   font-family: 'Gotham';
 }
 
+.exclusiveImgCont {
+  background-image: url('../images/exclusive-solution.jpeg');
+  background-size: cover;
+  width: 300px !important;
+  height: 300px !important;
+  border-radius: 50%;
+  border: 10px solid white;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.head-exclusive {
+  font-size: 52px;
+  color: rgb(50, 50, 50);
+  font-family: 'GothamLight' !important;
+  text-align: center;
+  margin-top: 8vh;
+}
+
 .demo-button {
   font-weight: 500;
   justify-content: space-around;
@@ -2139,4 +2179,19 @@ svg {
 
 .agencies-text-contain {
   margin: 3% auto;
+}
+
+.exclusive-solution-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.exclusive-solution-text {
+  text-align: left;
+  font-family: 'Gotham';
+}
+
+.exclusive-solution-text b {
+  color: rgb(50, 50, 50);
 }
