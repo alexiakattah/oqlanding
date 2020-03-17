@@ -2255,9 +2255,9 @@ h4.text-oq.b {
     padding: 0px;
     width: 100%;
   }
-  /* .a {
-    margin: 0% 25% 0% 0% !important;
-  } */
+  .a {
+    margin: 0px;
+  }
 }
 p.text-oq.b {
   padding: 0 3% 0 3%;
