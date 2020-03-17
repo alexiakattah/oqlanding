@@ -2195,8 +2195,8 @@ svg {
 .exclusive-solution-text b {
   color: rgb(50, 50, 50);
 }
-/* 
-.principal-banner {
+
+/* .principal-banner {
   background-color: #700c1c;
   width: 70%;
   height: 70%;
@@ -2208,7 +2208,7 @@ svg {
 }
 .principal-banner p {
   margin-left: 5%;
-}
+} */
 
 .text {
   color: #fff;
@@ -2224,57 +2224,58 @@ svg {
   opacity: 1;
   animation: fadein 9s;
   position: relative;
-  top: 12vh;
+  /* top: 12vh;
   margin: 0 auto;
-  width: 30%;
+  width: 30%; */
 }
 .text-oq {
   color: #fff;
   font-weight: 700;
   font-size: 1rem;
   text-align: center;
-  position: absolute;
+  /* position: absolute; */
   opacity: 1;
   animation: fadein 9s;
   width: 51%;
 }
+h4.text-oq.b {
+  padding-bottom: 26px;
+}
 @media (max-width: 824px) {
-  .call-to-action {
+  /* .call-to-action {
     top: 27vh;
     margin: 0 auto;
     width: 80%;
-  }
+  } */
   .text {
     font-size: 2rem;
     line-height: 40px;
   }
-  .a {
+  /* .a {
     margin: 0% 25% 0% 0% !important;
-  }
-  .principal-banner h3 {
-    width: 100% !important;
-    margin-left: 0%;
-    position: inherit;
-  }
-  .principal-banner p {
-    margin-left: 0%;
-  }
+  } */
+}
+p.text-oq.b {
+  padding: 0 3% 0 3%;
 }
 
 .a {
   animation-delay: 0s;
-  margin: 0% 18% 0% 0%;
+  margin: 0% 22% 0% 9%;
 }
 
 .b {
   animation-delay: 0s;
 }
+.img-oq {
+  width: 65%;
+}
 
 @keyframes fader {
-  10% {
+  30% {
     opacity: 1;
   }
-  80% {
+  90% {
     opacity: 0;
   }
 }
@@ -2286,4 +2287,4 @@ svg {
   100% {
     opacity: 1;
   }
-} */
+}
