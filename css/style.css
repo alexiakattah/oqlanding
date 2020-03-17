@@ -2251,6 +2251,10 @@ h4.text-oq.b {
     font-size: 2rem;
     line-height: 40px;
   }
+  p.text-oq.b {
+    padding: 0px;
+    width: 100%;
+  }
   /* .a {
     margin: 0% 25% 0% 0% !important;
   } */
