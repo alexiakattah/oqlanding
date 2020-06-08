@@ -1226,6 +1226,7 @@ a:hover {
 .section-sub-headline {
   font-size: 2.5vw;
   color: #d40000;
+  line-height: 33px;
 }
 
 .right-content {
