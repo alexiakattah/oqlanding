@@ -2316,13 +2316,13 @@ p.text-oq.b {
   bottom: 6rem;
   width: 80%;
   text-align: center;
-  animation: fadeBanner2 25s;
+  animation: fadeBanner2 20s;
 }
 .plataforma {
   animation: fadePlataforma 15s;
 }
 .call-to-action {
-  animation: fadeCallToAction 25s;
+  animation: fadeCallToAction 20s;
 }
 
 @keyframes fader {
@@ -2332,7 +2332,7 @@ p.text-oq.b {
   50% {
     opacity: 1;
   }
-  100% {
+  70% {
     opacity: 0;
   }
 }
