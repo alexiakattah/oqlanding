@@ -1830,6 +1830,7 @@ a:hover {
 
   .slider-title img {
     max-width: 65%;
+    height: auto !important;
   }
 
   .banner-title {
