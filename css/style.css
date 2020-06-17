@@ -855,10 +855,10 @@ a:hover {
     width: 100%;
   }
 
-  .img-principal-oq {
+  /* .img-principal-oq {
     display: flex !important;
     justify-content: center !important;
-  }
+  } */
   .banner-title {
     color: #fff;
     font-family: "Gotham" !important;
