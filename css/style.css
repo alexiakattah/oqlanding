@@ -1810,6 +1810,7 @@ a:hover {
     font-family: "Gotham" !important;
     bottom: 12rem !important;
     font-weight: lighter !important;
+    padding: 0px 10px;
   }
   .call-to-action{
     margin-top: -1rem !important;
