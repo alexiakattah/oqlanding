@@ -859,7 +859,7 @@ a:hover {
     display: flex !important;
     justify-content: center !important;
   } */
-  .banner-title {
+  /* .banner-title {
     color: #fff;
     font-family: "Gotham" !important;
     font-size: 20px !important;
@@ -868,7 +868,7 @@ a:hover {
     width: 100%;
     margin: 2% auto;
     text-align: center;
-  }
+  } */
 }
 
 .height-100-vh {
@@ -937,7 +937,7 @@ a:hover {
   top: -9rem;
   position: relative;
   text-align: center;
-  margin: 9rem 0rem 0rem 4rem;
+  margin: 9rem 0rem 0rem 0rem;
 }
 
 .banner-powered {
@@ -1654,8 +1654,8 @@ a:hover {
 
   .banner-title {
     font-family: "Gotham" !important;
-    margin-top: 10%;
-    margin-bottom: 10%;
+    /* margin-top: 10%;
+    margin-bottom: 10%; */
   }
 
   .section-headline-solutions {
@@ -1808,14 +1808,21 @@ a:hover {
     width: 100% !important;
     font-size: 20px !important;
     font-family: "Gotham" !important;
-    bottom: 30vh !important;
+    bottom: 12rem !important;
     font-weight: lighter !important;
+  }
+  .call-to-action{
+    margin-top: -1rem !important;
   }
   .agencies-text {
     text-align: center !important;
     font-family: "Gotham" !important;
     font-size: 15pt;
     line-height: 1.3em;
+  }
+  .banner-title{
+    top: -3rem;
+    margin: 4rem 0rem 0rem 0rem;
   }
 
   .agencies-text-contain {
@@ -2092,6 +2099,7 @@ svg {
   width: 100px;
   position: relative;
   bottom: 8rem;
+  text-align: center;
   animation: fadeBanner2 20s;
 }
 
