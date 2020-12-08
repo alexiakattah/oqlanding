@@ -2429,6 +2429,23 @@ p.text-oq.b {
   animation: fadeCallToAction 20s;
 }
 
+.CookieConsent > div {
+  text-align: center;
+  justify-content: center;
+}
+.CookieConsent {
+    border: 1px solid transparent;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.16);
+    border-radius: 8px;
+    margin: 2rem 1rem;
+}
+
+@media(min-width: 1052px) {
+  .CookieConsent {
+    margin: 0 0 2rem 6rem;
+  }
+}
+
 @keyframes fader {
   0% {
     opacity: 0;

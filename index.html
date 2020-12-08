@@ -16,6 +16,29 @@
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134614292-1"></script>
 
 	<script>
+
+		// retorna o valor do cookie
+		function getCookie(cookieConsent) {
+			var name = cookieConsent + "=";
+			var ca = document.cookie.split(';');
+			for(var i=0; i<ca.length; i++) {
+					var c = ca[i];
+					while (c.charAt(0)==' ') c = c.substring(1);
+					if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+			}
+			return "";
+		}
+
+		// verifica se tem cookie de consentimento e remove a div caso seja sim
+		window.onload = function () { 
+			var cookieString = getCookie("CookieConsent");
+			if(cookieString === 'true') {
+				document.getElementById("cookie-consent").style.display = "none";
+			} else {
+				document.getElementById("cookie-consent").style.display = "flex";
+			}
+		} 
+
 		window.dataLayer = window.dataLayer || [];
 		function gtag() { dataLayer.push(arguments); }
 		gtag('js', new Date());
@@ -114,7 +137,25 @@
 			}
 			return false;
 		}
+
+		//cria o cookie e remove div de consentimento
+		function setCookie(cookieName, cookieValue, exDays) {
+			var d = new Date();
+			d.setTime(d.getTime() + (exDays*24*60*60*1000));
+			var expires = "expires="+d.toUTCString();
+			document.cookie = cookieName + "=" + cookieValue + "; " + expires;
+
+			var cookieString = getCookie(cookieName);
+			if(cookieString === 'true') {
+				document.getElementById("cookie-consent").style.display = "none";
+			} else {
+				document.getElementById("cookie-consent").style.display = "flex";
+			}
+
+		}
+
 	</script>
+
 </head>
 
 <body style="overflow-x: hidden;">
@@ -196,6 +237,68 @@
 			</div>
 		</div>
 		<!-- Banner End -->
+
+		<!-- Cookie Consent ---- -->
+		<div
+			id="cookie-consent"
+			class="CookieConsent"
+			style="
+				align-items: baseline;
+				background: rgb(255, 255, 255);
+				color: rgb(0, 0, 0);
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				left: 0px;
+				position: fixed;
+				width: initial;
+				z-index: 999;
+				bottom: 0px;
+			"
+		>
+  <div class="" style="flex: 1 0 300px; margin: 15px">
+    A gente usa cookies para melhorar a sua experiência na Plataforma. Ao
+		continuar navegando, você concorda com a nossa
+		<a
+      href="https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/TermsAndPolitics%2FPoli%CC%81tica%20de%20Privacidade_OQ%20MIDIA%20DIGITAL%20JULHO%202020.docx.pdf?alt=media&amp;token=73c99224-963a-40c8-b385-618bb2cc5122"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="menu-link collapsed list-unstyled"
+      >Política de Privacidade.</a
+    >
+  </div>
+  <div class="">
+		<button
+			onclick="setCookie('CookieConsent', 'true', 7)"
+      class=""
+      id="rcc-confirm-button"
+      aria-label="Accept cookies"
+      style="
+        background-image: initial;
+        background-position: initial;
+        background-size: initial;
+        background-repeat: initial;
+        background-attachment: initial;
+        background-origin: initial;
+        background-clip: initial;
+        background-color: rgb(226, 24, 56, 0.9);
+        border: 0px;
+        border-radius: 5px;
+        box-shadow: none;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        flex: 0 0 auto;
+        padding: 5px 10px;
+        margin: 15px;
+        font-family: var(--oq-font-medium);
+      "
+    >
+      Eu aceito
+    </button>
+  </div>
+		</div>
+		<!-- Cookie Consent end -->
+
 
 		<!-- Description Items Begin -->
 		<section class="sec-solutions-container">
