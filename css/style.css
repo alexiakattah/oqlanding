@@ -2450,10 +2450,11 @@ p.text-oq.b {
     align-items: initial !important;
     bottom: -20px !important;
   }
-  .CookieConsent > div {
+  .CookieConsent > div:first-child {
     flex: initial !important;
     margin: 1px !important;
     font-size: 13px !important; 
+    padding-top: 8px;
   }
   .CookieConsent > div > div {
     display: flex !important;
