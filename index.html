@@ -17,27 +17,16 @@
 
 	<script>
 
-		// retorna o valor do cookie
-		function getCookie(cookieConsent) {
-			var name = cookieConsent + "=";
-			var ca = document.cookie.split(';');
-			for(var i=0; i<ca.length; i++) {
-					var c = ca[i];
-					while (c.charAt(0)==' ') c = c.substring(1);
-					if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
-			}
-			return "";
-		}
-
 		// verifica se tem cookie de consentimento e remove a div caso seja sim
-		window.onload = function () { 
-			var cookieString = getCookie("CookieConsent");
-			if(cookieString === 'true') {
-				document.getElementById("cookie-consent").style.display = "none";
-			} else {
-				document.getElementById("cookie-consent").style.display = "flex";
-			}
-		} 
+		
+		// window.onload = function () { 
+		// 	var cookieString = getCookie("CookieConsent");
+		// 	if(cookieString === 'true') {
+		// 		document.getElementById("cookie-consent").style.display = "none";
+		// 	} else {
+		// 		document.getElementById("cookie-consent").style.display = "flex";
+		// 	}
+		// } 
 
 		window.dataLayer = window.dataLayer || [];
 		function gtag() { dataLayer.push(arguments); }
@@ -136,22 +125,6 @@
 				};
 			}
 			return false;
-		}
-
-		//cria o cookie e remove div de consentimento
-		function setCookie(cookieName, cookieValue, exDays) {
-			var d = new Date();
-			d.setTime(d.getTime() + (exDays*24*60*60*1000));
-			var expires = "expires="+d.toUTCString();
-			document.cookie = cookieName + "=" + cookieValue + "; " + expires;
-
-			var cookieString = getCookie(cookieName);
-			if(cookieString === 'true') {
-				document.getElementById("cookie-consent").style.display = "none";
-			} else {
-				document.getElementById("cookie-consent").style.display = "flex";
-			}
-
 		}
 
 	</script>
@@ -255,47 +228,48 @@
 				z-index: 999;
 				bottom: 0px;
 			"
-		>
-  <div class="" style="flex: 1 0 300px; margin: 15px">
-    A gente usa cookies para melhorar a sua experiência no Site. Ao
-		continuar navegando, você concorda com a nossa
-		<a
-      href="https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/TermsAndPolitics%2FPoli%CC%81tica%20de%20Privacidade_OQ%20MIDIA%20DIGITAL%20JULHO%202020.docx.pdf?alt=media&amp;token=73c99224-963a-40c8-b385-618bb2cc5122"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="menu-link collapsed list-unstyled"
-      >Política de Privacidade.</a
-    >
-  </div>
-  <div class="">
-		<button
-			onclick="setCookie('CookieConsent', 'true', 7)"
-      class=""
-      id="rcc-confirm-button"
-      aria-label="Accept cookies"
-      style="
-        background-image: initial;
-        background-position: initial;
-        background-size: initial;
-        background-repeat: initial;
-        background-attachment: initial;
-        background-origin: initial;
-        background-clip: initial;
-        background-color: rgb(226, 24, 56, 0.9);
-        border: 0px;
-        border-radius: 5px;
-        box-shadow: none;
-        color: rgb(255, 255, 255);
-        cursor: pointer;
-        flex: 0 0 auto;
-        padding: 5px 10px;
-        margin: 15px;
-        font-family: var(--oq-font-medium);
-      "
-    >
-      Eu aceito
-    </button>
-  </div>
+			>
+			<div class="" style="flex: 1 0 300px; margin: 15px; line-height: 18px;">
+				Usamos cookies para melhorar a sua experiência no Site. Ao
+				continuar navegando, você concorda com a nossa
+				<a
+					style="color: rgb(226, 24, 56, 0.9); font-weight: bold;"
+					href="https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/TermsAndPolitics%2FPoli%CC%81tica%20de%20Privacidade_OQ%20MIDIA%20DIGITAL%20JULHO%202020.docx.pdf?alt=media&amp;token=73c99224-963a-40c8-b385-618bb2cc5122"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="menu-link collapsed list-unstyled"
+					>Política de Privacidade.</a
+				>
+			</div>
+			<div class="">
+				<button
+					onclick="setCookie('CookieConsent', 'true', 7)"
+					class=""
+					id="rcc-confirm-button"
+					aria-label="Accept cookies"
+					style="
+						background-image: initial;
+						background-position: initial;
+						background-size: initial;
+						background-repeat: initial;
+						background-attachment: initial;
+						background-origin: initial;
+						background-clip: initial;
+						background-color: rgb(226, 24, 56, 0.9);
+						border: 0px;
+						border-radius: 5px;
+						box-shadow: none;
+						color: rgb(255, 255, 255);
+						cursor: pointer;
+						flex: 0 0 auto;
+						padding: 5px 10px;
+						margin: 15px;
+						font-family: var(--oq-font-medium);
+					"
+				>
+					Eu aceito
+				</button>
+			</div>
 		</div>
 		<!-- Cookie Consent end -->
 
@@ -1473,8 +1447,44 @@ clientes e colaboradores.
 		function closeNav() {
 			document.getElementById("mySidenav").style.width = "0";
 		}
+
+			// retorna o valor do cookie
+			function getCookie(cookieConsent) {
+				var name = cookieConsent + "=";
+				var ca = document.cookie.split(';');
+				for(var i=0; i<ca.length; i++) {
+						var c = ca[i];
+						while (c.charAt(0)==' ') c = c.substring(1);
+						if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+				}
+				return "";
+			}
+
+			//cria o cookie e remove div de consentimento
+			function setCookie(cookieName, cookieValue, exDays) {
+				var d = new Date();
+				d.setTime(d.getTime() + (exDays*24*60*60*1000));
+				var expires = "expires="+d.toUTCString();
+				document.cookie = cookieName + "=" + cookieValue + "; " + expires;
+
+				var cookieString = getCookie(cookieName);
+				if(cookieString === 'true') {
+					document.getElementById("cookie-consent").style.display = "none";
+				} else {
+					document.getElementById("cookie-consent").style.display = "flex";
+				}
+			}
+
 		$(document).ready(function () {
 			$('#inputPhone').mask('(00) 0000-0000');
+
+			// verifica se tem cookie de consentimento e remove a div caso seja sim
+			var cookieString = getCookie("CookieConsent");
+			if(cookieString === 'true') {
+				document.getElementById("cookie-consent").style.display = "none";
+			} else {
+				document.getElementById("cookie-consent").style.display = "flex";
+			}
 		});
 	</script>
 	<script type="text/javascript" src="js/custom.js"></script>
