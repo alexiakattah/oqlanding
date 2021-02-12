@@ -214,62 +214,37 @@
 		<!-- Cookie Consent ---- -->
 		<div
 			id="cookie-consent"
-			class="CookieConsent"
-			style="
-				align-items: baseline;
-				background: rgb(255, 255, 255);
-				color: rgb(0, 0, 0);
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: center;
-				left: 0px;
-				position: fixed;
-				width: initial;
-				z-index: 999;
-				bottom: 0px;
-			"
-			>
-			<div class="" style="flex: 1 0 300px; margin: 15px; line-height: 18px;">
-				Usamos cookies para melhorar a sua experiência no Site. Ao
-				continuar navegando, você concorda com a nossa
-				<a
-					style="color: rgb(226, 24, 56, 0.9); font-weight: bold;"
-					href="https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/TermsAndPolitics%2FPoli%CC%81tica%20de%20Privacidade_OQ%20MIDIA%20DIGITAL%20JULHO%202020.docx.pdf?alt=media&amp;token=73c99224-963a-40c8-b385-618bb2cc5122"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="menu-link collapsed list-unstyled"
-					>Política de Privacidade.</a
-				>
+			class="CookieConsent cookie">
+			<div class="cookie-content-row">
+				<div class="cookie-text">
+					<p>
+						Usamos cookies para melhorar a sua experiência no Site. Ao
+					continuar navegando, você concorda com a nossa
+					<a
+						style="color: rgb(226, 24, 56, 0.9); font-weight: bold;"
+						href="https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/TermsAndPolitics%2FPoli%CC%81tica%20de%20Privacidade_OQ%20MIDIA%20DIGITAL%20JULHO%202020.docx.pdf?alt=media&amp;token=73c99224-963a-40c8-b385-618bb2cc5122"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="menu-link collapsed list-unstyled"
+						>Política de Privacidade.</a
+					>
+					</p>
+				</div>
+
+				<div>
+					<button
+						class="btn-cookie"
+						onclick="setCookie('CookieConsent', 'true', 30)"
+						class=""
+						id="rcc-confirm-button"
+						aria-label="Accept cookies"
+					>
+						Aceito
+					</button>
+				</div>
+
 			</div>
-			<div class="">
-				<button
-					onclick="setCookie('CookieConsent', 'true', 7)"
-					class=""
-					id="rcc-confirm-button"
-					aria-label="Accept cookies"
-					style="
-						background-image: initial;
-						background-position: initial;
-						background-size: initial;
-						background-repeat: initial;
-						background-attachment: initial;
-						background-origin: initial;
-						background-clip: initial;
-						background-color: rgb(226, 24, 56, 0.9);
-						border: 0px;
-						border-radius: 5px;
-						box-shadow: none;
-						color: rgb(255, 255, 255);
-						cursor: pointer;
-						flex: 0 0 auto;
-						padding: 5px 10px;
-						margin: 15px;
-						font-family: var(--oq-font-medium);
-					"
-				>
-					Eu aceito
-				</button>
-			</div>
+
 		</div>
 		<!-- Cookie Consent end -->
 

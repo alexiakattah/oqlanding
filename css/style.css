@@ -2429,62 +2429,79 @@ p.text-oq.b {
   animation: fadeCallToAction 20s;
 }
 
-.CookieConsent > div {
-  text-align: initial;
-  justify-content: center;
-}
+
 .CookieConsent {
-    border: 1px solid transparent;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.16);
-    border-radius: 8px;
-    margin: 2rem 1rem;
+  border: 1px solid transparent;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.16);
+  border-radius: 8px;
+  margin: 2rem 1rem;
 }
 
-@media(min-width: 1052px) {
-  .CookieConsent {
-    margin: 0 0 2rem 6rem;
-  }
-}
-@media(max-width: 420px) {
-  .CookieConsent {
-    align-items: initial !important;
-    bottom: -20px !important;
-  }
-  .CookieConsent > div:first-child {
-    flex: initial !important;
-    margin: 1px !important;
-    font-size: 13px !important; 
-    padding-top: 8px;
-  }
-  .CookieConsent > div > div {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: initial !important;
-  }
-  .CookieConsent button#rcc-confirm-button {
-    padding: 2px !important;
-    margin: 4px !important;
-  } 
+.btn-cookie {
+  background-image: initial;
+  background-position: initial;
+  background-size: initial;
+  background-repeat: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: rgb(226, 24, 56, 0.9);
+  border: 0px;
+  border-radius: 5px;
+  box-shadow: none;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  flex: 0 0 auto;
+  padding: 5px 10px;
+  /* margin: 15px; */
+  margin: 0 15px 5px;
+  font-family: var(--oq-font-medium);
+  font-weight: 300;
 }
 
-@media (max-width: 380px){
-  .CookieConsent button#rcc-confirm-button {
-    padding: 2px !important;
-    margin: 2px !important;
+.cookie {
+  align-items: center;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  left: 0px;
+  position: fixed;
+  z-index: 999;
+  bottom: 0px;
+  margin: 15px 40px;
+  width: -webkit-fill-available;
+}
+
+.cookie-content-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.cookie-text {
+  margin: 15px 0 0 10px;
+}
+
+@media(max-width: 508px) {
+  .cookie {
+    margin: 15px 15px;
+  }
+  .cookie-text {
+    margin: 10px 0px -25px 10px;
+    line-height: 18px;
+  }
+  .cookie-text > p {
+
+    font-size: 12px;
+    margin-bottom: 30px;
+    padding: 0;
   }
 }
 
-@media (max-width: 320px) {
-  .call-to-action {
-    margin-top: -3rem !important;
-  }
-  .CookieConsent {
-    bottom: -25px !important; 
-  }
-  .CookieConsent > div {
-    font-size: 15px !important;
-  }
-}
 
 @keyframes fader {
   0% {
