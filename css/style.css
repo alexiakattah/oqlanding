@@ -1,50 +1,50 @@
 @font-face {
-  font-family: "Gotham";
-  src: url("../fonts/gotham/gotham-bold-webfont.eot");
-  src: url("../fonts/gotham/gotham-bold-webfont.eot?#iefix")
-      format("embedded-opentype"),
-    url("../fonts/gotham/gotham-bold-webfont.svg#gothmbold") format("svg");
+  font-family: 'Gotham';
+  src: url('../fonts/gotham/gotham-bold-webfont.eot');
+  src: url('../fonts/gotham/gotham-bold-webfont.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/gotham/gotham-bold-webfont.svg#gothmbold') format('svg');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Gotham";
-  src: url("../fonts/gotham/gotham-book-webfont.eot");
-  src: url("../fonts/gotham/gotham-book-webfont.eot?#iefix")
-      format("embedded-opentype"),
-    url("../fonts/gotham/gotham-book-webfont.woff") format("woff"),
-    url("../fonts/gotham/gotham-book-webfont.ttf") format("truetype"),
-    url("../fonts/gotham/gotham-book-webfont.svg#gothmbook") format("svg");
+  font-family: 'Gotham';
+  src: url('../fonts/gotham/gotham-book-webfont.eot');
+  src: url('../fonts/gotham/gotham-book-webfont.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/gotham/gotham-book-webfont.woff') format('woff'),
+    url('../fonts/gotham/gotham-book-webfont.ttf') format('truetype'),
+    url('../fonts/gotham/gotham-book-webfont.svg#gothmbook') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Gotham";
-  src: url("../fonts/gotham/gotham-medium-webfont.eot");
-  src: url("../fonts/gotham/gotham-medium-webfont.eot?#iefix")
-      format("embedded-opentype"),
-    url("../fonts/gotham/gotham-medium-webfont.woff") format("woff"),
-    url("../fonts/gotham/gotham-medium-webfont.ttf") format("truetype"),
-    url("../fonts/gotham/gotham-medium-webfont.svg#gothmmedium") format("svg");
+  font-family: 'Gotham';
+  src: url('../fonts/gotham/gotham-medium-webfont.eot');
+  src: url('../fonts/gotham/gotham-medium-webfont.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/gotham/gotham-medium-webfont.woff') format('woff'),
+    url('../fonts/gotham/gotham-medium-webfont.ttf') format('truetype'),
+    url('../fonts/gotham/gotham-medium-webfont.svg#gothmmedium') format('svg');
   font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "GothamLight";
-  src: url("../fonts/gotham/GothamLight.eot");
-  src: local("GothamLight"),
-    url("../fonts/gotham/GothamLight.woff") format("woff"),
-    url("../fonts/gotham/GothamLight.ttf") format("truetype");
+  font-family: 'GothamLight';
+  src: url('../fonts/gotham/GothamLight.eot');
+  src: local('GothamLight'),
+    url('../fonts/gotham/GothamLight.woff') format('woff'),
+    url('../fonts/gotham/GothamLight.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "GothamBold";
-  src: url("../fonts/gotham/Gotham-Bold-Regular.ttf");
-  src: local("GothamBold"),
-    url("../fonts/gotham/Gotham-Bold-Regular.ttf") format("truetype");
+  font-family: 'GothamBold';
+  src: url('../fonts/gotham/Gotham-Bold-Regular.ttf');
+  src: local('GothamBold'),
+    url('../fonts/gotham/Gotham-Bold-Regular.ttf') format('truetype');
 }
 
 body,
@@ -337,7 +337,7 @@ a {
   margin-top: 0px;
   margin-bottom: 0px;
 }
-.call-to-action-1{
+.call-to-action-1 {
   text-align: center;
 }
 
@@ -896,7 +896,7 @@ a:hover {
 
 .banner-area:before {
   position: absolute;
-  content: "";
+  content: '';
   top: 0;
   left: 0;
   height: 100vh;
@@ -932,15 +932,15 @@ a:hover {
 .banner-title {
   color: #fff;
   font-size: 30px;
-  font-family: "Gotham" !important;
+  font-family: 'Gotham' !important;
   font-weight: lighter;
   line-height: 43px;
-  padding-top: 15px;
+  /* padding-top: 15px; */
   width: 80%;
-  top: -9rem;
+  top: -6rem;
   position: relative;
   text-align: center;
-  margin: 9rem 0rem 0rem 0rem;
+  margin: 5rem 0rem 0rem 0rem;
 }
 
 .banner-powered {
@@ -993,7 +993,7 @@ a:hover {
 .section-headline-solutions {
   font-size: 6vw;
   color: #9a9a9a;
-  font-family: "GothamLight" !important;
+  font-family: 'GothamLight' !important;
   text-align: center;
   margin-top: 8vh;
 }
@@ -1054,7 +1054,7 @@ a:hover {
 .sec-2 h2.mid {
   font-size: 8vw;
   color: #695f59;
-  font-family: "GothamLight" !important;
+  font-family: 'GothamLight' !important;
   text-align: right;
   margin: 30px 0;
 }
@@ -1069,7 +1069,7 @@ a:hover {
 
 .sec-posts {
   padding: 0 0 50px 0;
-  background: url("../images/orange-texture.jpg") 50% no-repeat fixed;
+  background: url('../images/orange-texture.jpg') 50% no-repeat fixed;
   -webkit-background-size: cover;
   background-size: cover;
   width: 100%;
@@ -1081,7 +1081,7 @@ a:hover {
 .section-headline-post {
   font-size: 6vw;
   color: rgb(255, 255, 255);
-  font-family: "GothamLight" !important;
+  font-family: 'GothamLight' !important;
   text-align: center;
   margin: 60px 0 30px 0;
   word-wrap: break-word;
@@ -1120,15 +1120,15 @@ a:hover {
 }
 
 .post-1 {
-  background-image: url("../images/roi-post.png");
+  background-image: url('../images/roi-post.png');
 }
 
 .post-2 {
-  background-image: url("../images/img-satisfacao-client.jpg");
+  background-image: url('../images/img-satisfacao-client.jpg');
 }
 
 .post-3 {
-  background-image: url("../images/img-gamification.png");
+  background-image: url('../images/img-gamification.png');
 }
 
 .blog-subject {
@@ -1159,7 +1159,7 @@ a:hover {
 }
 
 .post-text h5 {
-  font-family: "GothamBold";
+  font-family: 'GothamBold';
   color: rgba(0, 0, 0, 0.8);
   width: 100%;
   font-size: 1.16em;
@@ -1213,7 +1213,7 @@ a:hover {
 .headline-left {
   font-size: 8vw;
   color: #fff;
-  font-family: "GothamLight" !important;
+  font-family: 'GothamLight' !important;
   text-align: center;
   margin: 30px 0;
 }
@@ -1233,7 +1233,7 @@ a:hover {
 
 .content-list li {
   display: block;
-  font-family: "GothamLight" !important;
+  font-family: 'GothamLight' !important;
 }
 
 /*====Section 4========*/
@@ -1248,7 +1248,7 @@ a:hover {
 .sec-4 .section-headline {
   font-size: 7vw;
   color: #9a9a9a;
-  font-family: "GothamLight" !important;
+  font-family: 'GothamLight' !important;
   text-align: center;
   margin: 100px 0 30px 0;
   word-wrap: break-word;
@@ -1286,7 +1286,7 @@ a:hover {
 }
 
 .body-text {
-  font-family: "GothamLight" !important;
+  font-family: 'GothamLight' !important;
   font-size: 1.6em;
   line-height: 2em;
   color: #000000;
@@ -1313,14 +1313,14 @@ a:hover {
 .section-headline-org {
   font-size: 6vw;
   color: #fff;
-  font-family: "GothamLight" !important;
+  font-family: 'GothamLight' !important;
   text-align: center;
   margin-top: 8vh;
   word-wrap: normal;
 }
 
 .multiplataforma-text-desc {
-  font-family: "GothamLight" !important;
+  font-family: 'GothamLight' !important;
   color: #fff;
   font-weight: bolder;
   margin: 5% auto 0% auto;
@@ -1359,7 +1359,7 @@ a:hover {
 .section-headline-5 {
   font-size: 6vw;
   color: #fff;
-  font-family: "GothamLight" !important;
+  font-family: 'GothamLight' !important;
   text-align: center;
   margin: 100px 0 0px 0;
   word-wrap: break-word;
@@ -1407,7 +1407,7 @@ a:hover {
 }
 
 .tut-text-element {
-  font-family: "GothamLight" !important;
+  font-family: 'GothamLight' !important;
   color: #fff;
   width: 50%;
   margin: 0 auto;
@@ -1425,7 +1425,7 @@ a:hover {
   text-align: center;
 }
 .performance-body-text strong {
-  font-family: "GothamLight" !important;
+  font-family: 'GothamLight' !important;
   font-weight: bolder;
 }
 
@@ -1445,7 +1445,7 @@ a:hover {
 .section-headline-white {
   font-size: 6vw;
   color: #9a9a9a;
-  font-family: "GothamLight" !important;
+  font-family: 'GothamLight' !important;
   text-align: center;
   margin-top: 8vh;
   word-wrap: break-word;
@@ -1471,14 +1471,14 @@ a:hover {
 .sec-6 .section-headline {
   font-size: 7vw;
   color: #9a9a9a;
-  font-family: "GothamLight" !important;
+  font-family: 'GothamLight' !important;
   text-align: center;
   margin: 80px 0 30px 0;
   word-wrap: break-word;
 }
 
 .sec-6 .body-text {
-  font-family: "GothamLight" !important;
+  font-family: 'GothamLight' !important;
   font-size: 1.6em;
   line-height: 1.9em;
   color: #777777;
@@ -1507,14 +1507,14 @@ a:hover {
 .section-headline-7 {
   font-size: 6vw;
   color: #fff;
-  font-family: "GothamLight" !important;
+  font-family: 'GothamLight' !important;
   text-align: center;
   margin: 100px 0 30px 0;
   word-wrap: break-word;
 }
 
 .contact-text {
-  font-family: "GothamLight" !important;
+  font-family: 'GothamLight' !important;
   font-size: 2em;
   line-height: 1.5em;
   color: #fff;
@@ -1554,7 +1554,7 @@ a:hover {
   }
 
   .agencies-text {
-    font-family: "Gotham" !important;
+    font-family: 'Gotham' !important;
     font-size: 14pt;
     line-height: 1.2em;
     width: 90%;
@@ -1615,7 +1615,7 @@ a:hover {
   }
 
   .agencies-text {
-    font-family: "Gotham" !important;
+    font-family: 'Gotham' !important;
     font-size: 14pt;
     line-height: 1.2em;
     width: 90%;
@@ -1656,7 +1656,7 @@ a:hover {
   }
 
   .banner-title {
-    font-family: "Gotham" !important;
+    font-family: 'Gotham' !important;
     /* margin-top: 10%;
     margin-bottom: 10%; */
   }
@@ -1750,7 +1750,7 @@ a:hover {
 @media (min-width: 575px) and (max-width: 991px) {
   .banner-title {
     color: #fff;
-    font-family: "Gotham" !important;
+    font-family: 'Gotham' !important;
     font-size: 20px;
     line-height: 25px;
     padding-top: 5px;
@@ -1810,21 +1810,21 @@ a:hover {
   .banner-title-2 {
     width: 100% !important;
     font-size: 20px !important;
-    font-family: "Gotham" !important;
+    font-family: 'Gotham' !important;
     bottom: 12rem !important;
     font-weight: lighter !important;
     padding: 0px 10px;
   }
-  .call-to-action{
+  .call-to-action {
     margin-top: -1rem !important;
   }
   .agencies-text {
     text-align: center !important;
-    font-family: "Gotham" !important;
+    font-family: 'Gotham' !important;
     font-size: 15pt;
     line-height: 1.3em;
   }
-  .banner-title{
+  .banner-title {
     top: -3rem;
     margin: 4rem 0rem 0rem 0rem;
   }
@@ -1851,7 +1851,7 @@ a:hover {
     margin: 0 px;
     width: 100%;
     font-size: 20px;
-    font-family: "Gotham" !important;
+    font-family: 'Gotham' !important;
   }
 
   .sec-2 {
@@ -2057,7 +2057,7 @@ svg {
 
 .count-number {
   fill: #e22300;
-  font-family: "GothamBold";
+  font-family: 'GothamBold';
 }
 
 .whiteText {
@@ -2090,7 +2090,6 @@ svg {
   margin-bottom: 2.5vh;
   position: relative;
   bottom: 9rem;
-
 }
 
 #call-to-action-btn {
@@ -2099,7 +2098,7 @@ svg {
   justify-content: space-around;
   /* margin-bottom: 1rem; */
 }
-.lgpd{
+.lgpd {
   width: 100px;
   position: relative;
   bottom: 8rem;
@@ -2181,7 +2180,7 @@ svg {
 }
 
 .blogText {
-  color: "#FFFFFF" !important;
+  color: '#FFFFFF' !important;
   font-size: 15px !important;
 }
 
@@ -2275,11 +2274,11 @@ svg {
 
 .agencies-text {
   margin: 0px auto !important;
-  font-family: "Gotham";
+  font-family: 'Gotham';
 }
 
 .exclusiveImgCont {
-  background-image: url("../images/exclusive-solution.jpeg");
+  background-image: url('../images/exclusive-solution.jpeg');
   background-size: cover;
   width: 300px !important;
   height: 300px !important;
@@ -2292,7 +2291,7 @@ svg {
 .head-exclusive {
   font-size: 6vw;
   color: #9a9a9a;
-  font-family: "GothamLight" !important;
+  font-family: 'GothamLight' !important;
   text-align: center;
   margin-top: 5vh;
 }
@@ -2319,7 +2318,7 @@ svg {
 
 .exclusive-solution-text {
   text-align: left;
-  font-family: "Gotham";
+  font-family: 'Gotham';
 }
 
 .exclusive-solution-text b {
@@ -2406,14 +2405,14 @@ p.text-oq.b {
 
 .banner-title {
   animation-delay: 0s;
-  animation: fader 10s;
+  animation: fader 12s;
   opacity: 0;
 }
 
 .banner-title-2 {
   color: #fff;
   font-size: 30px;
-  font-family: "Gotham" !important;
+  font-family: 'Gotham' !important;
   font-weight: lighter;
   line-height: 43px;
   position: relative;
@@ -2428,7 +2427,6 @@ p.text-oq.b {
 .call-to-action {
   animation: fadeCallToAction 20s;
 }
-
 
 .CookieConsent {
   border: 1px solid transparent;
@@ -2486,7 +2484,7 @@ p.text-oq.b {
   margin: 15px 0 0 10px;
 }
 
-@media(max-width: 508px) {
+@media (max-width: 508px) {
   .cookie {
     margin: 15px 15px;
   }
@@ -2495,13 +2493,11 @@ p.text-oq.b {
     line-height: 18px;
   }
   .cookie-text > p {
-
     font-size: 12px;
     margin-bottom: 30px;
     padding: 0;
   }
 }
-
 
 @keyframes fader {
   0% {
@@ -2539,5 +2535,36 @@ p.text-oq.b {
   }
   75% {
     opacity: 1;
+  }
+}
+
+@media (max-width: 985px) {
+  .slider-title h1 {
+    top: 60px;
+  }
+  .banner-title {
+    top: -2.5rem;
+    font-size: 15px !important;
+  }
+  .banner-title-2 {
+    line-height: 30px;
+    font-size: 15px !important;
+    width: 22rem !important;
+    margin: 2rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .slider-title h1 {
+    top: initial;
+  }
+}
+
+@media (max-width: 420px) {
+  .banner-title {
+    top: 0.5rem;
+  }
+  .slider-title h1 {
+    top: 60px;
   }
 }
