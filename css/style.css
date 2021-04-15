@@ -519,9 +519,9 @@ a {
   .plataforma {
     font-size: 19px !important;
   }
-  .banner-title-2 {
+  /* .banner-title-2 {
     bottom: 9rem !important;
-  }
+  } */
   .float-none-sm {
     float: none;
   }
@@ -937,7 +937,7 @@ a:hover {
   line-height: 43px;
   /* padding-top: 15px; */
   width: 80%;
-  top: -6rem;
+  top: -3rem;
   position: relative;
   text-align: center;
   margin: 5rem 0rem 0rem 0rem;
@@ -1657,6 +1657,7 @@ a:hover {
 
   .banner-title {
     font-family: 'Gotham' !important;
+    top: 0.5rem !important;
     /* margin-top: 10%;
     margin-bottom: 10%; */
   }
@@ -1825,7 +1826,7 @@ a:hover {
     line-height: 1.3em;
   }
   .banner-title {
-    top: -3rem;
+    top: -4rem;
     margin: 4rem 0rem 0rem 0rem;
   }
 
@@ -2416,7 +2417,8 @@ p.text-oq.b {
   font-weight: lighter;
   line-height: 43px;
   position: relative;
-  bottom: 14rem;
+  /* bottom: 14rem; */
+  bottom: 11rem;
   width: 80%;
   text-align: center;
   animation: fadeBanner2 20s;
@@ -2538,12 +2540,23 @@ p.text-oq.b {
   }
 }
 
-@media (max-width: 985px) {
+.logo-content {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 2rem;
+}
+
+@media (max-width: 992px) {
+  .logo-content {
+    position: relative;
+    bottom: 2rem;
+  }
   .slider-title h1 {
-    top: 60px;
+    top: 0;
   }
   .banner-title {
-    top: -2.5rem;
+    /* top: -4rem; */
     font-size: 15px !important;
   }
   .banner-title-2 {
@@ -2551,20 +2564,40 @@ p.text-oq.b {
     font-size: 15px !important;
     width: 22rem !important;
     margin: 2rem;
+    bottom: 9rem !important;
   }
 }
 
-@media (max-width: 540px) {
-  .slider-title h1 {
-    top: initial;
+@media (max-width: 575px) {
+  .logo-content {
+    bottom: 0;
+    top: 5rem;
+  }
+  .banner-title {
+    top: 0.5rem !important;
+  }
+  .banner-title-2 {
+    bottom: 6rem !important;
   }
 }
 
 @media (max-width: 420px) {
   .banner-title {
-    top: 0.5rem;
+    top: 0.5rem !important;
   }
-  .slider-title h1 {
-    top: 60px;
+  .banner-title-2 {
+    bottom: 9rem !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .banner-title {
+    top: 3.5rem !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .banner-title {
+    top: 3.5rem !important;
   }
 }
