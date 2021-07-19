@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Gotham';
+  font-family: 'GothamBold';
   src: url('../fonts/gotham/gotham-bold-webfont.eot');
   src: url('../fonts/gotham/gotham-bold-webfont.eot?#iefix')
       format('embedded-opentype'),
@@ -9,7 +9,7 @@
 }
 
 @font-face {
-  font-family: 'Gotham';
+  font-family: 'GothamBook';
   src: url('../fonts/gotham/gotham-book-webfont.eot');
   src: url('../fonts/gotham/gotham-book-webfont.eot?#iefix')
       format('embedded-opentype'),
@@ -21,7 +21,7 @@
 }
 
 @font-face {
-  font-family: 'Gotham';
+  font-family: 'GothamMedium';
   src: url('../fonts/gotham/gotham-medium-webfont.eot');
   src: url('../fonts/gotham/gotham-medium-webfont.eot?#iefix')
       format('embedded-opentype'),
@@ -41,88 +41,19 @@
 }
 
 @font-face {
-  font-family: 'GothamBold';
+  font-family: 'GothamBoldRegular';
   src: url('../fonts/gotham/Gotham-Bold-Regular.ttf');
   src: local('GothamBold'),
     url('../fonts/gotham/Gotham-Bold-Regular.ttf') format('truetype');
 }
 
-body,
-html {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  line-height: 24px;
-  color: #6f6f6f;
-  font-size: 14px;
-  font-family: Gotham;
-  font-weight: normal;
-  background: #f7f7f7;
+html, body {
+  font-family: 'GothamLight', sans-serif !important;
+  color: rgba(0, 0, 0, 0.7);
+  overflow-x: hidden;
 }
 
 /*  Typography Style   ||-----------*/
-
-h1 {
-  font-size: 40px;
-  font-weight: 700;
-  margin-top: 0;
-  position: relative;
-  font-family: Gotham;
-  font-weight: normal;
-}
-
-h1 span {
-  position: relative;
-}
-
-h1:before {
-  content: attr(data-title);
-  font-size: 61px;
-  margin-top: 0;
-  position: absolute;
-  top: 4px;
-  left: 3px;
-  color: rgba(6, 60, 54, 0.08);
-  z-index: 0;
-}
-
-h2 {
-  font-size: 23px;
-  margin-top: 0;
-  color: #232323;
-}
-
-h2 span {
-  color: #ffb400;
-}
-
-h3 {
-  font-size: 18px;
-}
-
-h4 {
-  font-size: 15px;
-  line-height: 1.5;
-  font-weight: 600;
-}
-
-h6 {
-  font-size: 13px;
-  letter-spacing: 2px;
-  line-height: 17px;
-  font-weight: 600;
-}
-
-h3,
-h4,
-h4,
-h6 {
-  font-family: Gotham;
-  margin-top: 10px;
-  font-weight: 600;
-}
 
 a:hover,
 a:focus {
@@ -131,9 +62,10 @@ a:focus {
 }
 
 a {
-  color: #444;
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
 }
-
+/* 
 @media (min-width: 400px) and (max-width: 824px) {
   .circle-text {
     font-size: 2.2vh !important;
@@ -154,7 +86,7 @@ a {
   .h3 {
     font-size: 20px;
   }
-}
+} */
 
 /*  Padding and Margin Style   ||-----------*/
 
@@ -932,7 +864,6 @@ a:hover {
 .banner-title {
   color: #fff;
   font-size: 30px;
-  font-family: 'Gotham' !important;
   font-weight: lighter;
   line-height: 43px;
   /* padding-top: 15px; */
@@ -993,7 +924,6 @@ a:hover {
 .section-headline-solutions {
   font-size: 6vw;
   color: #9a9a9a;
-  font-family: 'GothamLight' !important;
   text-align: center;
   margin-top: 8vh;
 }
@@ -1052,9 +982,8 @@ a:hover {
 }
 
 .sec-2 h2.mid {
-  font-size: 8vw;
+  /* font-size: 8vw; */
   color: #695f59;
-  font-family: 'GothamLight' !important;
   text-align: right;
   margin: 30px 0;
 }
@@ -1081,7 +1010,6 @@ a:hover {
 .section-headline-post {
   font-size: 6vw;
   color: rgb(255, 255, 255);
-  font-family: 'GothamLight' !important;
   text-align: center;
   margin: 60px 0 30px 0;
   word-wrap: break-word;
@@ -1159,7 +1087,6 @@ a:hover {
 }
 
 .post-text h5 {
-  font-family: 'GothamBold';
   color: rgba(0, 0, 0, 0.8);
   width: 100%;
   font-size: 1.16em;
@@ -1213,7 +1140,6 @@ a:hover {
 .headline-left {
   font-size: 8vw;
   color: #fff;
-  font-family: 'GothamLight' !important;
   text-align: center;
   margin: 30px 0;
 }
@@ -1223,7 +1149,6 @@ a:hover {
   line-height: 2em;
   color: #fff;
   text-align: left;
-  padding-right: 12.5vw;
 }
 
 .content-list {
@@ -1233,7 +1158,6 @@ a:hover {
 
 .content-list li {
   display: block;
-  font-family: 'GothamLight' !important;
 }
 
 /*====Section 4========*/
@@ -1248,7 +1172,6 @@ a:hover {
 .sec-4 .section-headline {
   font-size: 7vw;
   color: #9a9a9a;
-  font-family: 'GothamLight' !important;
   text-align: center;
   margin: 100px 0 30px 0;
   word-wrap: break-word;
@@ -1286,7 +1209,6 @@ a:hover {
 }
 
 .body-text {
-  font-family: 'GothamLight' !important;
   font-size: 1.6em;
   line-height: 2em;
   color: #000000;
@@ -1313,14 +1235,12 @@ a:hover {
 .section-headline-org {
   font-size: 6vw;
   color: #fff;
-  font-family: 'GothamLight' !important;
   text-align: center;
   margin-top: 8vh;
   word-wrap: normal;
 }
 
 .multiplataforma-text-desc {
-  font-family: 'GothamLight' !important;
   color: #fff;
   font-weight: bolder;
   margin: 5% auto 0% auto;
@@ -1359,7 +1279,6 @@ a:hover {
 .section-headline-5 {
   font-size: 6vw;
   color: #fff;
-  font-family: 'GothamLight' !important;
   text-align: center;
   margin: 100px 0 0px 0;
   word-wrap: break-word;
@@ -1407,7 +1326,6 @@ a:hover {
 }
 
 .tut-text-element {
-  font-family: 'GothamLight' !important;
   color: #fff;
   width: 50%;
   margin: 0 auto;
@@ -1425,7 +1343,6 @@ a:hover {
   text-align: center;
 }
 .performance-body-text strong {
-  font-family: 'GothamLight' !important;
   font-weight: bolder;
 }
 
@@ -1445,7 +1362,6 @@ a:hover {
 .section-headline-white {
   font-size: 6vw;
   color: #9a9a9a;
-  font-family: 'GothamLight' !important;
   text-align: center;
   margin-top: 8vh;
   word-wrap: break-word;
@@ -1471,14 +1387,12 @@ a:hover {
 .sec-6 .section-headline {
   font-size: 7vw;
   color: #9a9a9a;
-  font-family: 'GothamLight' !important;
   text-align: center;
   margin: 80px 0 30px 0;
   word-wrap: break-word;
 }
 
 .sec-6 .body-text {
-  font-family: 'GothamLight' !important;
   font-size: 1.6em;
   line-height: 1.9em;
   color: #777777;
@@ -1507,14 +1421,12 @@ a:hover {
 .section-headline-7 {
   font-size: 6vw;
   color: #fff;
-  font-family: 'GothamLight' !important;
   text-align: center;
   margin: 100px 0 30px 0;
   word-wrap: break-word;
 }
 
 .contact-text {
-  font-family: 'GothamLight' !important;
   font-size: 2em;
   line-height: 1.5em;
   color: #fff;
@@ -1524,7 +1436,6 @@ a:hover {
 }
 
 .contact-details {
-  font-family: Gotham;
   font-weight: bold;
   font-size: 1.6em;
   line-height: 1.5em;
@@ -1533,7 +1444,6 @@ a:hover {
 }
 
 .address-details {
-  font-family: Gotham;
   font-size: 15px;
   line-height: 28px;
   color: #fff;
@@ -1554,7 +1464,6 @@ a:hover {
   }
 
   .agencies-text {
-    font-family: 'Gotham' !important;
     font-size: 14pt;
     line-height: 1.2em;
     width: 90%;
@@ -1615,7 +1524,6 @@ a:hover {
   }
 
   .agencies-text {
-    font-family: 'Gotham' !important;
     font-size: 14pt;
     line-height: 1.2em;
     width: 90%;
@@ -1656,7 +1564,6 @@ a:hover {
   }
 
   .banner-title {
-    font-family: 'Gotham' !important;
     top: 0.5rem !important;
     /* margin-top: 10%;
     margin-bottom: 10%; */
@@ -1751,7 +1658,6 @@ a:hover {
 @media (min-width: 575px) and (max-width: 991px) {
   .banner-title {
     color: #fff;
-    font-family: 'Gotham' !important;
     font-size: 20px;
     line-height: 25px;
     padding-top: 5px;
@@ -1811,7 +1717,6 @@ a:hover {
   .banner-title-2 {
     width: 100% !important;
     font-size: 20px !important;
-    font-family: 'Gotham' !important;
     bottom: 12rem !important;
     font-weight: lighter !important;
     padding: 0px 10px;
@@ -1821,7 +1726,6 @@ a:hover {
   }
   .agencies-text {
     text-align: center !important;
-    font-family: 'Gotham' !important;
     font-size: 15pt;
     line-height: 1.3em;
   }
@@ -1852,7 +1756,6 @@ a:hover {
     margin: 0 px;
     width: 100%;
     font-size: 20px;
-    font-family: 'Gotham' !important;
   }
 
   .sec-2 {
@@ -2058,7 +1961,6 @@ svg {
 
 .count-number {
   fill: #e22300;
-  font-family: 'GothamBold';
 }
 
 .whiteText {
@@ -2275,7 +2177,6 @@ svg {
 
 .agencies-text {
   margin: 0px auto !important;
-  font-family: 'Gotham';
 }
 
 .exclusiveImgCont {
@@ -2292,7 +2193,6 @@ svg {
 .head-exclusive {
   font-size: 6vw;
   color: #9a9a9a;
-  font-family: 'GothamLight' !important;
   text-align: center;
   margin-top: 5vh;
 }
@@ -2319,7 +2219,6 @@ svg {
 
 .exclusive-solution-text {
   text-align: left;
-  font-family: 'Gotham';
 }
 
 .exclusive-solution-text b {
@@ -2413,7 +2312,6 @@ p.text-oq.b {
 .banner-title-2 {
   color: #fff;
   font-size: 30px;
-  font-family: 'Gotham' !important;
   font-weight: lighter;
   line-height: 43px;
   position: relative;
@@ -2455,7 +2353,6 @@ p.text-oq.b {
   padding: 5px 10px;
   /* margin: 15px; */
   margin: 0 15px 5px;
-  font-family: var(--oq-font-medium);
   font-weight: 300;
 }
 
@@ -2602,3 +2499,5 @@ p.text-oq.b {
     top: 3.5rem !important;
   }
 }
+
+
