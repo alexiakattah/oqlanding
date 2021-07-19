@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="overflow-x: hidden;">
+<html lang="en">
 
 <head>
 	<meta charset="utf-8" />
@@ -7,131 +7,129 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>OQ Digital</title>
 	<link rel="shortcut icon" type="image/png" href="images/favicon.ico" />
-	<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet" />
-	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-	<link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 	<link href="css/animate.css" rel="stylesheet" />
 	<link href="css/style.css" rel="stylesheet" />
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134614292-1"></script>
-	
+
 	<script>
-		
+
 		// verifica se tem cookie de consentimento e remove a div caso seja sim
-		
+
 		// window.onload = function () { 
-			// 	var cookieString = getCookie("CookieConsent");
-			// 	if(cookieString === 'true') {
-				// 		document.getElementById("cookie-consent").style.display = "none";
-				// 	} else {
-					// 		document.getElementById("cookie-consent").style.display = "flex";
-					// 	}
-					// } 
-					
-					window.dataLayer = window.dataLayer || [];
-					function gtag() { dataLayer.push(arguments); }
-					gtag('js', new Date());
-					
-					gtag('config', 'UA-134614292-1');
-					
-					
-					function show() {
-						if (document.getElementById("benefits").style.display == "none") {
-							document.getElementById("benefits").style.display = "block";
-							document.getElementById("upbutton").style.display = "none";
-							document.getElementById("call-to-action-btn").innerHTML = "SOLICITAR DEMO";
-							
-							document.getElementById("request-demo").href = "#demoPortuguese";
-							
-							return false;
-						}
+		// 	var cookieString = getCookie("CookieConsent");
+		// 	if(cookieString === 'true') {
+		// 		document.getElementById("cookie-consent").style.display = "none";
+		// 	} else {
+		// 		document.getElementById("cookie-consent").style.display = "flex";
+		// 	}
+		// } 
+
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-134614292-1');
+
+
+		function show() {
+			if (document.getElementById("benefits").style.display == "none") {
+				document.getElementById("benefits").style.display = "block";
+				document.getElementById("upbutton").style.display = "none";
+				document.getElementById("call-to-action-btn").innerHTML = "SOLICITAR DEMO";
+
+				document.getElementById("request-demo").href = "#demoPortuguese";
+
+				return false;
+			}
+		}
+		function hide() {
+			if (document.getElementById("benefits").style.display == "block") {
+				document.getElementById("benefits").style.display = "none";
+				document.getElementById("upbutton").style.display = "block";
+				document.getElementById("call-to-action-btn").innerHTML = "REQUEST DEMO";
+
+				document.getElementById("request-demo").href = "#demoEnglish";
+			}
+			return false;
+		}
+
+		function changeButtonColorIfFormIsValid(language = "pt") {
+			const form = document.getElementById(language === "pt" ? "send" : "send2");
+			if (form.checkValidity()) {
+				document.getElementById("create-btn-" + language).style.backgroundColor =
+					"#e21838";
+			}
+		}
+
+		function createProspectLead(language = "pt") {
+			const Http = new XMLHttpRequest();
+			const url = "https://us-central1-oq20-139d9.cloudfunctions.net/create";
+			// const url = "http://localhost:5000/oqhomapi/us-central1/create"
+			Http.open("POST", url);
+
+			const form = document.getElementById(language === "pt" ? "send" : "send2");
+			if (!form.checkValidity()) {
+				form.reportValidity();
+			} else {
+				const parameters = JSON.stringify({
+					userType: "prospectLead",
+					createFunctionality: "createProspectLead",
+					prospectLead: {
+						name: document.getElementById(
+							language === "pt" ? "inputName" : "inputName2",
+						).value,
+						email: document.getElementById(
+							language === "pt" ? "inputEmail" : "inputEmail2",
+						).value,
+						phone: document.getElementById(
+							language === "pt" ? "inputPhone" : "inputPhone2",
+						).value,
+						role: document.getElementById(
+							language === "pt" ? "inputRole" : "inputRole2",
+						).value,
+						company: document.getElementById(
+							language === "pt" ? "inputCompany" : "inputCompany2",
+						).value,
+						description: document.getElementById(
+							language === "pt" ? "inputDescription" : "inputDescription2",
+						).value,
+					},
+				});
+
+				document.getElementById("create-btn-" + language).hidden = true;
+				document.getElementById("sending-btn-" + language).hidden = false;
+
+				Http.send(parameters);
+
+				Http.onreadystatechange = e => {
+					var response = JSON.parse(Http.responseText);
+
+					console.log('response', response)
+					var sucess = response.success;
+					var successAlert = language === "pt" ? "success-alert" : "success-alert2";
+					var dangerAlert = language === "pt" ? "danger-alert" : "danger-alert2";
+					if (sucess) {
+						document.getElementById(successAlert).hidden = false;
+						document.getElementById(dangerAlert).hidden = true;
+					} else {
+						document.getElementById(successAlert).hidden = true;
+						document.getElementById(dangerAlerts).hidden = false;
 					}
-					function hide() {
-						if (document.getElementById("benefits").style.display == "block") {
-							document.getElementById("benefits").style.display = "none";
-							document.getElementById("upbutton").style.display = "block";
-							document.getElementById("call-to-action-btn").innerHTML = "REQUEST DEMO";
-							
-							document.getElementById("request-demo").href = "#demoEnglish";
-						}
-						return false;
-					}
-					
-					function changeButtonColorIfFormIsValid(language = "pt") {
-						const form = document.getElementById(language === "pt" ? "send" : "send2");
-						if (form.checkValidity()) {
-							document.getElementById("create-btn-" + language).style.backgroundColor =
-							"#e21838";
-						}
-					}
-					
-					function createProspectLead(language = "pt") {
-						const Http = new XMLHttpRequest();
-						const url = "https://us-central1-oq20-139d9.cloudfunctions.net/create";
-						// const url = "http://localhost:5000/oqhomapi/us-central1/create"
-						Http.open("POST", url);
-						
-						const form = document.getElementById(language === "pt" ? "send" : "send2");
-						if (!form.checkValidity()) {
-							form.reportValidity();
-						} else {
-							const parameters = JSON.stringify({
-								userType: "prospectLead",
-								createFunctionality: "createProspectLead",
-								prospectLead: {
-									name: document.getElementById(
-									language === "pt" ? "inputName" : "inputName2",
-									).value,
-									email: document.getElementById(
-									language === "pt" ? "inputEmail" : "inputEmail2",
-									).value,
-									phone: document.getElementById(
-									language === "pt" ? "inputPhone" : "inputPhone2",
-									).value,
-									role: document.getElementById(
-									language === "pt" ? "inputRole" : "inputRole2",
-									).value,
-									company: document.getElementById(
-									language === "pt" ? "inputCompany" : "inputCompany2",
-									).value,
-									description: document.getElementById(
-									language === "pt" ? "inputDescription" : "inputDescription2",
-									).value,
-								},
-							});
-							
-							document.getElementById("create-btn-" + language).hidden = true;
-							document.getElementById("sending-btn-" + language).hidden = false;
-							
-							Http.send(parameters);
-							
-							Http.onreadystatechange = e => {
-								var response = JSON.parse(Http.responseText);
-								
-								console.log('response', response)
-								var sucess = response.success;
-								var successAlert = language === "pt" ? "success-alert" : "success-alert2";
-								var dangerAlert = language === "pt" ? "danger-alert" : "danger-alert2";
-								if (sucess) {
-									document.getElementById(successAlert).hidden = false;
-									document.getElementById(dangerAlert).hidden = true;
-								} else {
-									document.getElementById(successAlert).hidden = true;
-									document.getElementById(dangerAlerts).hidden = false;
-								}
-								
-								document.getElementById("create-btn-" + language).hidden = false;
-								document.getElementById("sending-btn-" + language).hidden = true;
-							};
-						}
-						return false;
-					}
-					
+
+					document.getElementById("create-btn-" + language).hidden = false;
+					document.getElementById("sending-btn-" + language).hidden = true;
+				};
+			}
+			return false;
+		}
+
 	</script>
-				
+
 </head>
-			
-	<body style="overflow-x: hidden;">
+
+<body>
 	<!-- header -->
 	<header id="home">
 		<div class="header-top-area">
@@ -141,7 +139,7 @@
 						<div class="blog">
 							<ul>
 								<a href="http://blog.oqdigital.com" target="_blank"
-								class="blogText whiteTextColor">BLOG</a>
+									class="blogText whiteTextColor">BLOG</a>
 							</ul>
 						</div>
 					</div>
@@ -149,50 +147,51 @@
 						<div class="language">
 							<ul class="text-center">
 								<a href="#1" name="1" id="chkYes" onclick="return show();"
-								class="blogText whiteTextColor">PORTUGUÊS</a>
+									class="blogText whiteTextColor">PORTUGUÊS</a>
 								<li></li>
 								<a href="#1" name="1" id="chkNo" onclick="return hide();"
-								class="blogText whiteTextColor">ENGLISH</a>
+									class="blogText whiteTextColor">ENGLISH</a>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
 	</header>
-		<!-- header End -->
-		<!-- <div id="mySidenav" class="sidenav"> -->
-			<div class="sidenav">
-				<a href="javascript:void(0)" class="closebtn" onClick="closeNav()">&times;</a>
-				<!--
+	<!-- header End -->
+	<!-- <div id="mySidenav" class="sidenav"> -->
+	<div class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onClick="closeNav()">&times;</a>
+		<!--
 					<a href="#">About</a><a href="#">Services</a><a href="#">Clients</a><a href="#">Contact</a>
 				-->
-			</div>
-			<div id="benefits" style="display:block;">
-				<!-- Banner ---- -->
-				<div id="banner" class="banner position_rel">
-					<div class="banner-area banner-1">
-						<div class="container">
-							<div class="row">
-								<div class="col-md-12">
-									<div class="slider-title">
-										<div class="header_space"></div>
-										
-										<!-- class="img-principal-oq" -->
-										<div class="logo-content">
-											<img src="images/banner-logo.png" width="100%" class="img-logo"/>
-										</div>
-										<div class="banner-title">
-											Bem-vindo a um jeito novo de gerar negócios com
-											relacionamento, reconhecimento, retenção
-											e recomendações on-line.
-										</div>
-										<div class="banner-title-2">
-											Plataforma OQ: a mais completa solução <br>
-											de social sellers, real influencers, referral marketing
-											e brand lovers do Brasil.
-										</div>
-										
-										<div style="
+	</div>
+	<div id="benefits" style="display:block;">
+		<!-- Banner ---- -->
+		<div id="banner" class="banner position_rel">
+			<div class="banner-area banner-1">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="slider-title">
+								<div class="header_space"></div>
+
+								<!-- class="img-principal-oq" -->
+								<div class="logo-content">
+									<img src="images/banner-logo.png" width="100%" class="img-logo" />
+								</div>
+								<div class="banner-title">
+									Bem-vindo a um jeito novo de gerar negócios com
+									relacionamento, reconhecimento, retenção
+									e recomendações on-line.
+								</div>
+								<div class="banner-title-2">
+									Plataforma OQ: a mais completa solução <br>
+									de social sellers, real influencers, referral marketing
+									e brand lovers do Brasil.
+								</div>
+
+								<div style="
 										display: flex;
 										align-items: center;
 										justify-content: center;
@@ -200,410 +199,409 @@
 										position: relative;
 										bottom: -70px;
 										">
-											<div class="call-to-action">
-												<a href="#demoPortuguese" id="request-demo">
-													<button type="button" class="btn btn-primary button_example"
-													id="call-to-action-btn">
-													QUERO CONHECER
-												</button>
-												</a>
-											</div>
-											<div class="lgpd">
-												<img src='images/lgpd.png' width="50" alt="">
-											</div>
-										</div>
-									
+									<div class="call-to-action">
+										<a href="#demoPortuguese" id="request-demo">
+											<button type="button" class="btn btn-primary button_example"
+												id="call-to-action-btn">
+												QUERO CONHECER
+											</button>
+										</a>
+									</div>
+									<div class="lgpd">
+										<img src='images/lgpd.png' width="50" alt="">
+									</div>
 								</div>
+
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- Banner End -->
-			
-			<!-- Cookie Consent ---- -->
-			<div
-			id="cookie-consent"
-			class="CookieConsent cookie">
+		</div>
+		<!-- Banner End -->
+
+		<!-- Cookie Consent ---- -->
+		<div id="cookie-consent" class="CookieConsent cookie">
 			<div class="cookie-content-row">
 				<div class="cookie-text">
 					<p>
 						Usamos cookies para melhorar a sua experiência no Site. Ao
 						continuar navegando, você concorda com a nossa
-						<a
-						style="color: rgb(226, 24, 56, 0.9); font-weight: bold;"
-						href="https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/TermsAndPolitics%2FPoli%CC%81tica%20de%20Privacidade_OQ%20MIDIA%20DIGITAL%20JULHO%202020.docx.pdf?alt=media&amp;token=73c99224-963a-40c8-b385-618bb2cc5122"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="menu-link collapsed list-unstyled"
-						>Política de Privacidade.</a
-						>
+						<a style="color: rgb(226, 24, 56, 0.9); font-weight: bold;"
+							href="https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/TermsAndPolitics%2FPoli%CC%81tica%20de%20Privacidade_OQ%20MIDIA%20DIGITAL%20JULHO%202020.docx.pdf?alt=media&amp;token=73c99224-963a-40c8-b385-618bb2cc5122"
+							target="_blank" rel="noopener noreferrer" class="menu-link collapsed list-unstyled">Política
+							de Privacidade.</a>
 					</p>
 				</div>
-				
+
 				<div>
-					<button
-					class="btn-cookie"
-					onclick="setCookie('CookieConsent', 'true', 30)"
-					class=""
-					id="rcc-confirm-button"
-					aria-label="Accept cookies"
-					>
-					Aceito
-				</button>
+					<button class="btn-cookie" onclick="setCookie('CookieConsent', 'true', 30)" class=""
+						id="rcc-confirm-button" aria-label="Accept cookies">
+						Aceito
+					</button>
+				</div>
+
 			</div>
-			
+
 		</div>
-		
-	</div>
-	<!-- Cookie Consent end -->
+		<!-- Cookie Consent end -->
 
 
-	<!-- Description Items Begin -->
-	<section class="sec-solutions-container">
-		<div class="col-md-12">
-			<h2 class="section-headline-solutions text-center">SOLUÇÕES</h2>
-		</div>
-		<div class="text-center solutions-list">
-			<div class="solution-item">
-				<img src="./assets/indication.svg" alt="Indication marketing" />
-				<h2 class="solution-title">Programa de indicação 4.0</h2>
-				<p class="solution-description">92% das pessoas sentem muito mais confiança
-					em recomendações de pessoas conhecidas. Criamos um Programa de Indicação exclusivo e 100% em conformidade com a LGPD para a sua empresa aumentar os resultados de vendas.</p>
+		<!-- Description Items Begin -->
+		<section class="sec-solutions-container">
+			<div class="col-md-12">
+				<h2 class="section-headline-solutions text-center">SOLUÇÕES</h2>
+			</div>
+			<div class="text-center solutions-list">
+				<div class="solution-item">
+					<img src="./assets/indication.svg" alt="Indication marketing" />
+					<h2 class="solution-title">Programa de Renda Extra 360º</h2>
+					<p class="solution-description">Aumente o alcance e a capilaridade das suas ofertas com programas de
+						indicação 4.0 ou <span class="italic">social selling</span> exclusivo para sua marca. Gestão de
+						ponta a ponta: da ativação
+						e engajamento do usuário ao pagamento dos sellers.</p>
 				</div>
 				<div class="solution-item">
 					<img src="./assets/crm-funnel.svg" alt="Crm funnel" />
 					<h2 class="solution-title">Gestão do funil</h2>
-					<p class="solution-description">Faça uma gestão completa das etapas, nível de 
-						interesse e conversões de leads de forma amigável.
-						Monitore o desempenho das equipes de vendas e 
-						dos clientes envolvidos no processo.</p>
+					<p class="solution-description">Monitore a jornada e envolva o
+						consumidor no seu processo para
+						entender melhor seus clientes e o que
+						ele quer. Forneça dados qualificados à
+						sua equipe de vendas e aumente sua
+						taxa de conversões.</p>
+				</div>
+				<div class="solution-item">
+					<img src="./assets/relation-channels.svg" alt="Relationship channel" />
+					<h2 class="solution-title">Brand Lovers/Real Influencers</h2>
+					<p class="solution-description">Identifique e envolva seus <span class="italic">brand lovers</span>
+						em suas ações de marketing. Estimule o
+						engajamento deles em suas campanhas.
+						Reconheça e recompense estes
+						verdadeiros influenciadores para gerar
+						recorrência e recomendações.</p>
+				</div>
+				<div class="solution-item">
+					<img src="./assets/trainning.svg" alt='Traninning program' />
+					<h2 class="solution-title">Treinamento e EAD</h2>
+					<p class="solution-description">Educar, gerir e motivar são 3 maneiras poderosas
+						de aumentar o conhecimento das pessoas. Use
+						nossa tecnologia para compartilhar informações
+						relevantes e gerar engajamento em conteúdos. </p>
+				</div>
+				<div class="solution-item">
+					<img src="./assets/gamification.svg" alt='Gamification' />
+					<h2 class="solution-title">Gamificação e MGM</h2>
+					<p class="solution-description">Crie ações de <span class="italic">Member Get Member</span> e
+						Campanhas de Incentivo contínuas
+						usando técnicas de games online para
+						motivar e engajar pessoas, acelerar o
+						ciclo de vendas, reter clientes e atrair
+						novos para o seu negócio.
+					</p>
+				</div>
+				<div class="solution-item">
+					<img src="./assets/search.svg" alt="Pesquisa e cocriação" />
+					<h2 class="solution-title">Pesquisas, cocriação e MQL</h2>
+					<p class="solution-description">Peça a opinião dos usuários, lance desafios de
+						cocriação, tenha insights com os feedbacks que você
+						receber e desenvolva produtos/serviços com a
+						ajuda de quem mais conhece a sua empresa.</p>
+				</div>
+			</div>
+
+		</section>
+		<!-- Description Items End -->
+
+		<section class="sec-video">
+			<div class="video-container">
+				<iframe src="https://www.youtube.com/embed/im4ImFlKmcI?loop=1&playlist=im4ImFlKmcI" frameborder="0"
+					allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				<div class="iframe_allow_scroll"></div>
+			</div>
+		</section>
+
+		<section class="sec-2">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5"></div>
+					<div class="col-md-7">
+						<h2 class="top">
+							Somos uma plataforma de marketing digital diferente: geramos
+							muito mais que audiência para sua marca.
+						</h2>
 					</div>
-					<div class="solution-item">
-						<img src="./assets/relation-channels.svg" alt="Relationship channel"/>
-						<h2 class="solution-title">Relacionamento e fidelização</h2>
-						<p class="solution-description">Quem ama sua marca está mais disposto a ajudá-lo a conquistar novos clientes. Segmente e personalize conteúdos, reconheça e recompense seus clientes, gere recorrência e recomendações.</p>
+					<div class="col-md-6">
+						<h2 class="mid display-1">O QUE É</h2>
 					</div>
-					<div class="solution-item">
-						<img src="./assets/trainning.svg" alt='Traninning program'/>
-						<h2 class="solution-title">Treinamento e EAD</h2>
-						<p class="solution-description">Educar, gerir e motivar são 3 maneiras poderosas
-							de aumentar o conhecimento das pessoas. Use
-							nossa tecnologia para compartilhar informações
-							relevantes e gerar engajamento em conteúdos. </p>
+					<div class="col-md-6"></div>
+					<div class="col-md-5"></div>
+					<div class="col-md-7">
+						<h2 class="bottom">
+							Somos um canal <span class="italic">white label</span> de aquisição de novos clientes que
+							gera receitas mensuráveis para sua empresa e valor imensurável
+							para seus clientes, colaboradores e parceiros comerciais.
+						</h2>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="sec-3 position_rel">
+			<div class="container">
+				<div class="row">
+					<div class="parent-section">
+						<div class="child-section">
+							<h2 class="mid display-1 text-white">COMO</h2><br>
 						</div>
-						<div class="solution-item">
-							<img src="./assets/gamification.svg" alt='Gamification'/>
-							<h2 class="solution-title">Gamificação e MGM</h2>
-							<p class="solution-description">Aumente o desempenho das suas ações de
-								marketing usando o modelo Member Get Member, campanhas de incentivo
-								e técnicas de games para motivar pessoas,
-								acelerar vendas e atrair muitos clientes
-								para seu negócio.
-							</p>
-						</div>
-						<div class="solution-item">
-							<img src="./assets/search.svg" alt="Pesquisa e cocriação"/>
-							<h2 class="solution-title">Pesquisas, cocriação e MQL</h2>
-							<p class="solution-description">Peça a opinião dos usuários, lance desafios de
-								cocriação, tenha insights com os feedbacks que você
-								receber e desenvolva produtos/serviços com a
-								ajuda de quem mais conhece a sua empresa.</p>
-							</div>
-						</div>
-						
-					</section>
-					<!-- Description Items End -->
-					
-					<section class="sec-video">
-						<div class="video-container">
-							<iframe src="https://www.youtube.com/embed/im4ImFlKmcI?loop=1&playlist=im4ImFlKmcI" frameborder="0"
-							allow="autoplay; encrypted-media" allowfullscreen></iframe>
-							<div class="iframe_allow_scroll"></div>
-						</div>
-					</section>
-					
-					<section class="sec-2">
-						<div class="container">
-							<div class="row">
-								<div class="col-md-5"></div>
-								<div class="col-md-7">
-									<h2 class="top">
-										Somos uma plataforma de m&iacutedia digital diferente: n&atilde;o
-										geramos s&oacute; audi&ecirc;ncia para a sua marca.
-									</h2>
-								</div>
-								<div class="col-md-6">
-									<h2 class="mid">O QUE &Eacute;</h2>
-								</div>
-								<div class="col-md-6"></div>
-								<div class="col-md-5"></div>
-								<div class="col-md-7">
-									<h2 class="bottom">
-										Somos um canal de aquisição de novos clientes que gera receitas
-										mensuráveis para a sua empresa e valor imensurável para seus
-										clientes e colaboradores. 
-									</h2>
-								</div>
+						<div class="child-section">
+							<div class="right-content">
+								<p>
+									Engaje, fidelize e proporcione uma experiência única ao seu
+									público com um próprio canal de relacionamento e
+									comunicação digital de alto impacto e grande alcance.
+									Reconheça e recompense quem gera resultados reais para
+									sua empresa.
+								</p>
 							</div>
 						</div>
-					</section>
-					<section class="sec-3 position_rel">
-						<div class="container">
-							<div class="row">
-								<div class="parent-section">
-									<div class="child-section">
-										<h2 class="headline-left">COMO</h2>
-									</div>
-									<div class="child-section">
-										<div class="right-content">
-											<p>
-												Engaje, fidelize, recompense e proporcione uma
-												experi&ecirc;ncia &uacute;nica aos seus clientes e
-												colaboradores com um canal pr&oacute;prio de m&iacute;dia
-												digital de alto impacto e grande alcance.
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="sec-4 position_rel">
+			<div class="container">
+				<div class="row ">
+					<div class="col-md-12 mb-4">
+						<h2 class="section-headline text-center">MULTICANAIS</h2>
+					</div>
+					<div class="col-md-6"></div>
+					<div class="col-md-6 pt-2">
+						<p class="section-sub-headline">SOMOS FIGITAL*</p>
+						<!-- <p class="section-sub-headline">resultados para sua empresa</p> -->
+					</div>
+					<div class="col-md-12 body-text text-center">
+						<p>
+							Não existe mais fronteiras entre o mundo virtual e o real. Com a Plataforma OQ você pode
+							usar dados e fazer ativações de prospecção digitais e presenciais. Use nossa tecnologia para
+							vender seus produtos e serviços a qualquer hora e lugar com a mais completa CDP/SEP** do
+							mercado.
+						</p><br>
+						<p class="section-sub-headline" style="font-size: 18px; font-weight: bold;">*Híbrido de físico e
+							digital. <span class="italic">**Customer Data Platform/Sales Engagement Platform.</span></p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="sec-5 position_rel">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h2 class="section-headline-5 text-center">PERFORMANCE</h2>
+					</div>
+					<div class="col-md-12 text-center m-top m-top">
+						<ul class="team-img-box">
+							<li>
+								<div class="fit-img" style="background-image: url('images/team-1.jpg');"></div>
+							</li>
+							<li>
+								<div class="fit-img" style="background-image: url('images/team-2.jpg');"></div>
+							</li>
+							<li>
+								<div class="fit-img" style="background-image: url('images/team-3.jpg');"></div>
+							</li>
+						</ul>
+						<div class="performance-body-text">
+							Uma <span class="italic">All-in-One Cloud Platform</span> a serviço da sua performance de
+							marketing e vendas; gestão,
+							engajamento e incentivo de equipes; encantamento e fidelização de clientes com um modelo
+							inédito de relação entre empresas e pessoas.
 						</div>
-					</section>
-					<section class="sec-4 position_rel">
-						<div class="container">
-							<div class="row ">
-								<div class="col-md-12 mb-4">
-									<h2 class="section-headline text-center">MULTICANAIS</h2>
-								</div>
-								<div class="col-md-6"></div>
-								<div class="col-md-6 pt-2">
-									<p class="section-sub-headline">Reconhe&ccedil;a e recompense quem gerar resultados para sua empresa:</p>
-									<!-- <p class="section-sub-headline">resultados para sua empresa</p> -->
-								</div>
-								<div class="col-md-12 body-text text-center">
-									<ul class="content-list-vertical">
-										<li>Programas de Indicação</li>
-										<li>+ Vendas Digitais</li>
-										<li>+ Amigo-Indica-Amigo</li>
-										<li>+ Marketing de Influência</li>
-										<li>+ Programa de Benefícios e Fidelidade</li>
-										<li>+ Engajamento de Equipes</li>
-										<li>+ Treinamento e EAD On-line</li>
-									</ul>
-									<p class='result-omni'>
-										= custo de aquisição mais baixo e ciclos de vendas muito mais rápidos.
-									</p>
-								</div>
-							</div>
-						</div>
-					</section>
-					<section class="sec-5 position_rel">
-						<div class="container">
-							<div class="row">
-								<div class="col-md-12">
-									<h2 class="section-headline-5 text-center">PERFORMANCE</h2>
-								</div>
-								<div class="col-md-12 text-center m-top m-top">
-									<ul class="team-img-box">
-										<li>
-											<div class="fit-img" style="background-image: url('images/team-1.jpg');"></div>
-										</li>
-										<li>
-											<div class="fit-img" style="background-image: url('images/team-2.jpg');"></div>
-										</li>
-										<li>
-											<div class="fit-img" style="background-image: url('images/team-3.jpg');"></div>
-										</li>
-									</ul>
-									<div class="performance-body-text">
-										Uma <strong><i>Cloud Platform</i></strong> a serviço da performance de marketing, motivação de
-										colaboradores e fidelização de consumidores com um modelo inédito de
-										relação entre empresas e pessoas.
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<section class="sec-count-white">
-						<div class="row text-center" id="countWhiteSection">
-							<div class="col-md-4 p-0">
-								<svg>
-									<circle r="35%" cx="50%" cy="55%" stroke="#787878" stroke-width="2" />
-									<text x="50%" y="53%" text-anchor="middle">
-										<tspan x="50.5%" dy="-3em" class="circle-text">Empresas com</tspan>
-										<tspan x="51%" dy="1.5em" class="circle-text">
-											funcionários engajados
-										</tspan>
-										<tspan x="51.5%" dy="1.5em" class="circle-text">
-											retêm mais de
-										</tspan>
-										<tspan x="52.5%" dy="0.9em" id="pt_count_1" font-size="9vh" class="count-number">
-											0
-										</tspan>
-										<tspan class="count-number circle-text">%</tspan>
-										<tspan x="50.5%" dy="1.5em" class="circle-text">
-											dos clientes.
-										</tspan>
-									</text>
-								</svg>
-							</div>
-							<div class="col-md-4 p-0">
-								<svg>
-									<circle r="35%" cx="50%" cy="56.5%" stroke="#787878" stroke-width="2" />
-									<text x="50%" y="55%" text-anchor="middle">
-										<tspan x="51.5%" dy="-4.2em" class="circle-text">Aumentar em</tspan>
-										<tspan x="51.5%" dy="1.5em" class="circle-text">
-											10% o investimento
-										</tspan>
-										<tspan x="51.5%" dy="1.5em" class="circle-text">
-											em engajamento dá
-										</tspan>
-										<tspan x="51.5%" dy="1.5em" class="circle-text">
-											um retorno médio de
-										</tspan>
-										<tspan x="52%" dy="3.45em" class="count-number circle-text">
-											$
-										</tspan>
-										<tspan class="count-number" id="pt_count_2" font-size="9vh">
-											0
-										</tspan>
-										<tspan class="count-number circle-text">k</tspan>
-										<tspan x="51%" dy="1.4em" class="circle-text">
-											por colaborador.
-										</tspan>
-									</text>
-								</svg>
-							</div>
-							<div class="col-md-4 p-0">
-								<svg>
-									<circle r="35%" cx="50%" cy="55%" stroke="#787878" stroke-width="2" />
-									<text x="50%" y="55%" id="top-right-circle" text-anchor="middle">
-										<tspan x="51%" dy="-4em" class="circle-text">Empresas com</tspan>
-										<tspan x="51.5%" dy="1.5em" class="circle-text">
-											colaboradores
-										</tspan>
-										<tspan x="51.5%" dy="1.5em" class="circle-text">engajados</tspan>
-										<tspan x="51.5%" dy="1.5em" class="circle-text">performam</tspan>
-										<tspan x="52%" dy="0.9em" id="pt_count_3" font-size="9vh" class="count-number">
-											0
-										</tspan>
-										<tspan class="count-number circle-text">%</tspan>
-										<tspan x="51.5%" dy="1.5em" class="circle-text">a mais.</tspan>
-									</text>
-								</svg>
-							</div>
-						</div>
-						<div class="row padding-30">
-							<div class="col-md-12 text-right">
-								<div class="source-text">
-									Fonte:
-									<a href="http://officevibe.com/blog/investing-employee-engagement"
-									target="_blank">officevibe.com.blog/investing-employee-engagement</a>
-								</div>
-							</div>
-						</div>
-					</section>
-					<section class="sec-count-colored" id="countColoredSection">
-						<div class="row text-center">
-							<div class="col-md-4 p-0">
-								<svg>
-									<circle r="35%" cx="50%" cy="55%" stroke="#FFFFFF" stroke-width="2" />
-									<text x="50%" y="55%" text-anchor="middle">
-										<tspan x="51.5%" dy="-0.2em" id="pt_count_4" font-size="9vh" class="count-number whiteText">
-											0
-										</tspan>
-										<tspan class="count-number circle-text whiteText">%</tspan>
-										<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
-											é quanto o gamification
-										</tspan>
-										<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
-											gera a mais de
-										</tspan>
-										<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
-											engajamento.
-										</tspan>
-									</text>
-								</svg>
-							</div>
-							<div class="col-md-4 p-0">
-								<svg>
-									<circle r="35%" cx="50%" cy="55%" stroke="#FFFFFF" stroke-width="2" />
-									<text x="50%" y="55%" text-anchor="middle">
-										<tspan x="51.5%" dy="-0.4em" id="pt_count_5" font-size="9vh" class="count-number whiteText">
-											0
-										</tspan>
-										<tspan class="count-number circle-text whiteText">%</tspan>
-										<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
-											das pessoas sentem mais
-										</tspan>
-										<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
-											confiança no que é
-										</tspan>
-										<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
-											recomendado por
-										</tspan>
-										<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
-											conhecidos.
-										</tspan>
-									</text>
-								</svg>
-							</div>
-							<div class="col-md-4 p-0">
-								<svg>
-									<circle r="35%" cx="50%" cy="55%" stroke="#FFFFFF" stroke-width="2" />
-									<text x="50%" y="55%" id="bottom-right-circle" text-anchor="middle">
-										<tspan x="51.5%" dy="-3.5em" class="circle-text whiteText">
-											Em média,
-										</tspan>
-										<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
-											cada usuário viraliza
-										</tspan>
-										<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
-											a mensagem para
-										</tspan>
-										<tspan x="51.5%" dy="0.9em" id="pt_count_6" font-size="9vh" class="count-number whiteText">
-											0
-										</tspan>
-										<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
-											contatos.
-										</tspan>
-									</text>
-								</svg>
-							</div>
-						</div>
-						<div class="row padding-30">
-							<div class="col-md-12 text-right">
-								<div class="whiteTextColor">
-									Fonte: eMarketer e Insights from Emergent Markets
-								</div>
-							</div>
-						</div>
-					</section>
-					<section class="sec-6 position_rel">
-						<div class="container">
-							<div class="row">
-								<div class="col-md-12">
-									<h2 class="section-headline text-center">GAMIFICATION</h2>
-								</div>
-							</div>
-						</div>
-						<div class="container">
-							<div class="row">
-								<div class="col-md-12 body-text text-center">
-									<p class="desc">
-										Um modelo <strong>gamificado</strong> de engajamento, um jogo onde
-										todos saem ganhando: gera&ccedil;&atilde;o de audi&ecirc;ncia,
-										gera&ccedil;&atilde;o de dados e convers&atilde;o de vendas em troca
-										de recompensas! Ganhe
-										<strong>visibilidade, marketshare e brand lovers.</strong>
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="full-width"><img src="images/section-6-bg.png" alt="" /></div>
-					</section>
-					
-					<!-- <section class="sec-6 position_rel clientSessionBottom">
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="sec-count-white">
+			<div class="row text-center" id="countWhiteSection">
+				<div class="col-md-4 p-0">
+					<svg>
+						<circle r="35%" cx="50%" cy="55%" stroke="#787878" stroke-width="2" />
+						<text x="50%" y="53%" text-anchor="middle">
+							<tspan x="50.5%" dy="-3em" class="circle-text">Empresas com</tspan>
+							<tspan x="51%" dy="1.5em" class="circle-text">
+								funcionários engajados
+							</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text">
+								retêm mais de
+							</tspan>
+							<tspan x="52.5%" dy="0.9em" id="pt_count_1" font-size="9vh" class="count-number fw-bold">
+								0
+							</tspan>
+							<tspan class="count-number circle-text">%</tspan>
+							<tspan x="50.5%" dy="1.5em" class="circle-text">
+								dos clientes.
+							</tspan>
+						</text>
+					</svg>
+				</div>
+				<div class="col-md-4 p-0">
+					<svg>
+						<circle r="35%" cx="50%" cy="56.5%" stroke="#787878" stroke-width="2" />
+						<text x="50%" y="55%" text-anchor="middle">
+							<tspan x="51.5%" dy="-4.2em" class="circle-text">Aumentar em</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text">
+								10% o investimento
+							</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text">
+								em engajamento dá
+							</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text">
+								um retorno médio de
+							</tspan>
+							<tspan x="52%" dy="3.45em" class="count-number circle-text">
+								$
+							</tspan>
+							<tspan class="count-number fw-bold" id="pt_count_2" font-size="9vh">
+								0
+							</tspan>
+							<tspan class="count-number circle-text">k</tspan>
+							<tspan x="51%" dy="1.4em" class="circle-text">
+								por colaborador.
+							</tspan>
+						</text>
+					</svg>
+				</div>
+				<div class="col-md-4 p-0">
+					<svg>
+						<circle r="35%" cx="50%" cy="55%" stroke="#787878" stroke-width="2" />
+						<text x="50%" y="55%" id="top-right-circle" text-anchor="middle">
+							<tspan x="51%" dy="-4em" class="circle-text">Empresas com</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text">
+								colaboradores
+							</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text">engajados</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text">performam</tspan>
+							<tspan x="52%" dy="0.9em" id="pt_count_3" font-size="9vh" class="count-number fw-bold">
+								0
+							</tspan>
+							<tspan class="count-number circle-text">%</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text">a mais.</tspan>
+						</text>
+					</svg>
+				</div>
+			</div>
+			<div class="row padding-30">
+				<div class="col-md-12 text-right">
+					<div class="source-text">
+						Fonte:
+						<a href="http://officevibe.com/blog/investing-employee-engagement"
+							target="_blank">officevibe.com.blog/investing-employee-engagement</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="sec-count-colored" id="countColoredSection">
+			<div class="row text-center">
+				<div class="col-md-4 p-0">
+					<svg>
+						<circle r="35%" cx="50%" cy="55%" stroke="#FFFFFF" stroke-width="2" />
+						<text x="50%" y="55%" text-anchor="middle">
+							<tspan x="51.5%" dy="-0.2em" id="pt_count_4" font-size="9vh"
+								class="count-number whiteText fw-bold">
+								0
+							</tspan>
+							<tspan class="count-number circle-text whiteText">%</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+								é quanto o gamification
+							</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+								gera a mais de
+							</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+								engajamento.
+							</tspan>
+						</text>
+					</svg>
+				</div>
+				<div class="col-md-4 p-0">
+					<svg>
+						<circle r="35%" cx="50%" cy="55%" stroke="#FFFFFF" stroke-width="2" />
+						<text x="50%" y="55%" text-anchor="middle">
+							<tspan x="51.5%" dy="-0.4em" id="pt_count_5" font-size="9vh"
+								class="count-number whiteText fw-bold">
+								0
+							</tspan>
+							<tspan class="count-number circle-text whiteText">%</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+								das pessoas sentem mais
+							</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+								confiança no que é
+							</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+								recomendado por
+							</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+								conhecidos.
+							</tspan>
+						</text>
+					</svg>
+				</div>
+				<div class="col-md-4 p-0">
+					<svg>
+						<circle r="35%" cx="50%" cy="55%" stroke="#FFFFFF" stroke-width="2" />
+						<text x="50%" y="55%" id="bottom-right-circle" text-anchor="middle">
+							<tspan x="51.5%" dy="-3.5em" class="circle-text whiteText">
+								Em média,
+							</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+								cada usuário viraliza
+							</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+								a mensagem para
+							</tspan>
+							<tspan x="51.5%" dy="0.9em" id="pt_count_6" font-size="9vh"
+								class="count-number whiteText fw-bold">
+								0
+							</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+								contatos.
+							</tspan>
+						</text>
+					</svg>
+				</div>
+			</div>
+			<div class="row padding-30">
+				<div class="col-md-12 text-right">
+					<div class="whiteTextColor">
+						Fonte: eMarketer e Insights from Emergent Markets
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="sec-6 position_rel">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h2 class="section-headline text-center">GAMIFICATION</h2>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 body-text text-center">
+						<p class="desc">
+							Use a gamificação para ganhar visibilidade, alcançar novos consumidores e ampliar seus
+							mercados. São mais de 12 modelos em um jogo onde todos saem ganhando. Geração de
+							audiência, leads e dados qualificados para acelerar seu ciclo de vendas e provocar muito
+							mais engajamento e conversões.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="full-width"><img src="images/section-6-bg.png" alt="" /></div>
+		</section>
+
+		<!-- <section class="sec-6 position_rel clientSessionBottom">
 						<div class="container">
 							<div class="row">
 								<div class="col-md-12">
@@ -674,502 +672,533 @@
 							</div>
 						</div>
 					</section> -->
-					
-					<section class="sec-6 position_rel ">
-						<div class="container">
-							<div class="row">
-								<div class="col-md-12">
-									<h2 class="text-center head-exclusive">SOLUÇÕES EXCLUSIVAS</h2>
-								</div>
-							</div>
-							<div class="exclusive-solution-container">
-								<div class="col-md-8 body-text text-center agencies-text-contain">
-									<p class="exclusive-solution-text">
-										Cada empresa é única e tem desafios de mercado diferentes.<br/>
-										Sabendo desta realidade, adotamos o modelo SaaS: <i>Solutions as a Service.</i>
-										Nossos consultores fazem uma imersão com suas equipes de <b>marketing, vendas e relacionamento com clientes:</b> estudam, entendem, planejam e criam uma <b>Plataforma sob medida para seu negócio.</b> Este trabalho garante uma solução exclusiva para atender suas demandas de forma totalmente personalizada.
-									</p>
-								</div>
-								<div class="exclusiveImgCont">
-									<!-- <img src="images/exclusive-solution.jpeg" alt="" class="exclusiveImg" /> -->
-								</div>
-							</div>
-							<div class="call-to-action-1 demo-button" >
-								<a href="#demoPortuguese" id="request-demo">
-									<button type="button" class="btn btn-primary button_example"
-									id="call-to-action-btn">
-									FALE COM UM CONSULTOR
-								</button>
-							</a>
-						</div>
+
+		<section class="sec-6 position_rel ">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h2 class="text-center head-exclusive">SOLUÇÕES EXCLUSIVAS</h2>
 					</div>
-				</section>
-				
-				<section class="sec-posts position_rel">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-12">
-								<h2 class="section-headline-post text-center">BLOG POSTS</h2>
-							</div>
-							<div class="row" >
-								<div class="col-md-4">
-									<div class="post-element">
-										<div class="img-parent">
-											<a href="http://blog.oqdigital.com/como-comprovar-o-roi-marketing-digital/">	<div class="imgPost post-1"></div></a>
-										</div>
-										<div class="blog-subject ">
-											<a class="subject-1" href="http://blog.oqdigital.com/category/marketing-digital/">MARKETING</a>
-										</div>
-										<div class="post-text">
-											<a href="http://blog.oqdigital.com/como-comprovar-o-roi-marketing-digital/"> <h5>Como comprovar o ROI do seu Marketing Digital?</h5></a>
-											<p>Esta &eacute; uma pergunta de bilh&otilde;es de d&oacute;lares. Na verdade, hoje ela vale mais de 350 bilh&otilde;es de d&oacute;lares (valor investido globalmente em marketing  <a class="leia-mais" href="http://blog.oqdigital.com/como-comprovar-o-roi-marketing-digital/">Leia mais ...</a></p>
-										</div>
-									</div>							
-								</div>		
-								<div class=" col-md-4">
-									<div class="post-element">
-										<div class="img-parent">
-											<a href="http://blog.oqdigital.com/por-que-a-satisfacao-do-cliente-e-importante/"><div class="imgPost post-2"></div></a>
-										</div>
-										<div class="blog-subject">
-											<a class="subject-2" href="http://blog.oqdigital.com/category/inovacao/">INOVAÇÃO</a>
-										</div>
-										<div class="post-text">
-											<a href="http://blog.oqdigital.com/por-que-a-satisfacao-do-cliente-e-importante/"><h5>Por que a satisfa&ccedil;&atilde;o do cliente &eacute; a base do sucesso das empresas na Nova Economia?</h5></a>
-											<p>Dezenas de variáveis contribuem para o sucesso ou fracasso de um negócio, é claro. Satisfação do cliente é <a class="leia-mais" href="http://blog.oqdigital.com/por-que-a-satisfacao-do-cliente-e-importante/">Leia mais ...</a></p>
-										</div>
-									</div>							
-								</div>		
-								<div class=" col-md-4">
-									<div class="post-element">
-										<div class="img-parent">
-											<a href="http://blog.oqdigital.com/como-fazer-a-transformacao-digital/">
-												<div class="imgPost post-3"></div></a>
-											</div>
-											<div class="blog-subject">
-												<a class="subject-3" href="http://blog.oqdigital.com/category/gamification/">GAMIFICATION</a>
-											</div>
-											<div class="post-text">
-												<a href="http://blog.oqdigital.com/como-fazer-a-transformacao-digital/"><h5>Como virar o jogo da transforma&ccedil;&atilde;o digital a seu favor?</h5></a>
-												<p>A indústria dos jogos digitais é um dos setores que mais cresce na nova economia, gerando bilhões de dólares em receita e criando novos grandes <a class="leia-mais" href="http://blog.oqdigital.com/como-fazer-a-transformacao-digital/">Leia mais ...</a></p>
-											</div>
-										</div>							
-									</div>	
-								</div>
-							</div>
-						</div>
-					</section>
-					<section class="sec-6 position_rel ">
-						<div class="container">
-							<div class="row">
-								<div class="col-md-12">
-									<h2 class="section-headline text-center head-agencies">FOR AGENCIES</h2>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-10 body-text text-center agencies-text-contain">
-									<p class="agencies-text">
-										A OQ for Agencies &eacute; uma proposta inovadora de parceria entre a Plataforma OQ e ag&ecirc;ncias que querem surpreender seus clientes com estrat&eacute;gias de marketing disruptivas e personalizadas. Entre em contato e solicite uma apresenta&ccedil;&atilde;o.
-									</p>
-								</div>
-								<div class="col-md-6 col-sm-6 col-xs-6 partners-wrapper agenciesImg-element">
-									<a href="" target="_blank">
-										<img src="images/agencies.png" alt="" class="agenciesImg" />
+				</div>
+				<div class="exclusive-solution-container">
+					<div class="col-md-8 body-text text-center agencies-text-contain">
+						<p class="exclusive-solution-text">
+							Cada empresa é única e tem desafios de mercado diferentes.<br />
+							Sabendo desta realidade, adotamos o modelo SaaS: <i>Solutions as a Service.</i>
+							Nossos consultores fazem uma imersão com suas equipes de marketing, vendas e
+							relacionamento com clientes: estudam, entendem, planejam e criam uma Plataforma
+							sob medida para seu negócio. Este trabalho garante uma solução exclusiva para
+							atender suas demandas de forma totalmente personalizada.
+						</p>
+					</div>
+					<div class="exclusiveImgCont">
+						<!-- <img src="images/exclusive-solution.jpeg" alt="" class="exclusiveImg" /> -->
+					</div>
+				</div>
+				<div class="call-to-action-1 demo-button">
+					<a href="#demoPortuguese" id="request-demo">
+						<button type="button" class="btn btn-primary button_example" id="call-to-action-btn">
+							FALE COM UM CONSULTOR
+						</button>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="sec-posts position_rel">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h2 class="section-headline-post text-center">BLOG POSTS</h2>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="post-element">
+								<div class="img-parent">
+									<a href="http://blog.oqdigital.com/como-comprovar-o-roi-marketing-digital/">
+										<div class="imgPost post-1"></div>
 									</a>
 								</div>
-								<div class="col-md-6 col-sm-6 col-xs-6 partners-wrapper agenciesImg-element">
-									<a href="" target="_blank">
-										<img src="images/partner-plataform.png" alt="" class="agenciesImg" />
+								<div class="blog-subject ">
+									<a class="subject-1"
+										href="http://blog.oqdigital.com/category/marketing-digital/">MARKETING</a>
+								</div>
+								<div class="post-text">
+									<a href="http://blog.oqdigital.com/como-comprovar-o-roi-marketing-digital/">
+										<h5>Como comprovar o ROI do seu Marketing Digital?</h5>
+									</a>
+									<p>Esta &eacute; uma pergunta de bilh&otilde;es de d&oacute;lares. Na verdade, hoje
+										ela vale mais de 350 bilh&otilde;es de d&oacute;lares (valor investido
+										globalmente em marketing <a class="leia-mais"
+											href="http://blog.oqdigital.com/como-comprovar-o-roi-marketing-digital/">Leia
+											mais ...</a></p>
+								</div>
+							</div>
+						</div>
+						<div class=" col-md-4">
+							<div class="post-element">
+								<div class="img-parent">
+									<a href="http://blog.oqdigital.com/por-que-a-satisfacao-do-cliente-e-importante/">
+										<div class="imgPost post-2"></div>
 									</a>
 								</div>
+								<div class="blog-subject">
+									<a class="subject-2"
+										href="http://blog.oqdigital.com/category/inovacao/">INOVAÇÃO</a>
+								</div>
+								<div class="post-text">
+									<a href="http://blog.oqdigital.com/por-que-a-satisfacao-do-cliente-e-importante/">
+										<h5>Por que a satisfa&ccedil;&atilde;o do cliente &eacute; a base do sucesso das
+											empresas na Nova Economia?</h5>
+									</a>
+									<p>Dezenas de variáveis contribuem para o sucesso ou fracasso de um negócio, é
+										claro. Satisfação do cliente é <a class="leia-mais"
+											href="http://blog.oqdigital.com/por-que-a-satisfacao-do-cliente-e-importante/">Leia
+											mais ...</a></p>
+								</div>
 							</div>
-							<div class="call-to-action-1 demo-button" >
-								<a href="#demoPortuguese" id="request-demo">
-									<button type="button" class="btn btn-primary button_example"
-									id="call-to-action-btn">
-									SOLICITAR DEMO
-								</button>
-							</a>
+						</div>
+						<div class=" col-md-4">
+							<div class="post-element">
+								<div class="img-parent">
+									<a href="http://blog.oqdigital.com/como-fazer-a-transformacao-digital/">
+										<div class="imgPost post-3"></div>
+									</a>
+								</div>
+								<div class="blog-subject">
+									<a class="subject-3"
+										href="http://blog.oqdigital.com/category/gamification/">GAMIFICATION</a>
+								</div>
+								<div class="post-text">
+									<a href="http://blog.oqdigital.com/como-fazer-a-transformacao-digital/">
+										<h5>Como virar o jogo da transforma&ccedil;&atilde;o digital a seu favor?</h5>
+									</a>
+									<p>A indústria dos jogos digitais é um dos setores que mais cresce na nova economia,
+										gerando bilhões de dólares em receita e criando novos grandes <a
+											class="leia-mais"
+											href="http://blog.oqdigital.com/como-fazer-a-transformacao-digital/">Leia
+											mais ...</a></p>
+								</div>
+							</div>
 						</div>
 					</div>
-				</section>
-				<section class="sec-7 position_rel no-padding-bottom" id="demoPortuguese">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-12">
-								<h2 class="section-headline-5 text-center">CONTATO</h2>
+				</div>
+			</div>
+		</section>
+		<section class="sec-6 position_rel ">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h2 class="section-headline text-center head-agencies">FOR AGENCIES</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-10 body-text text-center agencies-text-contain">
+						<p class="agencies-text">
+							A OQ for Agencies &eacute; uma proposta inovadora de parceria entre a Plataforma OQ e
+							ag&ecirc;ncias que querem surpreender seus clientes com estrat&eacute;gias de marketing
+							disruptivas e personalizadas. Entre em contato e solicite uma apresenta&ccedil;&atilde;o.
+						</p>
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-6 partners-wrapper agenciesImg-element">
+						<a href="" target="_blank">
+							<img src="images/agencies.png" alt="" class="agenciesImg" />
+						</a>
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-6 partners-wrapper agenciesImg-element">
+						<a href="" target="_blank">
+							<img src="images/partner-plataform.png" alt="" class="agenciesImg" />
+						</a>
+					</div>
+				</div>
+				<div class="call-to-action-1 demo-button">
+					<a href="#demoPortuguese" id="request-demo">
+						<button type="button" class="btn btn-primary button_example" id="call-to-action-btn">
+							SOLICITAR DEMO
+						</button>
+					</a>
+				</div>
+			</div>
+		</section>
+		<section class="sec-7 position_rel no-padding-bottom" id="demoPortuguese">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h2 class="section-headline-5 text-center">CONTATO</h2>
+					</div>
+					<div class="col-md-12 row form-container">
+						<div class="row col-12 contact-text">
+							Entre em contato e solicite uma apresenta&ccedil;&atilde;o:
+						</div>
+
+						<div class="col-md-6 d-flex justify-content-between flex-column margin-bt-15">
+							<div class="address-details">
+								<i class="fa fa-map-marker icon"></i> BH - Rua da Bahia, 1600, Lourdes
 							</div>
-							<div class="col-md-12 row form-container">
-								<div class="row col-12 contact-text">
-									Entre em contato e solicite uma apresenta&ccedil;&atilde;o:
-								</div>
-								
-								<div class="col-md-6 d-flex justify-content-between flex-column margin-bt-15">
-									<div class="address-details">
-										<i class="fa fa-map-marker icon"></i> BH - Rua da Bahia, 1600, Lourdes
-									</div>
-									
-									<div class="address-details">
-										<i class="fa fa-map-marker icon"></i> SP - Rua James Loule, 65, Cidade Monções
-									</div>
-									
-									<!-- <div class="address-details">
+
+							<div class="address-details">
+								<i class="fa fa-map-marker icon"></i> SP - Rua James Loule, 65, Cidade Monções
+							</div>
+
+							<!-- <div class="address-details">
 										<i class="fa fa-phone icon"></i>+55 31 3254 9909
 									</div> -->
-									
-									<div class="address-details">
-										<i class="fa fa-envelope icon"></i>sayhello@oqdigital.com
-									</div>
-								</div>
-								
-								<div class="col-md-6 p-right-0">
-									<form id="send">
-										<div class="row margin-bt-15">
-											<div class="col">
-												<input type="text" required class="form-control form-input"
-												placeholder="Nome" name="name"
-												onkeyup="return changeButtonColorIfFormIsValid();" id="inputName" />
-											</div>
-										</div>
-										
-										<div class="row margin-bt-15">
-											<div class="col">
-												<input type="email" required class="form-control form-input"
-												placeholder="Email" name="email"
-												onkeyup="return changeButtonColorIfFormIsValid();" id="inputEmail" />
-											</div>
-											<div class="col">
-												<input maxlength="" type="tel" class="form-control form-input"
-												placeholder="Telefone" required name="phone"
-												onkeyup="return changeButtonColorIfFormIsValid();" id="inputPhone" />
-											</div>
-										</div>
-										
-										<div class="row margin-bt-15">
-											<div class="col">
-												<input type="text" class="form-control form-input" placeholder="Empresa"
-												name="company" onkeyup="return changeButtonColorIfFormIsValid();"
-												id="inputCompany" />
-											</div>
-											<div class="col">
-												<input type="text" class="form-control form-input" placeholder="Cargo"
-												name="role" onkeyup="return changeButtonColorIfFormIsValid();"
-												id="inputRole" />
-											</div>
-										</div>
-										
-										<textarea class="form-control form-input margin-bt-15" rows="5" required
-										placeholder="Descreva sua solicitação" name="description"
-										onkeyup="return changeButtonColorIfFormIsValid();"
-										id="inputDescription"></textarea>
-									</form>
-								</div>
-								
-								<div class="d-flex justify-content-end w-100 col-md-12 p-right-0">
-									<div class="col-md-2 p-0">
-										<input class="btn btn-dark btn-primary button_example w-100" value="ENVIAR"
-										id="create-btn-pt" onclick="return createProspectLead();" />
-										<input class="btn btn-primary-color w-100" value="ENVIANDO..." id="sending-btn-pt"
-										hidden />
-									</div>
-								</div>
-								
-								<div class="col-12 d-flex justify-content-center">
-									<div class="alert alert-danger" id="danger-alert" role="alert" hidden>
-										Erro ao criar solicitação. Tente novamente.
-									</div>
-									
-									<div class="alert alert-primary" id="success-alert" role="alert" hidden>
-										Solicitação criada com sucesso!
-									</div>
-								</div>
-								
-								<p class="spam-message">Nos comprometemos a não compartilhar seus dados com terceiros
-									nem enviar spams para
-									você.</p>
-									
-									<div class="col-12 copyright-wrapper banner-powered">
-										<a href="https://pt.linkedin.com/company/oq-midia-digital-ltda" target="_blank">
-											<img src="images/linkedin.png" alt="" class="partners-image-linkedin footerImage" />
-										</a>
-										<div  class="copyright-margin">
-											<p>
-												<a class="banner-powered" href="https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/TermsAndPolitics%2FPOLITICA%20DE%20PRIVACIDADE%20.pdf?alt=media&token=36efa8dc-c5b2-490a-8185-02c940c684fe" target="_blank">POLÍTICA DE PRIVACIDADE</a>
-											</p>
-											
-										</div>
-										<div class="copyright-margin">
-											<p> © COPYRIGHT 2020. OQ MÍDIA DIGITAL LTDA</p>
-										</div>
-									</div>
-									
-								</div>
+
+							<div class="address-details">
+								<i class="fa fa-envelope icon"></i>sayhello@oqdigital.com
 							</div>
 						</div>
-					</section>
-				</div>
-				<div id="upbutton" style="display:none;">
-					<!-- Banner -->
-					<div id="banner" class="banner position_rel">
-						<div class="banner-area banner-1">
-							<div class="container">
-								<div class="row">
-									<div class="col-md-12">
-										<div class="slider-title">
-											<div class="header_space"></div>
-											
-											<div>
-												
-												<h1><img src="images/banner-logo.png" width="100%" class="img-logo"/>
-													<!-- <h2 class="plataforma">PLATFORM</h2> -->
-												</h1>
-											</div>
-											<div class="banner-title">
-												Welcome to the largest referral marketing platform, social sellers and brand lovers in Brazil.
-											</div>
-											<div class="banner-title-2">
-												OQ Platform. A new way to delight people <br />
-												and generate business.
-											</div>
-											
-											<div class="call-to-action">
-												<a href="#demoEnglish" id="request-demo">
-													<button type="button" class="btn btn-primary button_example"
-													id="call-to-action-btn">
-													MEET NOW
-												</button>
-											</a>
-										</div>
+
+						<div class="col-md-6 p-right-0">
+							<form id="send">
+								<div class="row margin-bt-15">
+									<div class="col">
+										<input type="text" required class="form-control form-input" placeholder="Nome"
+											name="name" onkeyup="return changeButtonColorIfFormIsValid();"
+											id="inputName" />
 									</div>
 								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- Banner End -->
-				<section class="sec-video">
-					<div class="video-container">
-						<iframe src="http://www.youtube.com/embed/vMMeiCs-0NU?loop=1&playlist=vMMeiCs-0NU" frameborder="0"
-						allow="autoplay; encrypted-media" allowfullscreen></iframe>
-					</div>
-				</section>
-				<section class="sec-2">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-5"></div>
-							<div class="col-md-7">
-								<h2 class="top">
-									We are an unconventional digital media company: we do not just
-									generate audience for your brand - we generate measurable revenues
-									for your business and immeasurable values for your customers and
-									employees.
-								</h2>
-							</div>
-							<div class="col-md-6">
-								<h2 class="mid">What is it?</h2>
-							</div>
-							<div class="col-md-6"></div>
-							<div class="col-md-5"></div>
-							<div class="col-md-7">
-								<h2 class="bottom">
-									We generate measurable revenue for your company and immense value to
-									your customers and employees.
-								</h2>
-							</div>
-						</div>
-					</div>
-				</section>
-				<section class="sec-3 position_rel">
-					<div class="container">
-						<div class="row">
-							<div class="parent-section">
-								<div class="child-section">
-									<h2 class="headline-left">HOW</h2>
-								</div>
-								<div class="child-section">
-									<div class="right-content">
-										<p>
-											Engage, turn them loyal , reward them, and provide a unique
-											experience for your clients and employees with a
-											high-impact, high-reach digital media channel.
-										</p>
+
+								<div class="row margin-bt-15">
+									<div class="col">
+										<input type="email" required class="form-control form-input" placeholder="Email"
+											name="email" onkeyup="return changeButtonColorIfFormIsValid();"
+											id="inputEmail" />
+									</div>
+									<div class="col">
+										<input maxlength="" type="tel" class="form-control form-input"
+											placeholder="Telefone" required name="phone"
+											onkeyup="return changeButtonColorIfFormIsValid();" id="inputPhone" />
 									</div>
 								</div>
+
+								<div class="row margin-bt-15">
+									<div class="col">
+										<input type="text" class="form-control form-input" placeholder="Empresa"
+											name="company" onkeyup="return changeButtonColorIfFormIsValid();"
+											id="inputCompany" />
+									</div>
+									<div class="col">
+										<input type="text" class="form-control form-input" placeholder="Cargo"
+											name="role" onkeyup="return changeButtonColorIfFormIsValid();"
+											id="inputRole" />
+									</div>
+								</div>
+
+								<textarea class="form-control form-input margin-bt-15" rows="5" required
+									placeholder="Descreva sua solicitação" name="description"
+									onkeyup="return changeButtonColorIfFormIsValid();" id="inputDescription"></textarea>
+							</form>
+						</div>
+
+						<div class="d-flex justify-content-end w-100 col-md-12 p-right-0">
+							<div class="col-md-2 p-0">
+								<input class="btn btn-dark btn-primary button_example w-100" value="ENVIAR"
+									id="create-btn-pt" onclick="return createProspectLead();" />
+								<input class="btn btn-primary-color w-100" value="ENVIANDO..." id="sending-btn-pt"
+									hidden />
 							</div>
 						</div>
-					</div>
-				</section>
-				<section class="sec-4 position_rel">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-12">
-								<h2 class="section-headline text-center">ONMICHANNEL</h2>
+
+						<div class="col-12 d-flex justify-content-center">
+							<div class="alert alert-danger" id="danger-alert" role="alert" hidden>
+								Erro ao criar solicitação. Tente novamente.
 							</div>
-							<div class="col-md-6"></div>
-							<div class="col-md-6">
-								<p class="section-sub-headline">Knowledge and recognition</p>
-								<p class="section-sub-headline">your target audience:</p>
+
+							<div class="alert alert-primary" id="success-alert" role="alert" hidden>
+								Solicitação criada com sucesso!
 							</div>
-							<div class="col-md-12 body-text text-center">
-								<ul class="content-list-vertical">
-									<li>Brand Advocate</li>
-									<li>+ Social Selling</li>
-									<li>+ Influencer Marketing</li>
-									<li>+ Loyalty Program</li>
-									<li>+ Real & Social Gaming</li>
-								</ul>
+						</div>
+
+						<p class="spam-message">Nos comprometemos a não compartilhar seus dados com terceiros
+							nem enviar spams para
+							você.</p>
+
+						<div class="col-12 copyright-wrapper banner-powered">
+							<a href="https://pt.linkedin.com/company/oq-midia-digital-ltda" target="_blank">
+								<img src="images/linkedin.png" alt="" class="partners-image-linkedin footerImage" />
+							</a>
+							<div class="copyright-margin">
 								<p>
-									= Measurable Metrics, Highly Qualified Leads and comproved ROI.
+									<a class="banner-powered"
+										href="https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/TermsAndPolitics%2FPOLITICA%20DE%20PRIVACIDADE%20.pdf?alt=media&token=36efa8dc-c5b2-490a-8185-02c940c684fe"
+										target="_blank">POLÍTICA DE PRIVACIDADE</a>
+								</p>
+
+							</div>
+							<div class="copyright-margin">
+								<p> © COPYRIGHT 2020. OQ MÍDIA DIGITAL LTDA</p>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<div id="upbutton" style="display:none;">
+		<!-- Banner -->
+		<div id="banner" class="banner position_rel">
+			<div class="banner-area banner-1">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="slider-title">
+								<div class="header_space"></div>
+
+								<div>
+
+									<h1><img src="images/banner-logo.png" width="100%" class="img-logo" />
+										<!-- <h2 class="plataforma">PLATFORM</h2> -->
+									</h1>
+								</div>
+								<div class="banner-title">
+									Welcome to the largest referral marketing platform, social sellers and brand lovers
+									in Brazil.
+								</div>
+								<div class="banner-title-2">
+									OQ Platform. A new way to delight people <br />
+									and generate business.
+								</div>
+
+								<div class="call-to-action">
+									<a href="#demoEnglish" id="request-demo">
+										<button type="button" class="btn btn-primary button_example"
+											id="call-to-action-btn">
+											MEET NOW
+										</button>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Banner End -->
+		<section class="sec-video">
+			<div class="video-container">
+				<iframe src="http://www.youtube.com/embed/vMMeiCs-0NU?loop=1&playlist=vMMeiCs-0NU" frameborder="0"
+					allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			</div>
+		</section>
+		<section class="sec-2">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5"></div>
+					<div class="col-md-7">
+						<h2 class="top">
+							We are an unconventional digital media company: we do not just
+							generate audience for your brand - we generate measurable revenues
+							for your business and immeasurable values for your customers and
+							employees.
+						</h2>
+					</div>
+					<div class="col-md-6">
+						<h2 class="mid">What is it?</h2>
+					</div>
+					<div class="col-md-6"></div>
+					<div class="col-md-5"></div>
+					<div class="col-md-7">
+						<h2 class="bottom">
+							We generate measurable revenue for your company and immense value to
+							your customers and employees.
+						</h2>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="sec-3 position_rel">
+			<div class="container">
+				<div class="row">
+					<div class="parent-section">
+						<div class="child-section">
+							<h2 class="headline-left">HOW</h2>
+						</div>
+						<div class="child-section">
+							<div class="right-content">
+								<p>
+									Engage, turn them loyal , reward them, and provide a unique
+									experience for your clients and employees with a
+									high-impact, high-reach digital media channel.
 								</p>
 							</div>
 						</div>
 					</div>
-				</section>
-				
-				<section class="sec-5 position_rel">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-12">
-								<h2 class="section-headline-5 text-center">PERFORMANCE</h2>
-							</div>
-							<div class="col-md-12 text-center m-top">
-								<ul class="team-img-box">
-									<li>
-										<div class="fit-img" style="background-image: url('images/team-1.jpg');"></div>
-									</li>
-									<li>
-										<div class="fit-img" style="background-image: url('images/team-2.jpg');"></div>
-									</li>
-									<li>
-										<div class="fit-img" style="background-image: url('images/team-3.jpg');"></div>
-									</li>
-								</ul>
-								<div class="performance-body-text">
-									A platform made for the marketing performance, motivation of
-									employees, involvement and loyalty of clients with an unprecedented
-									model of relationship between companies and people.
-								</div>
-							</div>
+				</div>
+			</div>
+		</section>
+		<section class="sec-4 position_rel">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h2 class="section-headline text-center">ONMICHANNEL</h2>
+					</div>
+					<div class="col-md-6"></div>
+					<div class="col-md-6">
+						<p class="section-sub-headline">Knowledge and recognition</p>
+						<p class="section-sub-headline">your target audience:</p>
+					</div>
+					<div class="col-md-12 body-text text-center">
+						<ul class="content-list-vertical">
+							<li>Brand Advocate</li>
+							<li>+ Social Selling</li>
+							<li>+ Influencer Marketing</li>
+							<li>+ Loyalty Program</li>
+							<li>+ Real & Social Gaming</li>
+						</ul>
+						<p>
+							= Measurable Metrics, Highly Qualified Leads and comproved ROI.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="sec-5 position_rel">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h2 class="section-headline-5 text-center">PERFORMANCE</h2>
+					</div>
+					<div class="col-md-12 text-center m-top">
+						<ul class="team-img-box">
+							<li>
+								<div class="fit-img" style="background-image: url('images/team-1.jpg');"></div>
+							</li>
+							<li>
+								<div class="fit-img" style="background-image: url('images/team-2.jpg');"></div>
+							</li>
+							<li>
+								<div class="fit-img" style="background-image: url('images/team-3.jpg');"></div>
+							</li>
+						</ul>
+						<div class="performance-body-text">
+							A platform made for the marketing performance, motivation of
+							employees, involvement and loyalty of clients with an unprecedented
+							model of relationship between companies and people.
 						</div>
 					</div>
-				</section>
-				<section class="sec-count-white">
-					<div class="row text-center" id="countWhiteSection">
-						<div class="col-md-4 p-0">
-							<svg>
-								<circle r="35%" cx="50%" cy="55%" stroke="#787878" stroke-width="2" />
-								<text x="50%" y="53%" text-anchor="middle">
-									<tspan x="50.5%" dy="-3em" class="circle-text">
-										Companies with
-									</tspan>
-									<tspan x="50%" dy="1.5em" class="circle-text">
-										engaged employees
-									</tspan>
-									<tspan x="51.5%" dy="1.5em" class="circle-text">
-										retain more than
-									</tspan>
-									<tspan x="52.5%" dy="0.9em" id="pt_count_7" font-size="9vh" class="count-number">
-										0
-									</tspan>
-									<tspan class="count-number">%</tspan>
-									<tspan x="50.5%" dy="1.5em" class="circle-text">
-										of customers.
-									</tspan>
-								</text>
-							</svg>
-						</div>
-						<div class="col-md-4 p-0">
-							<svg>
-								<circle r="35%" cx="50%" cy="55%" stroke="#787878" stroke-width="2" />
-								<text x="50%" y="56.5%" text-anchor="middle">
-									<tspan x="51.5%" dy="-4.55em" class="circle-text">
-										Increase in
-									</tspan>
-									<tspan x="51.5%" dy="1.5em" class="circle-text">
-										10% the investiment
-									</tspan>
-									<tspan x="51.5%" dy="1.5em" class="circle-text">
-										in engagement gives an
-									</tspan>
-									<tspan x="51.5%" dy="1.5em" class="circle-text">
-										average return of
-									</tspan>
-									<tspan x="51.5%" dy="3.45em" class="count-number circle-text">
-										$
-									</tspan>
-									<tspan class="count-number" id="pt_count_8" font-size="9vh">
-										0
-									</tspan>
-									<tspan class="count-number circle-text">k</tspan>
-									<tspan x="51%" dy="1.4em" class="circle-text">
-										by collaborator.
-									</tspan>
-								</text>
-							</svg>
-						</div>
-						<div class="col-md-4 p-0">
-							<svg>
-								<circle r="35%" cx="50%" cy="55%" stroke="#787878" stroke-width="2" />
-								<text x="50%" y="55%" text-anchor="middle">
-									<tspan x="51.5%" dy="-3.75em" class="circle-text">
-										Companies with
-									</tspan>
-									<tspan x="51.5%" dy="1.5em" class="circle-text">
-										engaged employees
-									</tspan>
-									<tspan x="51.5%" dy="1.5em" class="circle-text">perform</tspan>
-									<tspan x="52%" dy="0.9em" id="pt_count_9" font-size="9vh" class="count-number">
-										0
-									</tspan>
-									<tspan class="count-number circle-text">%</tspan>
-									<tspan x="51.5%" dy="1.5em" class="circle-text">
-										more than others.
-									</tspan>
-								</text>
-							</svg>
-						</div>
+				</div>
+			</div>
+		</section>
+		<section class="sec-count-white">
+			<div class="row text-center" id="countWhiteSection">
+				<div class="col-md-4 p-0">
+					<svg>
+						<circle r="35%" cx="50%" cy="55%" stroke="#787878" stroke-width="2" />
+						<text x="50%" y="53%" text-anchor="middle">
+							<tspan x="50.5%" dy="-3em" class="circle-text">
+								Companies with
+							</tspan>
+							<tspan x="50%" dy="1.5em" class="circle-text">
+								engaged employees
+							</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text">
+								retain more than
+							</tspan>
+							<tspan x="52.5%" dy="0.9em" id="pt_count_7" font-size="9vh" class="count-number">
+								0
+							</tspan>
+							<tspan class="count-number">%</tspan>
+							<tspan x="50.5%" dy="1.5em" class="circle-text">
+								of customers.
+							</tspan>
+						</text>
+					</svg>
+				</div>
+				<div class="col-md-4 p-0">
+					<svg>
+						<circle r="35%" cx="50%" cy="55%" stroke="#787878" stroke-width="2" />
+						<text x="50%" y="56.5%" text-anchor="middle">
+							<tspan x="51.5%" dy="-4.55em" class="circle-text">
+								Increase in
+							</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text">
+								10% the investiment
+							</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text">
+								in engagement gives an
+							</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text">
+								average return of
+							</tspan>
+							<tspan x="51.5%" dy="3.45em" class="count-number circle-text">
+								$
+							</tspan>
+							<tspan class="count-number" id="pt_count_8" font-size="9vh">
+								0
+							</tspan>
+							<tspan class="count-number circle-text">k</tspan>
+							<tspan x="51%" dy="1.4em" class="circle-text">
+								by collaborator.
+							</tspan>
+						</text>
+					</svg>
+				</div>
+				<div class="col-md-4 p-0">
+					<svg>
+						<circle r="35%" cx="50%" cy="55%" stroke="#787878" stroke-width="2" />
+						<text x="50%" y="55%" text-anchor="middle">
+							<tspan x="51.5%" dy="-3.75em" class="circle-text">
+								Companies with
+							</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text">
+								engaged employees
+							</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text">perform</tspan>
+							<tspan x="52%" dy="0.9em" id="pt_count_9" font-size="9vh" class="count-number">
+								0
+							</tspan>
+							<tspan class="count-number circle-text">%</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text">
+								more than others.
+							</tspan>
+						</text>
+					</svg>
+				</div>
+			</div>
+			<div class="row padding-30">
+				<div class="col-md-12 text-right">
+					<div class="source-text">
+						Source:
+						<a href="http://officevibe.com/blog/investing-employee-engagement"
+							target="_blank">officevibe.com.blog/investing-employee-engagement</a>
 					</div>
-					<div class="row padding-30">
-						<div class="col-md-12 text-right">
-							<div class="source-text">
-								Source:
-								<a href="http://officevibe.com/blog/investing-employee-engagement"
-								target="_blank">officevibe.com.blog/investing-employee-engagement</a>
-							</div>
-						</div>
-					</div>
-				</section>
-				<section class="sec-count-colored" id="countColoredSection">
-					<div class="row text-center">
-						<div class="col-md-4 p-0">
-							<svg>
-								<circle r="35%" cx="50%" cy="55%" stroke="#FFFFFF" stroke-width="2" />
-								<text x="50%" y="51%" text-anchor="middle" id="bottom-eng-circle">
-									<tspan x="51.5%" dy="-0.2em" id="pt_count_10" font-size="9vh"
-									class="count-number whiteText">
-									0
-								</tspan>
-								<tspan class="count-number whiteText">%</tspan>
-								<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
-									is how many times
-								</tspan>
-								<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
-									the gamification
-								</tspan>
-								<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
-									generate more
-								</tspan>
-								<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
-									engagement.
-								</tspan>
-							</text>
-						</svg>
-					</div>
-					<div class="col-md-4 p-0">
-						<svg>
-							<circle r="35%" cx="50%" cy="55%" stroke="#FFFFFF" stroke-width="2" />
-							<text x="50%" y="55%" text-anchor="middle">
-								<tspan x="51.5%" dy="-0.4em" id="pt_count_11" font-size="9vh"
+				</div>
+			</div>
+		</section>
+		<section class="sec-count-colored" id="countColoredSection">
+			<div class="row text-center">
+				<div class="col-md-4 p-0">
+					<svg>
+						<circle r="35%" cx="50%" cy="55%" stroke="#FFFFFF" stroke-width="2" />
+						<text x="50%" y="51%" text-anchor="middle" id="bottom-eng-circle">
+							<tspan x="51.5%" dy="-0.2em" id="pt_count_10" font-size="9vh"
+								class="count-number whiteText">
+								0
+							</tspan>
+							<tspan class="count-number whiteText">%</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+								is how many times
+							</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+								the gamification
+							</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+								generate more
+							</tspan>
+							<tspan x="51.5%" dy="1.5em" class="circle-text whiteText">
+								engagement.
+							</tspan>
+						</text>
+					</svg>
+				</div>
+				<div class="col-md-4 p-0">
+					<svg>
+						<circle r="35%" cx="50%" cy="55%" stroke="#FFFFFF" stroke-width="2" />
+						<text x="50%" y="55%" text-anchor="middle">
+							<tspan x="51.5%" dy="-0.4em" id="pt_count_11" font-size="9vh"
 								class="count-number whiteText">
 								0
 							</tspan>
@@ -1313,7 +1342,7 @@
 				</div>
 			</div>
 		</section>
-		
+
 		<section class="sec-7 position_rel no-padding-bottom" id="demoEnglish">
 			<div class="container">
 				<div class="row">
@@ -1324,80 +1353,80 @@
 						<div class="row col-12 contact-text">
 							Contact us and request a presentation:
 						</div>
-						
+
 						<div class="col-md-6 d-flex justify-content-between flex-column margin-bt-15">
 							<div class="address-details">
 								<i class="fa fa-map-marker icon"></i> BH - Rua da Bahia, 1600, Lourdes
 							</div>
-							
+
 							<div class="address-details">
 								<i class="fa fa-map-marker icon"></i> SP - Rua James Loule, 65, Cidade Monções
 							</div>
 							<!-- <div class="address-details">
 								<i class="fa fa-phone icon"></i>+55 31 3254 9909
 							</div> -->
-							
+
 							<div class="address-details">
 								<i class="fa fa-envelope icon"></i>sayhello@oqdigital.com
 							</div>
 						</div>
-						
+
 						<div class="col-md-6 p-right-0">
 							<form id="send2">
 								<div class="row margin-bt-15">
 									<div class="col">
 										<input type="text" required class="form-control form-input" placeholder="Name"
-										name="name" onkeyup="return changeButtonColorIfFormIsValid('en');"
-										id="inputName2" />
+											name="name" onkeyup="return changeButtonColorIfFormIsValid('en');"
+											id="inputName2" />
 									</div>
 								</div>
-								
+
 								<div class="row margin-bt-15">
 									<div class="col">
 										<input type="email" required class="form-control form-input" placeholder="Email"
-										name="email" onkeyup="return changeButtonColorIfFormIsValid('en');"
-										id="inputEmail2" />
+											name="email" onkeyup="return changeButtonColorIfFormIsValid('en');"
+											id="inputEmail2" />
 									</div>
 									<div class="col">
 										<input type="tel" class="form-control form-input" placeholder="Phone" required
-										name="phone" onkeyup="return changeButtonColorIfFormIsValid('en');"
-										id="inputPhone2" />
+											name="phone" onkeyup="return changeButtonColorIfFormIsValid('en');"
+											id="inputPhone2" />
 									</div>
 								</div>
-								
+
 								<div class="row margin-bt-15">
 									<div class="col">
 										<input type="text" class="form-control form-input" placeholder="Company"
-										name="company" onkeyup="return changeButtonColorIfFormIsValid('en');"
-										id="inputCompany2" />
+											name="company" onkeyup="return changeButtonColorIfFormIsValid('en');"
+											id="inputCompany2" />
 									</div>
 									<div class="col">
 										<input type="text" class="form-control form-input" placeholder="Role"
-										name="role" onkeyup="return changeButtonColorIfFormIsValid('en');"
-										id="inputRole2" />
+											name="role" onkeyup="return changeButtonColorIfFormIsValid('en');"
+											id="inputRole2" />
 									</div>
 								</div>
-								
+
 								<textarea class="form-control form-input margin-bt-15" rows="5" required
-								placeholder="Desccribe your request" name="description"
-								onkeyup="return changeButtonColorIfFormIsValid('en');"
-								id="inputDescription2"></textarea>
+									placeholder="Desccribe your request" name="description"
+									onkeyup="return changeButtonColorIfFormIsValid('en');"
+									id="inputDescription2"></textarea>
 							</form>
 						</div>
-						
+
 						<div class="d-flex justify-content-end w-100 col-md-12 p-right-0">
 							<div class="col-md-2 p-0">
 								<input class="btn btn-dark btn-primary button_example w-100" value="SEND"
-								id="create-btn-en" onclick="return createProspectLead('en');" />
+									id="create-btn-en" onclick="return createProspectLead('en');" />
 								<input class="btn btn-primary-color w-100" value="SENDING" id="sending-btn-en" hidden />
 							</div>
 						</div>
-						
+
 						<div class="col-12 d-flex justify-content-center">
 							<div class="alert alert-danger" id="danger-alert2" role="alert" hidden>
 								Error creating the request. Try again.
 							</div>
-							
+
 							<div class="alert alert-primary" id="success-alert2" role="alert" hidden>
 								Your request was created successfully.
 							</div>
@@ -1406,73 +1435,77 @@
 							<p class="spam-message">We're committed not to share your data with third parties or to send
 								spam to
 								you.</p>
-							</div>
-							<div class="col-12 copyright-wrapper banner-powered">
-								<a href="https://pt.linkedin.com/company/oq-midia-digital-ltda" target="_blank">
-									<img src="images/linkedin.png" alt="" class="partners-image-linkedin footerImage" />
-								</a>
-								<div class="copyright-margin">
-									© COPYRIGHT 2020. OQ MÍDIA DIGITAL LTDA
-								</div>
+						</div>
+						<div class="col-12 copyright-wrapper banner-powered">
+							<a href="https://pt.linkedin.com/company/oq-midia-digital-ltda" target="_blank">
+								<img src="images/linkedin.png" alt="" class="partners-image-linkedin footerImage" />
+							</a>
+							<div class="copyright-margin">
+								© COPYRIGHT 2020. OQ MÍDIA DIGITAL LTDA
 							</div>
 						</div>
 					</div>
-				</section>
-			</div>
-			<script type="text/javascript" src="js/jquery.min.js"></script>
-			<script type="text/javascript" src="js/bootstrap.min.js"></script>
-			<script type="text/javascript" src="js/wow.min.js"></script>
-			<script type="text/javascript" src="js/counter.js"></script>
-			<script type="text/javascript" src="js/inputmask.js"></script>
-			
-			<script>
-				function openNav() {
-					document.getElementById("mySidenav").style.width = "250px";
-				}
-				function closeNav() {
-					document.getElementById("mySidenav").style.width = "0";
-				}
-				
-				// retorna o valor do cookie
-				function getCookie(cookieConsent) {
-					var name = cookieConsent + "=";
-					var ca = document.cookie.split(';');
-					for(var i=0; i<ca.length; i++) {
-						var c = ca[i];
-						while (c.charAt(0)==' ') c = c.substring(1);
-						if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
-					}
-					return "";
-				}
-				
-				//cria o cookie e remove div de consentimento
-				function setCookie(cookieName, cookieValue, exDays) {
-					var d = new Date();
-					d.setTime(d.getTime() + (exDays*24*60*60*1000));
-					var expires = "expires="+d.toUTCString();
-					document.cookie = cookieName + "=" + cookieValue + "; " + expires;
-					
-					var cookieString = getCookie(cookieName);
-					if(cookieString === 'true') {
-						document.getElementById("cookie-consent").style.display = "none";
-					} else {
-						document.getElementById("cookie-consent").style.display = "flex";
-					}
-				}
-				
-				$(document).ready(function () {
-					$('#inputPhone').mask('(00) 0000-0000');
-					
-					// verifica se tem cookie de consentimento e remove a div caso seja sim
-					var cookieString = getCookie("CookieConsent");
-					if(cookieString === 'true') {
-						document.getElementById("cookie-consent").style.display = "none";
-					} else {
-						document.getElementById("cookie-consent").style.display = "flex";
-					}
-				});
-			</script>
-			<script type="text/javascript" src="js/custom.js"></script>
-		</body>
-					
+				</div>
+		</section>
+	</div>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/wow.min.js"></script>
+	<script type="text/javascript" src="js/counter.js"></script>
+	<script type="text/javascript" src="js/inputmask.js"></script>
+
+	<script>
+		function openNav() {
+			document.getElementById("mySidenav").style.width = "250px";
+		}
+		function closeNav() {
+			document.getElementById("mySidenav").style.width = "0";
+		}
+
+		// retorna o valor do cookie
+		function getCookie(cookieConsent) {
+			var name = cookieConsent + "=";
+			var ca = document.cookie.split(';');
+			for (var i = 0; i < ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') c = c.substring(1);
+				if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+			}
+			return "";
+		}
+
+		//cria o cookie e remove div de consentimento
+		function setCookie(cookieName, cookieValue, exDays) {
+			var d = new Date();
+			d.setTime(d.getTime() + (exDays * 24 * 60 * 60 * 1000));
+			var expires = "expires=" + d.toUTCString();
+			document.cookie = cookieName + "=" + cookieValue + "; " + expires;
+
+			var cookieString = getCookie(cookieName);
+			if (cookieString === 'true') {
+				document.getElementById("cookie-consent").style.display = "none";
+			} else {
+				document.getElementById("cookie-consent").style.display = "flex";
+			}
+		}
+
+		$(document).ready(function () {
+			$('#inputPhone').mask('(00) 0000-0000');
+
+			// verifica se tem cookie de consentimento e remove a div caso seja sim
+			var cookieString = getCookie("CookieConsent");
+			if (cookieString === 'true') {
+				document.getElementById("cookie-consent").style.display = "none";
+			} else {
+				document.getElementById("cookie-consent").style.display = "flex";
+			}
+		});
+	</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.7/js/tether.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/custom.js"></script>
+</body>
+
 </html>
