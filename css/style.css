@@ -875,9 +875,9 @@ a:hover {
   /* padding-top: 15px; */
   width: 80%;
   top: -3rem;
-  position: relative;
+  /* position: relative; */
   text-align: center;
-  margin: 5rem 0rem 0rem 0rem;
+  /* padding-top: 32px; */
 }
 
 .banner-powered {
@@ -1570,7 +1570,7 @@ a:hover {
   }
 
   .banner-title {
-    top: 0.5rem !important;
+    /* top: 0.5rem !important; */
     /* margin-top: 10%;
     margin-bottom: 10%; */
   }
@@ -1665,10 +1665,10 @@ a:hover {
   .banner-title {
     color: #fff;
     font-size: 20px;
-    line-height: 25px;
-    padding-top: 5px;
+    /* line-height: 25px; */
+    /* padding-top: 5px; */
     width: 100%;
-    margin: 2% auto;
+    /* margin: 2% auto; */
     text-align: center;
   }
 
@@ -1725,7 +1725,7 @@ a:hover {
     font-size: 20px !important;
     bottom: 12rem !important;
     font-weight: lighter !important;
-    padding: 0px 10px;
+    /* padding: 0px 10px; */
   }
   .call-to-action {
     margin-top: -1rem !important;
@@ -1735,10 +1735,10 @@ a:hover {
     font-size: 15pt;
     line-height: 1.3em;
   }
-  .banner-title {
+  /* .banner-title {
     top: -4rem;
     margin: 4rem 0rem 0rem 0rem;
-  }
+  } */
 
   .agencies-text-contain {
     width: 100%;
@@ -1759,7 +1759,6 @@ a:hover {
   }
 
   .banner-title {
-    margin: 0 px;
     width: 100%;
     font-size: 20px;
   }
@@ -2459,8 +2458,7 @@ p.text-oq.b {
   .slider-title h1 {
     top: 0;
   }
-  .banner-title {
-    /* top: -4rem; */
+  /* .banner-title {
     font-size: 15px !important;
   }
   .banner-title-2 {
@@ -2468,8 +2466,9 @@ p.text-oq.b {
     font-size: 15px !important;
     width: 22rem !important;
     margin: 2rem;
+    margin-top: 0;
     bottom: 9rem !important;
-  }
+  } */
 }
 
 @media (max-width: 575px) {
@@ -2477,33 +2476,60 @@ p.text-oq.b {
     bottom: 0;
     top: 5rem;
   }
-  .banner-title {
+  /* .banner-title {
     top: 0.5rem !important;
   }
   .banner-title-2 {
     bottom: 6rem !important;
-  }
+  } */
 }
 
-@media (max-width: 420px) {
+/* @media (max-width: 420px) {
   .banner-title {
     top: 0.5rem !important;
   }
   .banner-title-2 {
     bottom: 9rem !important;
   }
-}
+} */
 
-@media (max-width: 375px) {
+/* @media (max-width: 375px) {
   .banner-title {
     top: 3.5rem !important;
   }
-}
+} */
 
-@media (max-width: 360px) {
+/* @media (max-width: 360px) {
   .banner-title {
     top: 3.5rem !important;
   }
+} */
+
+.custom-logo {
+  position: relative;
+  top: -50px;
+  width: 250px;
+}
+
+.custom-lgpd-logo {
+  width: 70px;
+}
+
+.custom-title-banner {
+  position: relative;
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.custom-title-banner p {
+  margin: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.container {
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 
