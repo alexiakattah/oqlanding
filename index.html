@@ -255,9 +255,9 @@
 			<div class="text-center solutions-list">
 				<div class="solution-item">
 					<img src="./assets/indication.svg" alt="Indication marketing" />
-					<h2 class="solution-title">Programa de Renda Extra 360º</h2>
+					<h2 class="solution-title">Programa de Renda Extra 360<span class="complement">º</span></h2>
 					<p class="solution-description">Aumente o alcance e a capilaridade das suas ofertas com programas de
-						indicação 4.0 ou <span class="italic">social selling</span> exclusivo para sua marca. Gestão de
+						indicação 4.0 e <span class="italic">social selling</span> exclusivos para sua marca. Gestão de
 						ponta a ponta: da ativação
 						e engajamento do usuário ao pagamento dos sellers.</p>
 				</div>
@@ -284,17 +284,17 @@
 				<div class="solution-item">
 					<img src="./assets/trainning.svg" alt='Traninning program' />
 					<h2 class="solution-title">Treinamento e EAD</h2>
-					<p class="solution-description">Educar, gerir e motivar são 3 maneiras poderosas
+					<p class="solution-description">Requalificar, gerir e motivar são 3 maneiras poderosas
 						de aumentar o conhecimento das pessoas. Use
-						nossa tecnologia para compartilhar informações
-						relevantes e gerar engajamento em conteúdos. </p>
+						nossa tecnologia para compartilhar conhecimento
+						e gerar engajamento em conteúdos. </p>
 				</div>
 				<div class="solution-item">
 					<img src="./assets/gamification.svg" alt='Gamification' />
 					<h2 class="solution-title">Gamificação e MGM</h2>
 					<p class="solution-description">Crie ações de <span class="italic">Member Get Member</span> e
 						Campanhas de Incentivo contínuas
-						usando técnicas de games online para
+						usando técnicas de <span class="italic">games</span> online para
 						motivar e engajar pessoas, acelerar o
 						ciclo de vendas, reter clientes e atrair
 						novos para o seu negócio.
@@ -304,7 +304,7 @@
 					<img src="./assets/search.svg" alt="Pesquisa e cocriação" />
 					<h2 class="solution-title">Pesquisas, cocriação e MQL</h2>
 					<p class="solution-description">Peça a opinião dos usuários, lance desafios de
-						cocriação, tenha insights com os feedbacks que você
+						cocriação, tenha insights com os <span class="italic">feedbacks</span> que você
 						receber e desenvolva produtos/serviços com a
 						ajuda de quem mais conhece a sua empresa.</p>
 				</div>
@@ -368,26 +368,28 @@
 				</div>
 			</div>
 		</section>
-		<section class="sec-4 position_rel">
+		<section class="sec-4 position_rel" style="height: auto;">
 			<div class="container">
 				<div class="row ">
 					<div class="col-md-12 mb-4">
-						<h2 class="section-headline text-center">MULTICANAIS</h2>
+						<h2 class="section-headline text-center" style="margin-bottom: 0; margin-top: 40px;">MULTICANAIS
+						</h2>
 					</div>
 					<div class="col-md-6"></div>
 					<div class="col-md-6 pt-2">
 						<p class="section-sub-headline">SOMOS FIGITAL*</p>
 						<!-- <p class="section-sub-headline">resultados para sua empresa</p> -->
 					</div>
-					<div class="col-md-12 body-text text-center">
+					<div class="col-md-12 body-text text-center" style="margin-top: 0;">
 						<p>
 							Não existe mais fronteiras entre o mundo virtual e o real. Com a Plataforma OQ você pode
 							usar dados e fazer ativações de prospecção digitais e presenciais. Use nossa tecnologia para
 							vender seus produtos e serviços a qualquer hora e lugar com a mais completa CDP/SEP** do
 							mercado.
-						</p><br>
+						</p>
 						<p class="section-sub-headline" style="font-size: 18px; font-weight: bold;">*Híbrido de físico e
 							digital. <span class="italic">**Customer Data Platform/Sales Engagement Platform.</span></p>
+						<br>
 					</div>
 				</div>
 			</div>
@@ -492,7 +494,7 @@
 			<div class="row padding-30">
 				<div class="col-md-12 text-right">
 					<div class="source-text">
-						Fonte:
+						Fonte Gallup:
 						<a href="http://officevibe.com/blog/investing-employee-engagement"
 							target="_blank">officevibe.com.blog/investing-employee-engagement</a>
 					</div>
@@ -677,7 +679,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<h2 class="text-center head-exclusive">SOLUÇÕES EXCLUSIVAS</h2>
+						<h2 class="text-center display-1 section-headline">SOLUÇÕES EXCLUSIVAS</h2>
 					</div>
 				</div>
 				<div class="exclusive-solution-container">
@@ -831,9 +833,9 @@
 							Entre em contato e solicite uma apresenta&ccedil;&atilde;o:
 						</div>
 
-						<div class="col-md-6 d-flex justify-content-between flex-column margin-bt-15">
+						<div class="col-md-6 d-flex flex-column margin-bt-15">
 							<div class="address-details">
-								<i class="fa fa-map-marker icon"></i> BH - Rua da Bahia, 1600, Lourdes
+								<i class="fa fa-map-marker icon"></i> BH - Av. Afonso Pena, 4000, Cruzeiro
 							</div>
 
 							<div class="address-details">
@@ -888,31 +890,29 @@
 								<textarea class="form-control form-input margin-bt-15" rows="5" required
 									placeholder="Descreva sua solicitação" name="description"
 									onkeyup="return changeButtonColorIfFormIsValid();" id="inputDescription"></textarea>
+
+								<p class="spam-message">Nos comprometemos a não compartilhar seus dados com terceiros
+									nem enviar spams para
+									você.</p>
+
+								<div class="d-grid gap-2 mb-5">
+									<input class="btn btn-dark btn-primary button_example w-100" value="ENVIAR"
+											id="create-btn-pt" onclick="return createProspectLead();" />
+										<input class="btn btn-primary-color w-100" value="ENVIANDO..."
+											id="sending-btn-pt" hidden />
+								</div>
+
+								<div class="col-12 d-flex justify-content-center">
+									<div class="alert alert-danger" id="danger-alert" role="alert" hidden>
+										Erro ao criar solicitação. Tente novamente.
+									</div>
+
+									<div class="alert alert-primary" id="success-alert" role="alert" hidden>
+										Solicitação criada com sucesso!
+									</div>
+								</div>
 							</form>
 						</div>
-
-						<div class="d-flex justify-content-end w-100 col-md-12 p-right-0">
-							<div class="col-md-2 p-0">
-								<input class="btn btn-dark btn-primary button_example w-100" value="ENVIAR"
-									id="create-btn-pt" onclick="return createProspectLead();" />
-								<input class="btn btn-primary-color w-100" value="ENVIANDO..." id="sending-btn-pt"
-									hidden />
-							</div>
-						</div>
-
-						<div class="col-12 d-flex justify-content-center">
-							<div class="alert alert-danger" id="danger-alert" role="alert" hidden>
-								Erro ao criar solicitação. Tente novamente.
-							</div>
-
-							<div class="alert alert-primary" id="success-alert" role="alert" hidden>
-								Solicitação criada com sucesso!
-							</div>
-						</div>
-
-						<p class="spam-message">Nos comprometemos a não compartilhar seus dados com terceiros
-							nem enviar spams para
-							você.</p>
 
 						<div class="col-12 copyright-wrapper banner-powered">
 							<a href="https://pt.linkedin.com/company/oq-midia-digital-ltda" target="_blank">

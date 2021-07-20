@@ -49,7 +49,7 @@ function isScrolledIntoView(elem) {
 function loadPtCounts(){
   const maxCountPt1 = 80;
   const maxCountPt2 = 2.4;
-  const maxCountPt3 = 202;
+  const maxCountPt3 = 147;
   const maxCountPt4 = 200;
   const maxCountPt5 = 92;
   const maxCountPt6 = 854;
