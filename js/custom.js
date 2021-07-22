@@ -14,11 +14,11 @@ $(document).ready(function () {
 
 
 
-	let textTitle1 = '<div class="container" style="padding: 0"><p class="fs-3 animate__animated animate__fadeIn animate__slow">Bem-vindo a um jeito novo de gerar negócios com relacionamento, reconhecimento, retenção e recomendações on-line.</p></div>';
-	let textTitle2 = '<div class="container" style="padding: 0"><p class="fs-3 animate__animated animate__fadeIn animate__slow">Plataforma OQ: a mais completa solução<br> de social sellers, real influencers, referral marketing e brand lovers do Brasil.</p></div>';
+	let textTitle1 = '<div class="container" style="padding: 0"><p class="fs-3 animate__animated animate__fadeIn animate__slower">Um jeito novo de gerar negócios com relacionamento, reconhecimento, retenção e recomendações on-line.</p></div>';
+	let textTitle2 = '<div class="container" style="padding: 0"><p class="fs-3 animate__animated animate__fadeIn animate__slower">Plataforma OQ: a mais completa solução<br> de <span class="italic">social sellers</span>, <span class="italic">real influencers</span>, <span class="italic">referral marketing</span> e <span class="italic">brand lovers</span> do Brasil.</p></div>';
 
-	let textTitle1mobile = '<p style="padding: 0" class="fs-6 animate__animated animate__fadeIn animate__slow">Bem-vindo a um jeito novo de gerar negócios com relacionamento, reconhecimento, retenção e recomendações on-line.</p>';
-	let textTitle2mobile = '<p style="padding: 0" class="fs-6 animate__animated animate__fadeIn animate__slow">Plataforma OQ: a mais completa solução de social sellers, real influencers, referral marketing e brand lovers do Brasil.</p>';
+	let textTitle1mobile = '<p style="padding: 0" class="fs-6 animate__animated animate__fadeIn animate__slower">Um jeito novo de gerar negócios com relacionamento, reconhecimento, retenção e recomendações on-line.</p>';
+	let textTitle2mobile = '<p style="padding: 0" class="fs-6 animate__animated animate__fadeIn animate__slower">Plataforma OQ: a mais completa solução de social sellers, real influencers, referral marketing e brand lovers do Brasil.</p>';
 
 	if (window.screen.width > 425) {
 
